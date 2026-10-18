@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia do Mapa do UGC · Aulão 7/11 · Ousadia Marketing</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Seu passo a passo do Aulão Mapa do UGC com a Juh Araújo: perfil, portfólio, prospecção e plataformas, com prompts e modelos prontos pra copiar.">
+<meta name="theme-color" content="#100a1c">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0b0713; --deep:#100a1c; --ink:#16102a; --roxo:#241044; --roxo6:#32155c;
+  --amarelo:#ffc61a; --amarelo-soft:#ffdd66; --floresta:#23b26f; --floresta-deep:#128a52;
+  --rio:#18a5c9; --paper:#f4f1ea; --fg:#f2eef8; --muted:#a89fbc; --line:rgba(255,255,255,.12);
+  --fh:'Chakra Petch','Arial Narrow',Arial,sans-serif; --fb:'Manrope',Arial,sans-serif; --fm:'JetBrains Mono',ui-monospace,monospace;
+  --nav:268px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--fg);font-family:var(--fb);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--amarelo)}
+::selection{background:var(--amarelo);color:#1a0b2e}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--amarelo);outline-offset:2px}
+
+/* ---------- topo (celular) ---------- */
+#topo{position:sticky;top:0;z-index:40;display:none;align-items:center;gap:12px;padding:10px 16px;background:var(--void);border-bottom:1px solid var(--line)}
+#topo img{height:26px;width:auto}
+#topo b{font-family:var(--fm);font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:uppercase;flex:1;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#abrir{background:var(--amarelo);color:#1a0b2e;border:0;border-radius:8px;padding:9px 14px;font-family:var(--fm);font-weight:500;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+
+/* ---------- menu lateral ---------- */
+#menu{position:fixed;inset:0 auto 0 0;width:var(--nav);background:var(--void);border-right:1px solid var(--line);overflow-y:auto;z-index:50;padding:22px 16px 40px}
+#menu .logo{display:block;margin:0 4px 18px}
+#menu .logo img{height:34px;width:auto;display:block}
+.placar{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:18px}
+.placar .rot{font-family:var(--fm);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.placar .num{font-family:var(--fh);font-weight:700;font-size:30px;line-height:1.1;color:var(--amarelo)}
+.barra{height:6px;border-radius:99px;background:rgba(255,255,255,.1);margin-top:8px;overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:var(--amarelo);border-radius:99px;transition:width .3s}
+#menu h4{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:18px 6px 6px}
+#menu a.item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;color:var(--fg);text-decoration:none;font-size:14.5px;font-weight:500;line-height:1.3}
+#menu a.item:hover{background:rgba(255,255,255,.06)}
+#menu a.item.on{background:var(--amarelo);color:#1a0b2e;font-weight:700}
+#menu a.item .em{width:22px;text-align:center;flex:none}
+#menu a.item .ok{margin-left:auto;font-size:12px;color:var(--floresta);flex:none}
+#menu a.item.on .ok{color:#1a0b2e}
+#fundo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:45}
+
+/* ---------- conteúdo ---------- */
+main{margin-left:var(--nav);padding:48px 40px 90px}
+.etapa{display:none;max-width:780px;margin:0 auto}
+.etapa.on{display:block;animation:ent .25s ease}
+@keyframes ent{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{font-family:var(--fm);font-weight:500;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--amarelo);margin-bottom:10px}
+.live{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--amarelo-soft);background:rgba(255,198,26,.1);border:1px solid rgba(255,198,26,.35);border-radius:99px;padding:6px 14px;margin-bottom:22px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff4d6d;box-shadow:0 0 0 0 rgba(255,77,109,.6);animation:pulsa 1.6s infinite}
+@keyframes pulsa{70%{box-shadow:0 0 0 9px rgba(255,77,109,0)}100%{box-shadow:0 0 0 0 rgba(255,77,109,0)}}
+h1,h2{font-family:var(--fh);font-weight:700;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(40px,7vw,68px);text-transform:uppercase}
+h1 span,h2 span{color:var(--amarelo)}
+h2{font-size:clamp(28px,4.6vw,42px);margin-bottom:16px}
+h3{font-family:var(--fh);font-weight:600;font-size:19px;margin:26px 0 8px}
+p{margin:0 0 14px;color:#d9d2e8}
+p.lead{font-size:19px;color:var(--fg)}
+strong{color:var(--fg)}
+ul.l{margin:0 0 16px 4px;padding-left:20px;color:#d9d2e8}
+ul.l li{margin-bottom:6px}
+.card{background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:18px 0}
+.card.dest{border:2px solid var(--amarelo)}
+.card.verde{background:rgba(35,178,111,.1);border-color:rgba(35,178,111,.45)}
+.card h3:first-child{margin-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.passos{counter-reset:p;list-style:none;margin:18px 0}
+.passos li{counter-increment:p;position:relative;padding:14px 16px 14px 58px;background:var(--ink);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.passos li::before{content:counter(p);position:absolute;left:14px;top:12px;width:32px;height:32px;border-radius:50%;background:var(--amarelo);color:#1a0b2e;font-family:var(--fh);font-weight:700;display:grid;place-items:center}
+.passos b{display:block;color:var(--fg)}
+.agenda{list-style:none;margin:18px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.agenda li{display:flex;gap:18px;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--ink)}
+.agenda li:last-child{border-bottom:0}
+.agenda .h{font-family:var(--fm);color:var(--amarelo);width:56px;flex:none;font-size:14px}
+.agenda li.rota{background:var(--roxo)}
+.stat{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+.stat div{flex:1 1 150px;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-family:var(--fh);font-size:28px;color:var(--amarelo);line-height:1.1}
+.stat span{font-size:13.5px;color:var(--muted)}
+.sai{list-style:none;margin:16px 0}
+.sai li{display:flex;gap:12px;padding:12px 16px;background:var(--ink);border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+.sai li::before{content:"✓";color:var(--floresta);font-weight:700}
+.sai b{display:block}
+
+/* prompts */
+.prompt{position:relative;background:var(--void);border:1px solid var(--line);border-left:4px solid var(--amarelo);border-radius:12px;padding:16px 18px;margin:14px 0}
+.prompt .tt{font-family:var(--fm);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amarelo);margin-bottom:8px;padding-right:90px}
+.prompt pre{white-space:pre-wrap;word-break:break-word;font-family:var(--fm);font-size:13.5px;line-height:1.6;color:#e9e3f6}
+.copiar{position:absolute;top:12px;right:12px;background:var(--amarelo);color:#1a0b2e;border:0;border-radius:8px;padding:6px 12px;font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+.copiar.feito{background:var(--floresta);color:#fff}
+
+/* checkpoint */
+.check{background:rgba(35,178,111,.09);border:1px solid rgba(35,178,111,.4);border-radius:14px;padding:18px 20px;margin:28px 0 6px}
+.check .eyebrow{color:var(--floresta)}
+.check label{display:flex;gap:12px;align-items:flex-start;padding:7px 0;cursor:pointer;color:#e6f5ec}
+.check input{appearance:none;flex:none;width:22px;height:22px;margin-top:2px;border:2px solid var(--floresta);border-radius:6px;background:transparent;display:grid;place-items:center;cursor:pointer}
+.check input:checked{background:var(--floresta)}
+.check input:checked::after{content:"✓";color:#fff;font-weight:700;font-size:14px;line-height:1}
+.check input:checked+span{opacity:.7;text-decoration:line-through}
+
+.rodape{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+.rodape button{background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:12px 18px;font-weight:600}
+.rodape button.pri{background:var(--amarelo);color:#1a0b2e;border-color:var(--amarelo)}
+.rodape button:disabled{opacity:.35;cursor:default}
+.btn{display:inline-block;background:var(--amarelo);color:#1a0b2e;font-weight:700;text-decoration:none;border-radius:10px;padding:13px 20px;border:0}
+.btn.sec{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.aviso{font-family:var(--fm);font-size:12px;color:var(--muted);margin-top:10px}
+.slot{border:1.5px dashed rgba(255,198,26,.5);border-radius:12px;padding:14px 16px;background:rgba(255,198,26,.06);font-family:var(--fm);font-size:12.5px;color:var(--amarelo-soft);margin:14px 0}
+
+/* mentora */
+.mentora{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;margin:20px 0}
+.mentora img{width:150px;height:190px;object-fit:cover;border-radius:14px;border:2px solid var(--amarelo)}
+.mentora b{font-family:var(--fh);font-size:22px;display:block}
+.mentora small{font-family:var(--fm);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--amarelo)}
+
+/* quadro de marcas */
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+th{font-family:var(--fm);font-weight:500;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px}
+td{padding:6px 4px;border-top:1px solid var(--line)}
+input.f,select.f,textarea.f{width:100%;background:var(--void);color:var(--fg);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit;font-size:15px}
+td input.f,td select.f{padding:8px 10px;font-size:14px}
+.x{background:transparent;border:0;color:var(--muted);font-size:20px;padding:0 8px}
+
+/* cadastro */
+#entrada{position:fixed;inset:0;z-index:100;background:rgba(11,7,19,.96);display:none;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
+#entrada.on{display:flex}
+.caixa{width:100%;max-width:440px;background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
+.caixa img{height:34px;margin-bottom:18px}
+.caixa h2{font-size:30px;text-transform:uppercase;margin-bottom:8px}
+.caixa label.c{display:block;font-family:var(--fm);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:12px 0 5px}
+.caixa .ac{display:flex;gap:10px;align-items:flex-start;margin:16px 0;font-size:13.5px;color:#d9d2e8}
+.caixa .ac input{margin-top:4px;accent-color:var(--amarelo)}
+.caixa .btn{width:100%;font-size:16px;cursor:pointer}
+.erro{color:#ff8fa3;font-size:13.5px;margin-top:8px;min-height:18px}
+
+@media (max-width:900px){
+  #topo{display:flex}
+  #menu{transform:translateX(-100%);transition:transform .25s;width:min(86vw,320px)}
+  #menu.on{transform:none}
+  #fundo.on{display:block}
+  main{margin-left:0;padding:28px 16px 70px}
+  .grid2{grid-template-columns:1fr}
+  .mentora{grid-template-columns:110px 1fr}
+  .mentora img{width:110px;height:140px}
+  .agenda li{gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- Cadastro: grava na planilha de leads e libera o guia -->
+<div id="entrada" role="dialog" aria-modal="true" aria-labelledby="entTit">
+  <form class="caixa" id="formEntrada" novalidate>
+    <img src="img/logo-ousadia.png" alt="Ousadia Marketing">
+    <h2 id="entTit">Sua apostila do Aulão</h2>
+    <p>Crie seu acesso com seus dados. O guia abre na hora e o seu progresso fica salvo neste aparelho.</p>
+    <label class="c" for="eNome">Nome completo</label>
+    <input class="f" id="eNome" autocomplete="name" required>
+    <label class="c" for="eEmail">Melhor e-mail</label>
+    <input class="f" id="eEmail" type="email" autocomplete="email" required>
+    <label class="c" for="eInsta">@ do seu Instagram</label>
+    <input class="f" id="eInsta" placeholder="@seuperfil" autocomplete="off">
+    <label class="c" for="eZap">WhatsApp com DDD</label>
+    <input class="f" id="eZap" type="tel" inputmode="tel" autocomplete="tel" required>
+    <label class="ac"><input type="checkbox" id="eOk"><span>Aceito receber o material e avisos do Aulão Mapa do UGC. Meus dados ficam com a Ousadia Marketing e seguem a <a href="https://ousadiamarketing.com.br/politica-de-privacidade" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
+    <button class="btn" type="submit">Abrir meu guia</button>
+    <p class="erro" id="eErro" role="alert"></p>
+    <p class="aviso">Travou? Chama a Juh no WhatsApp: <a href="https://wa.me/5593992282674" target="_blank" rel="noopener">(93) 99228-2674</a></p>
+  </form>
+</div>
+
+<header id="topo">
+  <img src="img/logo-ousadia.png" alt="Ousadia Marketing">
+  <b id="topoNome">Guia do Mapa do UGC</b>
+  <button id="abrir" type="button" aria-controls="menu" aria-expanded="false">Menu</button>
+</header>
+<div id="fundo"></div>
+
+<nav id="menu" aria-label="Etapas do guia">
+  <a class="logo" href="#e1"><img src="img/logo-ousadia.png" alt="Ousadia Marketing"></a>
+  <div class="placar">
+    <div class="rot">Seu placar</div>
+    <div class="num" id="pct">0%</div>
+    <div class="rot" id="pctTxt">0 de 0 checkpoints</div>
+    <div class="barra"><i id="barra"></i></div>
+  </div>
+  <div id="itens"></div>
+</nav>
+
+<main>
+
+<!-- ============ COMECE AQUI ============ -->
+<section class="etapa" id="e1" data-parte="Comece aqui" data-em="🧭" data-nome="Como usar este guia">
+  <div class="live">Ao vivo · Sábado, 7 de novembro · 15h às 20h</div>
+  <h1>Mapa<br>do <span>UGC</span></h1>
+  <p class="lead" style="margin-top:18px">Perfil, portfólio, prospecção e plataformas: o caminho pra você começar a vender vídeo pra marca, com a Juh Araújo.</p>
+  <div class="mentora">
+    <img src="img/juh.webp" alt="Juliana Araújo, UGC Creator da Amazônia" width="150" height="190">
+    <div><small>Mentora do aulão</small><b>Juh Araújo</b><p style="margin-top:6px">Creator de Altamira (PA) que já atendeu mais de 70 marcas sem sair da Amazônia. Convidado do dia: <strong>Jackson Satoyiro</strong>, fundador da Ousadia, com “UGC como negócio”.</p></div>
+  </div>
+
+  <div class="card dest">
+    <h3>Esse guia é o seu passo a passo do sábado</h3>
+    <p>Tudo que a gente fizer junto no aulão está escrito aqui, na ordem, com os prompts e modelos pra copiar. <strong>Ele não expira às 20h.</strong> Se você travar, perder um bloco ou quiser refazer na semana que vem, é por aqui.</p>
+  </div>
+
+  <h3>O caminho da marca até te contratar</h3>
+  <ol class="passos">
+    <li><b>Prospecção</b>Sua mensagem chega na caixa de entrada da marca.</li>
+    <li><b>Perfil</b>Ela abre o seu Instagram.</li>
+    <li><b>Portfólio</b>Ela vê o que você grava.</li>
+    <li><b>Entrega</b>Você grava e entrega no prazo.</li>
+    <li><b>De novo</b>Ela te chama pra próxima campanha.</li>
+  </ol>
+  <p>No UGC, a marca compra o seu <strong>vídeo</strong>, não o seu alcance. Por isso dá pra começar sem milhares de seguidores.</p>
+
+  <h3>Às 20h você sai com</h3>
+  <ul class="sai">
+    <li><span><b>Perfil de UGC arrumado</b>Bio, foto, destaques e link no lugar.</span></li>
+    <li><span><b>Portfólio montado no Canva</b>Mesmo sem marca, gravando com produto que você tem em casa.</span></li>
+    <li><span><b>Primeira mensagem enviada pra uma marca</b>E um script pra repetir nas próximas.</span></li>
+    <li><span><b>Cadastro nas plataformas de UGC</b>Pra você ser encontrada também.</span></li>
+  </ul>
+
+  <h3>Como usar</h3>
+  <p>Siga na ordem e marque os checkpoints: <strong>ficam salvos neste aparelho</strong>. O menu mostra o seu placar. Vai colando num documento tudo que fizer durante o dia; no final a gente confere item por item. Dúvida? Pergunte no chat da aula, com o número da etapa antes.</p>
+  <p class="aviso">Sobre resultado: o aulão ensina método e prática. Não prometemos contrato, aprovação nem faturamento.</p>
+
+  <div class="check" data-check="e1">
+    <div class="eyebrow">Checkpoint · Antes de começar</div>
+    <label><input type="checkbox"><span>Entrei no grupo do WhatsApp do Mapa do UGC</span></label>
+    <label><input type="checkbox"><span>Estou com o Instagram aberto e a galeria de vídeos à mão</span></label>
+    <label><input type="checkbox"><span>Abri um documento (ou bloco de notas) pra colar o que eu fizer hoje</span></label>
+    <label><input type="checkbox"><span>Salvei este guia nos favoritos do celular</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e2" data-parte="Comece aqui" data-em="📅" data-nome="Agenda e combinados">
+  <div class="eyebrow">Etapa 02 · Comece aqui</div>
+  <h2>Agenda e <span>combinados</span></h2>
+  <p>Sábado, 7 de novembro de 2026, das 15h às 20h (horário de Brasília), ao vivo e online. Cinco horas em ritmo de oficina, com pausa e uma entrega a cada bloco.</p>
+  <ul class="agenda">
+    <li><span class="h">15h00</span><span>Abertura: de Altamira para 70 marcas, e as regras da tarde</span></li>
+    <li class="rota"><span class="h">15h20</span><span><b>Rota 1 · Perfil</b></span></li>
+    <li><span class="h">16h10</span><span>Pausa e desafio: story “tô no Mapa do UGC”</span></li>
+    <li class="rota"><span class="h">16h20</span><span><b>Rota 2 · Portfólio</b></span></li>
+    <li class="rota"><span class="h">17h10</span><span><b>Rota 3 · Prospecção</b>, com a primeira mensagem enviada</span></li>
+    <li class="rota"><span class="h">17h55</span><span><b>Rota 4 · Plataformas</b></span></li>
+    <li><span class="h">18h20</span><span>Jackson Satoyiro: UGC como negócio</span></li>
+    <li><span class="h">18h45</span><span>Perguntas, novidades e encerramento às 20h</span></li>
+  </ul>
+  <h3>Combinados da tarde</h3>
+  <ul class="l">
+    <li><strong>Faz junto.</strong> O aulão é pra executar ao vivo, não só assistir. Reserve a tarde.</li>
+    <li><strong>Câmera é opcional, entrega não.</strong> Cada bloco termina com algo seu pronto.</li>
+    <li><strong>Pergunta com número.</strong> No chat, escreva a etapa antes da dúvida, por exemplo “E7: …”.</li>
+    <li><strong>Sem pressa de ficar perfeita.</strong> Feito e enviado vale mais que perfeito na gaveta.</li>
+  </ul>
+  <div class="slot">Link da sala e plataforma da transmissão: chegam no grupo do Mapa do UGC e nos lembretes do dia.</div>
+  <p><a class="btn sec" href="https://chat.whatsapp.com/IFS158jFoeEEXqltGJMLCG" target="_blank" rel="noopener">Entrar no grupo do Mapa do UGC</a></p>
+  <div class="check" data-check="e2">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Coloquei o aulão na agenda: sábado, 7/11, 15h às 20h (Brasília)</span></label>
+    <label><input type="checkbox"><span>Vou ficar num lugar com internet boa e o celular carregado</span></label>
+  </div>
+</section>
+
+<!-- ============ ROTA 1 · PERFIL ============ -->
+<section class="etapa" id="e3" data-parte="Rota 1 · Perfil" data-em="🎯" data-nome="UGC e o seu nicho">
+  <div class="eyebrow">Etapa 03 · Rota 1 · Perfil</div>
+  <h2>O que é UGC e <span>qual é o seu nicho</span></h2>
+  <p>UGC (conteúdo gerado pelo usuário) é o vídeo com cara de gente real que a marca usa no <strong>perfil dela e nos anúncios dela</strong>, não no seu. Ela compra o seu vídeo, não o seu alcance.</p>
+  <div class="grid2">
+    <div class="card"><h3>Influenciadora</h3><p>Posta no próprio perfil. A marca paga pelo alcance e pela audiência.</p></div>
+    <div class="card dest"><h3>Creator de UGC</h3><p>Entrega o vídeo pronto. A marca posta e anuncia no perfil dela.</p></div>
+  </div>
+  <h3>Escolha um nicho pra começar</h3>
+  <p>Nicho é o tipo de produto que você grava com mais naturalidade: beleza, casa, pet, bebê, alimentação, moda, bem-estar, tecnologia. Escolha um e comece. Dá pra mudar depois.</p>
+  <div class="prompt">
+    <div class="tt">Prompt · Meu nicho de UGC</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Atue como estrategista de UGC no Brasil. Eu sou [seu nome], moro em [cidade/estado] e gosto de [3 interesses seus]. Tenho em casa estes produtos pra gravar: [liste 5 a 10 produtos].
+
+Me indique os 3 melhores nichos de UGC pra eu começar. Pra cada um, diga: por que combina comigo, que tipo de marca contrata esse nicho e 3 ideias de vídeo que eu consigo gravar hoje com o celular.</pre>
+  </div>
+  <div class="check" data-check="e3">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Entendi a diferença entre influenciadora e creator de UGC</span></label>
+    <label><input type="checkbox"><span>Escolhi o meu nicho e escrevi no documento</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e4" data-parte="Rota 1 · Perfil" data-em="👤" data-nome="Bio, foto e destaques">
+  <div class="eyebrow">Etapa 04 · Rota 1 · Perfil</div>
+  <h2>Seu perfil como <span>vitrine</span></h2>
+  <p>A marca abre o seu Instagram antes de responder. Em 5 segundos ela precisa entender: <strong>o que você grava, pra quem e como te chamar</strong>.</p>
+  <h3>O checklist do perfil</h3>
+  <ul class="l">
+    <li><strong>Foto:</strong> rosto visível, boa luz, fundo limpo.</li>
+    <li><strong>Nome e @:</strong> fáceis de ler e de digitar.</li>
+    <li><strong>Bio:</strong> o que você cria + nicho + como falar com você.</li>
+    <li><strong>Link:</strong> portfólio no Canva ou WhatsApp. Um só, que funcione.</li>
+    <li><strong>Destaques:</strong> “Portfólio”, “Sobre mim”, “Contato”. Três bastam.</li>
+    <li><strong>Perfil aberto:</strong> a marca precisa conseguir ver os seus vídeos.</li>
+  </ul>
+  <div class="prompt">
+    <div class="tt">Prompt · Bio de creator de UGC</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Escreva 5 opções de bio de Instagram pra uma creator de UGC. Meu nome é [nome], meu nicho é [nicho], moro em [cidade]. A bio deve ter no máximo 150 caracteres, dizer o que eu crio (vídeos pra marcas), pra quem e incluir uma chamada pra contato. Tom: [simpático / direto / divertido]. Sem emoji em excesso.</pre>
+  </div>
+  <div class="prompt">
+    <div class="tt">Prompt · Roteiro de destaques</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Me diga o que colocar em 3 destaques de Instagram pra uma creator de UGC iniciante do nicho [nicho]: “Portfólio”, “Sobre mim” e “Contato”. Pra cada um, liste os stories em ordem (o que mostrar e o que escrever em cada um).</pre>
+  </div>
+  <div class="check" data-check="e4">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Troquei a bio e a foto do perfil</span></label>
+    <label><input type="checkbox"><span>Criei os 3 destaques</span></label>
+    <label><input type="checkbox"><span>Coloquei um link que funciona</span></label>
+    <label><input type="checkbox"><span>Deixei o perfil aberto</span></label>
+  </div>
+</section>
+
+<!-- ============ ROTA 2 · PORTFÓLIO ============ -->
+<section class="etapa" id="e5" data-parte="Rota 2 · Portfólio" data-em="👀" data-nome="O que a marca olha">
+  <div class="eyebrow">Etapa 05 · Rota 2 · Portfólio</div>
+  <h2>O que a marca olha <span>no seu portfólio</span></h2>
+  <p>Portfólio decide, prospecção abre a porta. Uma sem a outra não fecha. A marca não quer ver quantas campanhas você já fez: quer ver <strong>se o seu vídeo serve pra ela</strong>.</p>
+  <div class="grid2">
+    <div class="card verde"><h3>Ela procura</h3><ul class="l"><li>Gente real, natural, sem cara de anúncio</li><li>Gancho forte nos primeiros 3 segundos</li><li>Áudio limpo e luz boa</li><li>Produto bem mostrado, com a fala certa</li></ul></div>
+    <div class="card"><h3>Ela descarta</h3><ul class="l"><li>Vídeo escuro ou com som ruim</li><li>Muita enrolação antes do produto</li><li>Portfólio sem nicho nenhum</li><li>Link que não abre</li></ul></div>
+  </div>
+  <p>E se você ainda não tem marca? Sem problema: <strong>você cria o portfólio gravando com produtos que já tem em casa</strong>, como se fosse a campanha.</p>
+  <div class="check" data-check="e5">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Entendi o que a marca olha</span></label>
+    <label><input type="checkbox"><span>Separei 3 produtos que tenho em casa pra gravar</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e6" data-parte="Rota 2 · Portfólio" data-em="🪝" data-nome="Ganchos e vídeos pra gravar">
+  <div class="eyebrow">Etapa 06 · Rota 2 · Portfólio</div>
+  <h2>Ganchos e os <span>3 vídeos</span> do seu portfólio</h2>
+  <p>Grave 3 vídeos curtos, de formatos diferentes, no mesmo nicho. Assim a marca vê variedade sem perder a coerência.</p>
+  <ol class="passos">
+    <li><b>Prova de uso</b>Você usando o produto e contando o que sentiu. Mostra naturalidade.</li>
+    <li><b>Antes e depois / demonstração</b>O problema, o produto e o resultado na tela.</li>
+    <li><b>Lista ou dica</b>“3 coisas que eu faria diferente”, “por que eu troquei por este”. Mostra roteiro.</li>
+  </ol>
+  <h3>Ganchos pros primeiros 3 segundos</h3>
+  <ul class="l">
+    <li>“Eu não acreditava que isso funcionava, até testar.”</li>
+    <li>“Se você [problema], precisa ver isso.”</li>
+    <li>“3 motivos pra eu nunca mais usar [coisa antiga].”</li>
+    <li>“Gastei [valor] pra você não precisar gastar.”</li>
+  </ul>
+  <div class="prompt">
+    <div class="tt">Prompt · Roteiro de vídeo UGC de 30 segundos</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Crie um roteiro de vídeo UGC de 30 segundos, em português do Brasil, pra eu gravar com o celular. Produto: [produto]. Formato: [prova de uso / demonstração / lista]. Público: [quem compra]. Quero: gancho nos 3 primeiros segundos, desenvolvimento curto, uma prova ou demonstração e um fechamento com chamada pra ação. Tom natural, de conversa, sem parecer anúncio. Escreva em tópicos curtos, não em texto corrido, pra eu não decorar.</pre>
+  </div>
+  <div class="check" data-check="e6">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Escolhi 3 formatos e 3 produtos</span></label>
+    <label><input type="checkbox"><span>Escrevi o gancho de cada vídeo</span></label>
+    <label><input type="checkbox"><span>Gravei pelo menos 1 vídeo</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e7" data-parte="Rota 2 · Portfólio" data-em="🎨" data-nome="Portfólio no Canva e com IA">
+  <div class="eyebrow">Etapa 07 · Rota 2 · Portfólio</div>
+  <h2>Monte o portfólio <span>no Canva</span></h2>
+  <p>Uma página simples, que abre no celular e cabe numa mensagem. A Juh monta o passo a passo ao vivo.</p>
+  <h3>O que entra na página</h3>
+  <ul class="l">
+    <li>Capa com o seu nome, nicho e uma frase do que você cria</li>
+    <li>Seus 3 vídeos (link ou captura com o play)</li>
+    <li>Uma linha sobre você e como você trabalha</li>
+    <li>Contato: WhatsApp e Instagram</li>
+  </ul>
+  <div class="slot">Modelos de portfólio: entregues pela Juh durante o aulão.</div>
+  <div class="prompt">
+    <div class="tt">Prompt · Textos do portfólio</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Escreva os textos de um portfólio de creator de UGC em 1 página. Meu nome é [nome], moro em [cidade], meu nicho é [nicho]. Preciso de: uma frase de capa (até 12 palavras), um “sobre mim” de 3 linhas, uma frase pra cada um dos meus 3 vídeos [descreva os vídeos] e uma chamada final pra contato. Tom: [simpático e direto]. Sem inventar números nem marcas que eu não atendi.</pre>
+  </div>
+  <div class="check" data-check="e7">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Abri o Canva e escolhi um modelo</span></label>
+    <label><input type="checkbox"><span>Coloquei os textos e os vídeos</span></label>
+    <label><input type="checkbox"><span>Testei o link no celular</span></label>
+    <label><input type="checkbox"><span>Coloquei o link do portfólio na bio</span></label>
+  </div>
+</section>
+
+<!-- ============ ROTA 3 · PROSPECÇÃO ============ -->
+<section class="etapa" id="e8" data-parte="Rota 3 · Prospecção" data-em="🔥" data-nome="Achar marcas">
+  <div class="eyebrow">Etapa 08 · Rota 3 · Prospecção</div>
+  <h2>Onde achar <span>as marcas</span></h2>
+  <p>Comece por marcas que você já usa e que já mostram vídeo de gente real. Elas entendem o que você faz sem explicar.</p>
+  <div class="grid2">
+    <div class="card"><h3>Marca quente</h3><p>Já faz UGC: reposta vídeos de clientes, tem anúncio com gente real, usa creators. Aborde com o seu portfólio.</p></div>
+    <div class="card"><h3>Marca fria</h3><p>Boa de produto, mas sem vídeo de gente real. Aborde com uma ideia de vídeo pra ela, não só com o seu preço.</p></div>
+  </div>
+  <h3>Faça a sua lista de 10</h3>
+  <ol class="passos">
+    <li><b>Abra o seu Instagram e a sua casa</b>Quais marcas você já usa? Anote 5.</li>
+    <li><b>Procure marcas do seu nicho</b>Veja quem anuncia e quem marca creators. Anote mais 5.</li>
+    <li><b>Registre no “Meu quadro de marcas”</b>Nome, canal de contato e status. É o seu placar da prospecção.</li>
+  </ol>
+  <div class="check" data-check="e8">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Anotei 10 marcas no Meu quadro</span></label>
+    <label><input type="checkbox"><span>Marquei quais são quentes e quais são frias</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e9" data-parte="Rota 3 · Prospecção" data-em="💬" data-nome="A mensagem de abordagem">
+  <div class="eyebrow">Etapa 09 · Rota 3 · Prospecção</div>
+  <h2>A primeira mensagem, <span>enviada ao vivo</span></h2>
+  <p>Mensagem boa é curta, tem o nome da marca, diz o que você cria e termina com uma pergunta fácil de responder. <strong>Todo mundo manda uma mensagem durante o aulão.</strong></p>
+  <h3>A estrutura em 4 linhas</h3>
+  <ol class="passos">
+    <li><b>Cumprimento com o nome da marca</b>Mostra que não é mensagem copiada.</li>
+    <li><b>Um elogio específico</b>Algo real de um produto ou de uma campanha.</li>
+    <li><b>O que você cria</b>“Eu crio vídeos de UGC no nicho de [nicho]”. E o link do portfólio.</li>
+    <li><b>Pergunta fácil</b>“Posso te mandar uma ideia de vídeo?”</li>
+  </ol>
+  <div class="prompt">
+    <div class="tt">Modelo · Mensagem de abordagem</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Oi, [equipe da marca]! Tudo bem? Sou a [seu nome], de [cidade]. Uso o [produto] e amei [detalhe real]. Eu crio vídeos de UGC no nicho de [nicho] e queria te mostrar o meu trabalho: [link do portfólio]. Posso te mandar uma ideia de vídeo pra [produto]?</pre>
+  </div>
+  <div class="prompt">
+    <div class="tt">Prompt · Abordagem personalizada</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Escreva uma mensagem curta de abordagem (até 450 caracteres) pro direct da marca [marca], do nicho [nicho]. Eu sou creator de UGC iniciante, moro em [cidade] e tenho este portfólio: [link]. Elogie algo real sobre a marca [o que você notou], diga o que eu crio e termine com uma pergunta fácil. Tom natural, sem formalidade excessiva e sem prometer resultado.</pre>
+  </div>
+  <div class="check" data-check="e9">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Escrevi a minha mensagem</span></label>
+    <label><input type="checkbox"><span>Enviei pra pelo menos 1 marca</span></label>
+    <label><input type="checkbox"><span>Registrei o envio no Meu quadro</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e10" data-parte="Rota 3 · Prospecção" data-em="⚖️" data-nome="Permuta ou cachê">
+  <div class="eyebrow">Etapa 10 · Rota 3 · Prospecção</div>
+  <h2>Permuta <span>ou cachê</span></h2>
+  <p>Permuta é a porta de entrada e cachê é o próximo passo. Os dois são trabalho, e os dois valem portfólio.</p>
+  <div class="grid2">
+    <div class="card"><h3>Permuta</h3><p>A marca manda o produto e você entrega o vídeo. Boa pra criar portfólio e provar entrega. Combine <strong>por escrito</strong> o que será entregue.</p></div>
+    <div class="card dest"><h3>Cachê</h3><p>A marca paga pelo vídeo. Cobre pelo que entrega: tempo, roteiro, edição e o uso do vídeo nos anúncios.</p></div>
+  </div>
+  <h3>O que combinar antes de gravar</h3>
+  <ul class="l">
+    <li>Quantos vídeos, de quantos segundos e em qual formato</li>
+    <li>Prazo de entrega e número de ajustes</li>
+    <li>Onde a marca vai usar o vídeo (perfil, anúncio) e por quanto tempo</li>
+    <li>Forma e data de pagamento, quando houver cachê</li>
+  </ul>
+  <div class="prompt">
+    <div class="tt">Prompt · Quanto cobrar</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Quero montar a minha primeira tabela de preços de UGC no Brasil. Meu nicho é [nicho], sou iniciante e já tenho [n] vídeos no portfólio. Me explique como calcular um valor justo por vídeo considerando: tempo de roteiro, gravação e edição, uso do vídeo em anúncio e quantidade de ajustes. Depois sugira como apresentar 3 pacotes (1 vídeo, 3 vídeos, 5 vídeos) e me diga o que eu devo pesquisar pra confirmar os valores.</pre>
+  </div>
+  <div class="check" data-check="e10">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Entendi a diferença entre permuta e cachê</span></label>
+    <label><input type="checkbox"><span>Escrevi o que eu combino antes de gravar</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e11" data-parte="Rota 3 · Prospecção" data-em="🔁" data-nome="Follow-up">
+  <div class="eyebrow">Etapa 11 · Rota 3 · Prospecção</div>
+  <h2>Follow-up sem <span>constrangimento</span></h2>
+  <p>Marca não responde porque está ocupada, não porque você é ruim. Um segundo toque, leve, resolve muita coisa.</p>
+  <ol class="passos">
+    <li><b>Dia 3</b>Retome com uma ideia de vídeo, não com “viu minha mensagem?”.</li>
+    <li><b>Dia 7</b>Mande um vídeo curto seu pra ela, com o produto dela.</li>
+    <li><b>Dia 14</b>Encerre com educação e deixe a porta aberta. Siga pra próxima marca.</li>
+  </ol>
+  <div class="prompt">
+    <div class="tt">Modelo · Follow-up do dia 3</div>
+    <button class="copiar" type="button">Copiar</button>
+    <pre>Oi, [equipe da marca]! Voltei rapidinho porque pensei numa ideia de vídeo pro [produto]: [descreva a ideia em 1 linha]. Se fizer sentido, eu gravo uma versão e te mando. Posso?</pre>
+  </div>
+  <div class="check" data-check="e11">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Anotei as datas de follow-up no Meu quadro</span></label>
+    <label><input type="checkbox"><span>Salvei o modelo de follow-up</span></label>
+  </div>
+</section>
+
+<!-- ============ ROTA 4 · PLATAFORMAS ============ -->
+<section class="etapa" id="e12" data-parte="Rota 4 · Plataformas" data-em="🗂️" data-nome="Plataformas de UGC">
+  <div class="eyebrow">Etapa 12 · Rota 4 · Plataformas</div>
+  <h2>Pra você ser <span>encontrada também</span></h2>
+  <p>Além de ir atrás das marcas, deixe o seu perfil onde as marcas procuram creators: plataformas de UGC e marketplaces de creators.</p>
+  <div class="slot">Lista de plataformas e links de cadastro: entregue pela Juh durante o aulão (Rota 4, a partir das 17h55).</div>
+  <h3>O que ter pronto antes de se cadastrar</h3>
+  <ul class="l">
+    <li>Foto de perfil e uma bio curta (você fez na etapa 04)</li>
+    <li>Link do portfólio (etapa 07)</li>
+    <li>Seus 3 vídeos de portfólio</li>
+    <li>Chave Pix ou conta pra receber, quando a plataforma pedir</li>
+  </ul>
+  <div class="check" data-check="e12">
+    <div class="eyebrow">Checkpoint</div>
+    <label><input type="checkbox"><span>Fiz o cadastro em pelo menos 1 plataforma</span></label>
+    <label><input type="checkbox"><span>Salvei a lista de plataformas</span></label>
+  </div>
+</section>
+
+<!-- ============ FECHAMENTO ============ -->
+<section class="etapa" id="e13" data-parte="Depois do aulão" data-em="🏁" data-nome="Desafio dos 7 dias">
+  <div class="eyebrow">Etapa 13 · Depois do aulão</div>
+  <h2>Desafio dos <span>7 dias</span></h2>
+  <p>O aulão acende o motor. O que traz resultado é a constância na semana seguinte. Uma ação pequena por dia.</p>
+  <ol class="passos">
+    <li><b>Dia 1 · Sábado, 7/11</b>Perfil arrumado e 1 mensagem enviada.</li>
+    <li><b>Dia 2</b>Grave o vídeo 2 do portfólio.</li>
+    <li><b>Dia 3</b>Grave o vídeo 3 e atualize o portfólio no Canva.</li>
+    <li><b>Dia 4</b>Envie mais 3 mensagens pra marcas do seu quadro.</li>
+    <li><b>Dia 5</b>Faça os follow-ups que já venceram.</li>
+    <li><b>Dia 6</b>Cadastre-se em mais uma plataforma e revise o seu perfil.</li>
+    <li><b>Dia 7</b>Conte as respostas, ajuste a mensagem e escolha as próximas 10 marcas.</li>
+  </ol>
+  <div class="check" data-check="e13">
+    <div class="eyebrow">Checkpoint · Marque conforme avançar</div>
+    <label><input type="checkbox"><span>Dia 1: perfil e 1 mensagem</span></label>
+    <label><input type="checkbox"><span>Dias 2 e 3: vídeos 2 e 3 gravados</span></label>
+    <label><input type="checkbox"><span>Dia 4: mais 3 mensagens enviadas</span></label>
+    <label><input type="checkbox"><span>Dia 5: follow-ups feitos</span></label>
+    <label><input type="checkbox"><span>Dias 6 e 7: plataforma, revisão e próximas 10 marcas</span></label>
+  </div>
+</section>
+
+<section class="etapa" id="e14" data-parte="Meu quadro" data-em="📌" data-nome="Meu quadro de marcas">
+  <div class="eyebrow">Etapa 14 · Meu quadro</div>
+  <h2>Meu quadro <span>de marcas</span></h2>
+  <p>Anote cada marca que você abordar e o que aconteceu. Fica salvo neste aparelho.</p>
+  <table>
+    <thead><tr><th>Marca</th><th>Contato</th><th>Status</th><th></th></tr></thead>
+    <tbody id="quadro"></tbody>
+  </table>
+  <p><button class="btn" type="button" id="addMarca">+ Adicionar marca</button></p>
+  <p class="aviso" id="quadroResumo"></p>
+</section>
+
+<section class="etapa" id="e15" data-parte="Prompts" data-em="📋" data-nome="Todos os prompts">
+  <div class="eyebrow">Etapa 15 · Prompts</div>
+  <h2>Todos os <span>prompts</span></h2>
+  <p>Todos os modelos do guia num lugar só. Troque o que está entre [colchetes] pelos seus dados e cole no ChatGPT, no Claude ou na IA que você usa.</p>
+  <div id="todosPrompts"></div>
+  <div class="card dest" style="margin-top:28px">
+    <h3>Quer ir além do aulão?</h3>
+    <p>No fim do aulão a Juh apresenta, ao vivo, o próximo passo pra quem quer viver de UGC. Fique até o final.</p>
+    <a class="btn" href="https://wa.me/5593992282674?text=Oi%2C%20Juh!%20Estou%20no%20Guia%20do%20Mapa%20do%20UGC." target="_blank" rel="noopener">Falar com a Juh no WhatsApp</a>
+  </div>
+</section>
+
+<div class="rodape" id="rodape">
+  <button type="button" id="voltar">Voltar</button>
+  <button type="button" class="pri" id="proxima">Próxima etapa</button>
+</div>
+
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Endpoint do Apps Script (planilha de leads do guia). Vazio = só salva no aparelho.
+     Veja apps-script/guia-mapa-ugc-google-sheets.gs. */
+  var ENDPOINT = "";
+
+  var K_PROG = "ugc-guia-prog-v1", K_LEAD = "ugc-guia-lead-v1", K_QUADRO = "ugc-guia-quadro-v1";
+
+  function lerLS(k, pad){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : pad; }catch(e){ return pad; } }
+  function salvaLS(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+
+  var etapas = [].slice.call(document.querySelectorAll(".etapa"));
+  var ids = etapas.map(function(e){ return e.id; });
+  var prog = lerLS(K_PROG, {});
+  var atual = "e1";
+
+  /* ---------- menu ---------- */
+  var itens = document.getElementById("itens");
+  function montaMenu(){
+    var html = "", parte = "";
+    etapas.forEach(function(e){
+      if(e.dataset.parte !== parte){ parte = e.dataset.parte; html += "<h4>" + parte + "</h4>"; }
+      html += '<a class="item" href="#' + e.id + '" data-id="' + e.id + '"><span class="em">' + e.dataset.em + '</span><span>' + e.dataset.nome + '</span><span class="ok" hidden>✓</span></a>';
+    });
+    itens.innerHTML = html;
+  }
+
+  /* ---------- checkpoints ---------- */
+  function ligaChecks(){
+    [].forEach.call(document.querySelectorAll("[data-check]"), function(bloco){
+      var id = bloco.dataset.check;
+      [].forEach.call(bloco.querySelectorAll("input"), function(inp, i){
+        var chave = id + "-" + i;
+        inp.checked = !!prog[chave];
+        inp.addEventListener("change", function(){
+          if(inp.checked) prog[chave] = 1; else delete prog[chave];
+          salvaLS(K_PROG, prog); placar();
+        });
+      });
+    });
+  }
+  function placar(){
+    var todos = document.querySelectorAll("[data-check] input");
+    var feitos = [].filter.call(todos, function(i){ return i.checked; }).length;
+    var pct = todos.length ? Math.round(feitos / todos.length * 100) : 0;
+    document.getElementById("pct").textContent = pct + "%";
+    document.getElementById("pctTxt").textContent = feitos + " de " + todos.length + " checkpoints";
+    document.getElementById("barra").style.width = pct + "%";
+    [].forEach.call(document.querySelectorAll("[data-check]"), function(bloco){
+      var ins = bloco.querySelectorAll("input");
+      var completo = [].every.call(ins, function(i){ return i.checked; });
+      var a = itens.querySelector('[data-id="' + bloco.dataset.check + '"] .ok');
+      if(a) a.hidden = !completo;
+    });
+  }
+
+  /* ---------- navegação ---------- */
+  function vai(id){
+    if(ids.indexOf(id) < 0) id = "e1";
+    atual = id;
+    etapas.forEach(function(e){ e.classList.toggle("on", e.id === id); });
+    [].forEach.call(itens.querySelectorAll("a.item"), function(a){ a.classList.toggle("on", a.dataset.id === id); });
+    var i = ids.indexOf(id);
+    document.getElementById("voltar").disabled = i === 0;
+    var prox = document.getElementById("proxima");
+    prox.disabled = i === ids.length - 1;
+    prox.textContent = i < ids.length - 1 ? "Próxima: " + etapas[i+1].dataset.nome : "Fim do guia";
+    document.getElementById("topoNome").textContent = etapas[i].dataset.nome;
+    document.title = etapas[i].dataset.nome + " · Guia do Mapa do UGC";
+    fechaMenu();
+    window.scrollTo({top:0, behavior:"auto"});
+  }
+  window.addEventListener("hashchange", function(){ vai(location.hash.slice(1)); });
+  document.getElementById("voltar").addEventListener("click", function(){ var i = ids.indexOf(atual); if(i > 0) location.hash = ids[i-1]; });
+  document.getElementById("proxima").addEventListener("click", function(){ var i = ids.indexOf(atual); if(i < ids.length-1) location.hash = ids[i+1]; });
+
+  var menu = document.getElementById("menu"), fundo = document.getElementById("fundo"), abrir = document.getElementById("abrir");
+  function abreMenu(){ menu.classList.add("on"); fundo.classList.add("on"); abrir.setAttribute("aria-expanded","true"); }
+  function fechaMenu(){ menu.classList.remove("on"); fundo.classList.remove("on"); abrir.setAttribute("aria-expanded","false"); }
+  abrir.addEventListener("click", function(){ menu.classList.contains("on") ? fechaMenu() : abreMenu(); });
+  fundo.addEventListener("click", fechaMenu);
+
+  /* ---------- copiar prompts ---------- */
+  function ligaCopia(raiz){
+    [].forEach.call(raiz.querySelectorAll(".copiar"), function(b){
+      b.addEventListener("click", function(){
+        var txt = b.parentNode.querySelector("pre").innerText;
+        function ok(){ b.textContent = "Copiado ✓"; b.classList.add("feito"); setTimeout(function(){ b.textContent = "Copiar"; b.classList.remove("feito"); }, 1800); }
+        if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(ok, manual); } else manual();
+        function manual(){
+          var t = document.createElement("textarea"); t.value = txt; t.style.position = "fixed"; t.style.opacity = "0";
+          document.body.appendChild(t); t.select();
+          try{ document.execCommand("copy"); ok(); }catch(e){ b.textContent = "Selecione e copie"; }
+          document.body.removeChild(t);
+        }
+      });
+    });
+  }
+  function montaTodosPrompts(){
+    var alvo = document.getElementById("todosPrompts"), html = "";
+    etapas.forEach(function(e){
+      if(e.id === "e15") return;
+      var ps = e.querySelectorAll(".prompt");
+      if(!ps.length) return;
+      html += "<h3>" + e.dataset.em + " " + e.dataset.nome + "</h3>";
+      [].forEach.call(ps, function(p){ html += p.outerHTML; });
+    });
+    alvo.innerHTML = html;
+  }
+
+  /* ---------- quadro de marcas ---------- */
+  var STATUS = ["Para abordar","Mensagem enviada","Respondeu","Fechou permuta","Fechou cachê","Sem resposta"];
+  var quadro = lerLS(K_QUADRO, []);
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function desenhaQuadro(){
+    var tb = document.getElementById("quadro");
+    tb.innerHTML = quadro.map(function(m, i){
+      return '<tr><td><input class="f" data-i="' + i + '" data-c="marca" value="' + esc(m.marca) + '" aria-label="Marca" placeholder="Nome da marca"></td>' +
+        '<td><input class="f" data-i="' + i + '" data-c="contato" value="' + esc(m.contato) + '" aria-label="Contato" placeholder="@ ou e-mail"></td>' +
+        '<td><select class="f" data-i="' + i + '" data-c="status" aria-label="Status">' + STATUS.map(function(s){ return "<option" + (s === m.status ? " selected" : "") + ">" + s + "</option>"; }).join("") + '</select></td>' +
+        '<td><button class="x" type="button" data-del="' + i + '" aria-label="Remover marca">×</button></td></tr>';
+    }).join("");
+    var env = quadro.filter(function(m){ return m.status !== "Para abordar"; }).length;
+    var res = quadro.filter(function(m){ return m.status === "Respondeu" || m.status.indexOf("Fechou") === 0; }).length;
+    document.getElementById("quadroResumo").textContent = quadro.length ? quadro.length + " marcas · " + env + " abordadas · " + res + " com resposta ou fechadas" : "Nenhuma marca ainda. Comece pela lista de 10 da etapa 08.";
+  }
+  document.getElementById("addMarca").addEventListener("click", function(){ quadro.push({marca:"",contato:"",status:STATUS[0]}); salvaLS(K_QUADRO, quadro); desenhaQuadro(); });
+  document.getElementById("quadro").addEventListener("input", function(e){ var t = e.target; if(t.dataset.i){ quadro[t.dataset.i][t.dataset.c] = t.value; salvaLS(K_QUADRO, quadro); } });
+  document.getElementById("quadro").addEventListener("change", function(e){ var t = e.target; if(t.dataset.i){ quadro[t.dataset.i][t.dataset.c] = t.value; salvaLS(K_QUADRO, quadro); desenhaQuadro(); } });
+  document.getElementById("quadro").addEventListener("click", function(e){ var d = e.target.dataset.del; if(d !== undefined){ quadro.splice(d, 1); salvaLS(K_QUADRO, quadro); desenhaQuadro(); } });
+
+  /* ---------- cadastro ---------- */
+  var entrada = document.getElementById("entrada");
+  function validaEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s); }
+  document.getElementById("formEntrada").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var nome = document.getElementById("eNome").value.trim();
+    var email = document.getElementById("eEmail").value.trim();
+    var insta = document.getElementById("eInsta").value.trim();
+    var zap = document.getElementById("eZap").value.replace(/\D/g, "");
+    var erro = document.getElementById("eErro");
+    if(nome.length < 3){ erro.textContent = "Escreva seu nome completo."; return; }
+    if(!validaEmail(email)){ erro.textContent = "Confira o e-mail."; return; }
+    if(zap.length < 10){ erro.textContent = "Escreva o WhatsApp com DDD."; return; }
+    if(!document.getElementById("eOk").checked){ erro.textContent = "Marque o aceite pra continuar."; return; }
+    var lead = { nome: nome, email: email, instagram: insta, whatsapp: zap, origem: "guia-mapa-ugc-07-11", consentimento: true, enviadoEm: new Date().toISOString() };
+    salvaLS(K_LEAD, lead);
+    if(ENDPOINT){
+      try{ navigator.sendBeacon(ENDPOINT, new Blob([JSON.stringify(lead)], {type:"text/plain;charset=UTF-8"})); }catch(e){}
+    }
+    entrada.classList.remove("on");
+  });
+
+  /* ---------- início ---------- */
+  montaMenu();
+  montaTodosPrompts();
+  ligaCopia(document);
+  ligaChecks();
+  desenhaQuadro();
+  placar();
+  vai(location.hash.slice(1) || "e1");
+  if(!lerLS(K_LEAD, null)) entrada.classList.add("on");
+})();
+</script>
+</body>
+</html>
