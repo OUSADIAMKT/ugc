@@ -8,12 +8,13 @@ Página única (`index.html`), sem build, pronta para o GitHub Pages.
 2. A página abre em `https://ousadiamkt.github.io/ugc/`.
 
 ## Cadastro na planilha de leads
-O guia pede nome, e-mail, Instagram e WhatsApp antes de abrir. Enquanto `ENDPOINT` (início do `<script>`
-em `index.html`) estiver vazio, o cadastro só fica salvo no aparelho da aluna.
-Para gravar na planilha, siga o passo a passo em `apps-script/guia-mapa-ugc-google-sheets.gs`
-e cole a URL `/exec` em `ENDPOINT`.
+O guia pede nome, e-mail, Instagram e WhatsApp antes de abrir e grava na planilha pelo Apps Script
+(`ENDPOINT` no início do `<script>` de `index.html`; código em `apps-script/guia-mapa-ugc-google-sheets.gs`).
+Se o código do script mudar, é preciso publicar uma "Nova versão" da implantação.
+
+## Sala do aulão
+Google Meet: https://meet.google.com/yuq-tyhv-pni (etapa 2).
 
 ## Pendências de conteúdo (marcadas na página)
-- Link da sala e plataforma da transmissão (etapa 2)
 - Modelos de portfólio da Juh (etapa 7)
 - Lista de plataformas de UGC e links de cadastro (etapa 12)

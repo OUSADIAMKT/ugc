@@ -267,11 +267,17 @@ td input.f,td select.f{padding:8px 10px;font-size:14px}
     <li><strong>Pergunta com número.</strong> No chat, escreva a etapa antes da dúvida, por exemplo “E7: …”.</li>
     <li><strong>Sem pressa de ficar perfeita.</strong> Feito e enviado vale mais que perfeito na gaveta.</li>
   </ul>
-  <div class="slot">Link da sala e plataforma da transmissão: chegam no grupo do Mapa do UGC e nos lembretes do dia.</div>
+  <div class="card dest">
+    <h3>A sala do aulão</h3>
+    <p>A transmissão é no <strong>Google Meet</strong>, no sábado, 7/11, das 15h às 20h (horário de Brasília). Entre uns 10 minutos antes.</p>
+    <p><a class="btn" href="https://meet.google.com/yuq-tyhv-pni" target="_blank" rel="noopener">Entrar na sala do Meet</a></p>
+    <p class="aviso">meet.google.com/yuq-tyhv-pni</p>
+  </div>
   <p><a class="btn sec" href="https://chat.whatsapp.com/IFS158jFoeEEXqltGJMLCG" target="_blank" rel="noopener">Entrar no grupo do Mapa do UGC</a></p>
   <div class="check" data-check="e2">
     <div class="eyebrow">Checkpoint</div>
     <label><input type="checkbox"><span>Coloquei o aulão na agenda: sábado, 7/11, 15h às 20h (Brasília)</span></label>
+    <label><input type="checkbox"><span>Salvei o link do Meet e testei se abre no meu aparelho</span></label>
     <label><input type="checkbox"><span>Vou ficar num lugar com internet boa e o celular carregado</span></label>
   </div>
 </section>
@@ -585,7 +591,7 @@ Me indique os 3 melhores nichos de UGC pra eu começar. Pra cada um, diga: por q
 
   /* Endpoint do Apps Script (planilha de leads do guia). Vazio = só salva no aparelho.
      Veja apps-script/guia-mapa-ugc-google-sheets.gs. */
-  var ENDPOINT = "";
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbx7W9tz0WDCdLi8K8YIT__kWkPjOhKKktLaWngFzGiHm4e3rpAK2a-EZC-6YCKiHIqm/exec";
 
   var K_PROG = "ugc-guia-prog-v1", K_LEAD = "ugc-guia-lead-v1", K_QUADRO = "ugc-guia-quadro-v1";
 
