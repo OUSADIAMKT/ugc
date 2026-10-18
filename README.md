@@ -16,5 +16,4 @@ Se o código do script mudar, é preciso publicar uma "Nova versão" da implanta
 Google Meet: https://meet.google.com/yuq-tyhv-pni (etapa 2).
 
 ## Pendências de conteúdo (marcadas na página)
-- Modelos de portfólio da Juh (etapa 7)
 - Lista de plataformas de UGC e links de cadastro (etapa 12)

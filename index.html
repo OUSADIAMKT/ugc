@@ -118,6 +118,13 @@ ul.l li{margin-bottom:6px}
 .aviso{font-family:var(--fm);font-size:12px;color:var(--muted);margin-top:10px}
 .slot{border:1.5px dashed rgba(255,198,26,.5);border-radius:12px;padding:14px 16px;background:rgba(255,198,26,.06);font-family:var(--fm);font-size:12.5px;color:var(--amarelo-soft);margin:14px 0}
 
+/* modelos de portfólio */
+.tpl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.tpl a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--ink);border:1px solid var(--line);border-radius:12px;color:var(--fg);text-decoration:none;font-weight:600}
+.tpl a:hover{border-color:var(--amarelo)}
+.tpl b{font-family:var(--fh);font-size:26px;color:var(--amarelo);line-height:1}
+@media (max-width:600px){.tpl{grid-template-columns:repeat(2,1fr)}}
+
 /* mentora */
 .mentora{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;margin:20px 0}
 .mentora img{width:150px;height:190px;object-fit:cover;border-radius:14px;border:2px solid var(--amarelo)}
@@ -396,7 +403,19 @@ Me indique os 3 melhores nichos de UGC pra eu começar. Pra cada um, diga: por q
     <li>Uma linha sobre você e como você trabalha</li>
     <li>Contato: WhatsApp e Instagram</li>
   </ul>
-  <div class="slot">Modelos de portfólio: entregues pela Juh durante o aulão.</div>
+  <h3>Escolha um dos 9 modelos da Juh</h3>
+  <p>Abra o modelo no Canva, <strong>salve uma cópia pra você</strong> (menu Arquivo > Fazer uma cópia) e só então troque os textos e os vídeos. Assim o modelo original continua intacto.</p>
+  <div class="tpl">
+    <a href="https://www.canva.com/design/DAGyzOlDHwM/9IrKRqALxAd7UALd9eyXfg/edit?utm_content=DAGyzOlDHwM&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>01</b>Modelo 1</a>
+    <a href="https://www.canva.com/design/DAG0AtYcXVA/zCEb53EqBzAma0cb7ONSNg/edit?utm_content=DAG0AtYcXVA&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>02</b>Modelo 2</a>
+    <a href="https://www.canva.com/design/DAG0Ah7iNtQ/VWxZkUZcgcABOtsgCQ9EPQ/edit?utm_content=DAG0Ah7iNtQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>03</b>Modelo 3</a>
+    <a href="https://www.canva.com/design/DAG0Ah9esUw/e2c_Ivlkus0Az4PEntY1eQ/edit?utm_content=DAG0Ah9esUw&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>04</b>Modelo 4</a>
+    <a href="https://www.canva.com/design/DAG0AmwvqI0/fttJq5tgwUyQCFAykErzFA/edit?utm_content=DAG0AmwvqI0&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>05</b>Modelo 5</a>
+    <a href="https://www.canva.com/design/DAG0AgAVySI/SWCjFR4yeoJ45qrTeAhmqw/edit?utm_content=DAG0AgAVySI&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>06</b>Modelo 6</a>
+    <a href="https://www.canva.com/design/DAGyzD08qpw/3lD49Mb9YGAHEqLTiSSwSQ/edit?utm_content=DAGyzD08qpw&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>07</b>Modelo 7</a>
+    <a href="https://www.canva.com/design/DAGyzLuANaQ/2N1_nM4lFhKu9r0tP93ebA/edit?utm_content=DAGyzLuANaQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>08</b>Modelo 8</a>
+    <a href="https://www.canva.com/design/DAGyzCdizgk/J2HkxVnc6HXPOyrXDhRBEg/edit?utm_content=DAGyzCdizgk&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" target="_blank" rel="noopener"><b>09</b>Modelo 9</a>
+  </div>
   <div class="prompt">
     <div class="tt">Prompt · Textos do portfólio</div>
     <button class="copiar" type="button">Copiar</button>
@@ -404,7 +423,7 @@ Me indique os 3 melhores nichos de UGC pra eu começar. Pra cada um, diga: por q
   </div>
   <div class="check" data-check="e7">
     <div class="eyebrow">Checkpoint</div>
-    <label><input type="checkbox"><span>Abri o Canva e escolhi um modelo</span></label>
+    <label><input type="checkbox"><span>Escolhi um dos 9 modelos e salvei uma cópia no meu Canva</span></label>
     <label><input type="checkbox"><span>Coloquei os textos e os vídeos</span></label>
     <label><input type="checkbox"><span>Testei o link no celular</span></label>
     <label><input type="checkbox"><span>Coloquei o link do portfólio na bio</span></label>
