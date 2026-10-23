@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Juliana Araújo · Portfólio UGC na Amazônia</title>
+  <meta name="description" content="Juliana Araújo, atriz e creator na Amazônia. Vídeos UGC, publicidade e conteúdo cinematográfico com autenticidade, propósito e estética. Altamira, Pará.">
+  <meta name="theme-color" content="#0f2a1d">
+  <script>
+    document.documentElement.classList.add('js');
+    // Black Friday: dia seguinte à quarta quinta-feira de novembro. A faixa aparece nos 60 dias antes e some depois do dia.
+    (function () {
+      var hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+      var primeiro = new Date(hoje.getFullYear(), 10, 1);
+      var primeiraQuinta = 1 + (4 - primeiro.getDay() + 7) % 7;
+      var black = new Date(hoje.getFullYear(), 10, primeiraQuinta + 22);
+      var dias = Math.round((black - hoje) / 864e5);
+      if (dias >= 0 && dias <= 60) { document.documentElement.classList.add('com-aviso'); window.diasBlack = dias; }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&text=BlackFriday&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===================== CORES E MEDIDAS =====================
+       Paleta inspirada na Amazônia: verde da mata, areia das praias de rio,
+       ouro do tucupi, vermelho do urucum e o marrom do rio barrento. */
+    :root {
+      --mata: #0f2a1d;
+      --mata-2: #163a28;
+      --musgo: #2f5a3c;
+      --areia: #f3ead8;
+      --areia-2: #e8dbc1;
+      --papel: #fbf6ec;
+      --tinta: #1b1813;
+      --tinta-2: #5a5040;
+      --ouro: #c9973f;
+      --ouro-claro: #e4c27a;
+      --urucum: #a63f1a;
+      --rio: #7a4f2c;
+      --linha: rgba(27, 24, 19, .14);
+      --linha-clara: rgba(243, 234, 216, .18);
+      --raio: 10px;
+      --raio-g: 20px;
+      --sombra: 0 1px 2px rgba(15, 42, 29, .05), 0 22px 44px -26px rgba(15, 42, 29, .45);
+      --serifa: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+      --corpo: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --topo: 76px;
+      --aviso: 0px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topo) + var(--aviso) + 8px); -webkit-text-size-adjust: 100%; }
+    html.com-aviso { --aviso: 42px; }
+
+    /* ===================== FAIXA DA BLACK FRIDAY (topo) ===================== */
+    .aviso-black {
+      display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 110; height: var(--aviso);
+      align-items: center; justify-content: center; gap: .9rem; padding: 0 16px;
+      background: #12110e; color: rgba(243, 234, 216, .82); font-size: .86rem; white-space: nowrap; overflow: hidden;
+      border-bottom: 1px solid rgba(224, 68, 42, .45);
+    }
+    .com-aviso .aviso-black { display: flex; }
+    .aviso-black .selo-black { background: #e0442a; color: #fff; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: .32rem .75rem; border-radius: 999px; }
+    .aviso-black strong { color: #fff; font-weight: 800; }
+    .aviso-black a { color: var(--ouro-claro); font-weight: 700; text-underline-offset: 3px; }
+    .aviso-black a:hover { color: #fff; }
+    @media (max-width: 640px) {
+      .aviso-black { gap: .6rem; font-size: .8rem; }
+      .aviso-black .aviso-texto { display: none; }
+    }
+    body {
+      margin: 0; background: var(--areia); color: var(--tinta);
+      font-family: var(--corpo); font-size: 1.02rem; line-height: 1.7;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    }
+    @supports (overflow: clip) { body { overflow-x: clip; } }
+    /* textura de papel bem leve por cima de tudo */
+    body::after {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 400; opacity: .07;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      mix-blend-mode: multiply;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--serifa); font-weight: 500; line-height: 1; letter-spacing: -.01em; margin: 0; }
+    h1 em, h2 em, h3 em { font-style: italic; font-weight: 500; }
+    p { margin: 0 0 1em; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    button { font-family: inherit; }
+
+    :focus-visible { outline: 2.5px solid var(--urucum); outline-offset: 3px; border-radius: 6px; }
+    .escuro :focus-visible, .barra :focus-visible, .black :focus-visible { outline-color: var(--ouro-claro); }
+
+    .sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; margin: -1px; }
+    .pular { position: fixed; left: 16px; top: -60px; z-index: 500; background: var(--mata); color: var(--areia); padding: .7rem 1rem; border-radius: var(--raio); text-decoration: none; transition: top .2s; }
+    .pular:focus { top: 12px; }
+
+    .wrap { width: min(1220px, calc(100% - 32px)); margin-inline: auto; }
+    @media (min-width: 768px) { .wrap { width: min(1220px, calc(100% - 80px)); } }
+    .secao { padding-block: clamp(4.5rem, 9vw, 8rem); position: relative; }
+
+    .escuro { background: var(--mata); color: var(--areia); }
+    .escuro .apoio { color: rgba(243, 234, 216, .78); }
+
+    /* rótulo pequeno acima dos títulos */
+    .kicker {
+      display: inline-flex; align-items: center; gap: .65rem; margin: 0 0 1.2rem;
+      font-size: .74rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--musgo);
+    }
+    .kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ouro); box-shadow: 0 0 0 4px rgba(201, 151, 63, .2); }
+    .escuro .kicker { color: var(--ouro-claro); }
+
+    .titulo-secao { font-size: clamp(2.6rem, 5.8vw, 4.8rem); max-width: 15ch; }
+    .titulo-secao em { color: var(--urucum); }
+    .escuro .titulo-secao em { color: var(--ouro-claro); }
+    .cabeca { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.2rem 3rem; margin-bottom: clamp(2.2rem, 5vw, 3.6rem); }
+    .apoio { max-width: 40ch; color: var(--tinta-2); margin: 0; }
+
+    /* botões */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      min-height: 50px; padding: .8rem 1.5rem; border-radius: 999px; cursor: pointer;
+      font: 700 .9rem/1 var(--corpo); letter-spacing: .01em; text-decoration: none;
+      border: 1.5px solid transparent; transition: background .25s, color .25s, transform .25s, border-color .25s;
+    }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-ouro { background: var(--ouro); color: var(--mata); }
+    .btn-ouro:hover { background: var(--ouro-claro); }
+    .btn-mata { background: var(--mata); color: var(--areia); }
+    .btn-mata:hover { background: var(--mata-2); }
+    .btn-linha { border-color: currentColor; background: transparent; }
+    .btn-linha:hover { background: var(--mata); color: var(--areia); border-color: var(--mata); }
+    .escuro .btn-linha:hover { background: var(--areia); color: var(--mata); border-color: var(--areia); }
+
+    /* ===================== TOPO ===================== */
+    .topo {
+      position: fixed; top: var(--aviso); left: 0; right: 0; z-index: 100; height: var(--topo); color: var(--areia);
+      transition: background .35s, box-shadow .35s;
+    }
+    .topo.rolou { background: rgba(15, 42, 29, .93); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 10px 30px -20px rgba(0, 0, 0, .6); }
+    .topo .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .assinatura-topo { font-family: var(--serifa); font-style: italic; font-size: 1.7rem; text-decoration: none; letter-spacing: .01em; white-space: nowrap; }
+    .menu { display: flex; align-items: center; gap: 1.8rem; }
+    .menu a:not(.btn) { font-size: .86rem; font-weight: 600; text-decoration: none; position: relative; padding-block: .35rem; opacity: .88; }
+    .menu a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: var(--ouro); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .menu a:not(.btn):hover, .menu a.ativo { opacity: 1; }
+    .menu a:not(.btn):hover::after, .menu a.ativo::after { transform: scaleX(1); }
+    .menu .btn { min-height: 44px; padding: .65rem 1.2rem; }
+    .topo-insta { display: none; }
+
+    /* barra de navegação de baixo (celular) */
+    .barra, .folha-mais { display: none; }
+
+    @media (max-width: 959px) {
+      :root { --topo: 62px; }
+      .topo nav { display: none; }
+      .topo-insta { display: inline-flex; align-items: center; gap: .4rem; font-size: .82rem; font-weight: 700; text-decoration: none; padding: .5rem .9rem; border: 1.5px solid rgba(243, 234, 216, .5); border-radius: 999px; min-height: 40px; }
+      .topo-insta svg { width: 16px; height: 16px; }
+      .assinatura-topo { font-size: 1.45rem; }
+      /* espaço para a barra de baixo fica dentro do rodapé verde, sem faixa creme no fim */
+      body .rodape { padding-bottom: calc(2rem + 92px + env(safe-area-inset-bottom)); }
+
+      .barra {
+        display: grid; grid-template-columns: repeat(5, 1fr); align-items: end;
+        position: fixed; z-index: 120; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+        background: var(--mata); color: var(--areia); border-radius: 22px; padding: 8px 6px;
+        box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .55); border: 1px solid rgba(201, 151, 63, .25);
+      }
+      .barra a, .barra button {
+        display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 52px; justify-content: center;
+        background: none; border: 0; color: inherit; text-decoration: none; font-size: .68rem; font-weight: 600; cursor: pointer; border-radius: 14px; padding: 4px 2px;
+      }
+      .barra svg { width: 21px; height: 21px; }
+      .barra .ativo { color: var(--ouro-claro); }
+      .barra .central { position: relative; top: -16px; min-height: auto; }
+      .barra .central .circulo {
+        width: 58px; height: 58px; border-radius: 50%; background: var(--ouro); color: var(--mata);
+        display: grid; place-items: center; box-shadow: 0 10px 22px -8px rgba(0, 0, 0, .6); border: 4px solid var(--mata);
+      }
+      .barra .central .circulo svg { width: 24px; height: 24px; }
+
+      .folha-mais {
+        display: block; position: fixed; z-index: 130; left: 12px; right: 12px; bottom: calc(96px + env(safe-area-inset-bottom));
+        background: var(--papel); color: var(--tinta); border-radius: var(--raio-g); padding: .6rem; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .5);
+        transform: translateY(12px); opacity: 0; visibility: hidden; transition: all .25s;
+      }
+      .folha-mais.aberta { transform: none; opacity: 1; visibility: visible; }
+      .folha-mais a { display: flex; justify-content: space-between; align-items: center; padding: .95rem 1rem; text-decoration: none; font-family: var(--serifa); font-size: 1.45rem; border-radius: 12px; }
+      .folha-mais a + a { border-top: 1px solid var(--linha); }
+      .folha-mais a:hover { background: var(--areia); }
+      .folha-mais a span { font-family: var(--corpo); font-size: .75rem; color: var(--tinta-2); }
+    }
+
+    /* ===================== DESENHOS DO PARÁ (textura sutil) ===================== */
+    .desenho {
+      position: absolute; z-index: 0; pointer-events: none; width: var(--t, 200px); height: auto;
+      color: var(--musgo); opacity: .22; transform: rotate(var(--giro, 0deg));
+    }
+    .escuro .desenho, .black .desenho { color: var(--ouro); opacity: .26; }
+    .secao > .wrap { position: relative; z-index: 1; }
+    .secao { overflow-x: clip; } /* os desenhos podem sair pela lateral sem criar rolagem para o lado */
+    @media (max-width: 700px) {
+      .desenho { width: calc(var(--t, 200px) * .6); }
+      .desenho.so-computador { display: none; }
+    }
+
+    /* ===================== ONDAS ENTRE AS SEÇÕES ===================== */
+    .onda { display: block; line-height: 0; margin: -1px 0; position: relative; z-index: 1; }
+    .onda svg { display: block; width: 100%; height: clamp(34px, 5vw, 72px); }
+
+    /* ===================== CAPA ===================== */
+    .capa {
+      position: relative; overflow: hidden; isolation: isolate;
+      padding: calc(var(--topo) + var(--aviso) + clamp(2rem, 6vw, 4.5rem)) 0 0;
+      background: radial-gradient(120% 80% at 85% 10%, #1d4a33 0%, var(--mata) 55%, #0a1f15 100%);
+    }
+    .capa .rio { position: absolute; left: -5%; top: 18%; width: 110%; height: clamp(200px, 32vw, 420px); z-index: -1; opacity: .55; }
+    .capa .palmeira { position: absolute; z-index: -1; width: clamp(220px, 32vw, 460px); opacity: .5; }
+    .capa .palmeira.p1 { left: -70px; bottom: 60px; transform: rotate(-12deg); }
+    .capa .palmeira.p2 { right: -90px; top: 70px; transform: scaleX(-1) rotate(-20deg); opacity: .3; }
+    .capa-grade { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+    .ola { font-family: var(--serifa); font-style: italic; font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--ouro-claro); margin: 0 0 .3rem; }
+    .nome { font-size: clamp(4rem, 10.5vw, 9.6rem); line-height: .86; letter-spacing: -.02em; font-weight: 500; }
+    .nome em { display: block; color: var(--ouro-claro); padding-left: clamp(1.5rem, 7vw, 6rem); }
+    .linha-papel { display: inline-block; margin: 1.6rem 0 1.2rem; font-size: .76rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--ouro-claro); }
+    .frase { font-size: clamp(1.05rem, 1.5vw, 1.2rem); max-width: 36ch; color: rgba(243, 234, 216, .86); }
+    .capa-meta { display: grid; gap: 1.1rem; margin: 1.6rem 0 2rem; justify-items: start; }
+    /* números grandes da capa, cada um com a legenda ao lado */
+    .numeros-capa { display: flex; flex-wrap: wrap; gap: 1rem 1.15rem; }
+    .numeros-capa li { display: flex; align-items: baseline; gap: .5rem; }
+    .numeros-capa strong { font-family: var(--serifa); font-size: clamp(2.2rem, 3.4vw, 3.4rem); line-height: 1; color: var(--ouro-claro); font-weight: 500; white-space: nowrap; }
+    .numeros-capa small { font-size: .5em; font-style: italic; margin-left: .08em; }
+    .numeros-capa span { font-size: .85rem; max-width: 9ch; line-height: 1.25; color: rgba(243, 234, 216, .85); }
+    @media (max-width: 599px) {
+      .numeros-capa { display: grid; grid-template-columns: repeat(3, auto); gap: 1rem; width: 100%; justify-content: space-between; }
+      .numeros-capa li { flex-direction: column; gap: .35rem; }
+      .numeros-capa strong { font-size: 2.4rem; }
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .chip { font-size: .76rem; font-weight: 600; padding: .4rem .8rem; border-radius: 999px; border: 1px solid var(--linha-clara); color: rgba(243, 234, 216, .9); }
+    .botoes { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+    /* foto sem fundo, apoiada na faixa de marcas */
+    .capa-foto {
+      position: relative; z-index: 1; justify-self: center; align-self: end; width: min(100%, 430px);
+      margin-bottom: calc(-1 * clamp(3.5rem, 7vw, 5.5rem));
+    }
+    .recorte { display: block; width: 100%; height: auto; position: relative; }
+    .brilho {
+      position: absolute; left: -12%; right: -12%; top: 6%; bottom: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(closest-side at 50% 45%, rgba(228, 194, 122, .34), rgba(201, 151, 63, .12) 55%, transparent 100%);
+    }
+    .selo-giro { position: absolute; width: 132px; height: 132px; right: -26px; top: -18px; z-index: 2; color: var(--ouro-claro); }
+    .selo-giro > svg { width: 100%; height: 100%; animation: girar 16s linear infinite; }
+    .selo-giro .centro { position: absolute; inset: 0; display: grid; place-items: center; }
+    .selo-giro .centro svg { width: 22px; height: 44px; }
+    @keyframes girar { to { transform: rotate(360deg); } }
+    .legenda {
+      position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 2; white-space: nowrap;
+      background: rgba(251, 246, 236, .92); color: var(--tinta); font-size: .7rem; font-weight: 700; letter-spacing: .04em; padding: .35rem .75rem; border-radius: 999px;
+    }
+
+    /* faixa de marcas */
+    .faixa { margin-top: clamp(3.5rem, 7vw, 5.5rem); border-top: 1px solid rgba(201, 151, 63, .35); padding: 1.5rem 0 1.8rem; position: relative; z-index: 2; background: #0b2117; }
+    .faixa-titulo { text-align: center; font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(243, 234, 216, .7); margin-bottom: 1rem; }
+    .faixa-janela { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+    .faixa-trilho { display: flex; width: max-content; animation: deslizar 70s linear infinite; }
+    .faixa-janela:hover .faixa-trilho { animation-play-state: paused; }
+    .faixa ul { display: flex; align-items: center; gap: 1rem; padding-right: 1rem; flex: none; }
+    .faixa li { flex: none; }
+    /* cada marca num círculo creme */
+    .selo-marca {
+      width: 108px; height: 108px; border-radius: 50%; background: var(--papel); display: grid; place-items: center;
+      border: 3px solid rgba(201, 151, 63, .3); box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .7);
+    }
+    .selo-marca img { max-width: 72%; max-height: 40%; object-fit: contain; mix-blend-mode: multiply; }
+    .selo-marca img.alto { max-height: 62%; max-width: 62%; }
+    @keyframes deslizar { to { transform: translateX(-50%); } }
+
+    /* ===================== BLOCOS DE IMAGEM (placeholders) ===================== */
+    .g1 { background: linear-gradient(165deg, #2f5a3c 0%, #163a28 55%, #0f2a1d 100%); }
+    .g2 { background: linear-gradient(165deg, #c9973f 0%, #a8662c 55%, #6e3a1c 100%); }
+    .g3 { background: linear-gradient(165deg, #7a4f2c 0%, #4b3a24 50%, #1e3f2c 100%); }
+    .g4 { background: linear-gradient(165deg, #e8dbc1 0%, #b9a37b 55%, #6f6a45 100%); }
+    .g5 { background: linear-gradient(165deg, #a63f1a 0%, #7a2f17 55%, #2a1a10 100%); }
+    .g6 { background: linear-gradient(165deg, #5e8a6a 0%, #2f5a3c 50%, #c9973f 100%); }
+
+    /* ===================== SOBRE ===================== */
+    /* cartão verde compacto: foto de um lado, texto curto do outro */
+    .sobre-cartao {
+      position: relative; overflow: hidden; border-radius: 32px; padding: clamp(1.6rem, 4vw, 3.4rem);
+      display: grid; grid-template-columns: minmax(240px, .8fr) 1.2fr; gap: clamp(2.2rem, 5vw, 4.5rem); align-items: center;
+      box-shadow: 0 40px 80px -50px rgba(15, 42, 29, .8);
+    }
+    .sobre-cartao .palmeira { position: absolute; right: -70px; top: -60px; width: 280px; opacity: .22; transform: scaleX(-1) rotate(-8deg); pointer-events: none; }
+    .sobre-fotos { position: relative; margin: 0 8% 8% 0; }
+    .sobre-fotos .f1 { aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden; position: relative; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .7); }
+    .sobre-fotos .f2 { aspect-ratio: 1; border-radius: 50%; overflow: hidden; position: absolute; width: 40%; right: -12%; bottom: -10%; border: 6px solid var(--mata); }
+    .sobre-fotos img { width: 100%; height: 100%; object-fit: cover; }
+    .selo-marcas {
+      position: absolute; left: -12px; top: 22px; z-index: 2; background: var(--ouro); color: var(--mata);
+      font-size: .78rem; font-weight: 800; padding: .45rem .9rem; border-radius: 999px; transform: rotate(-5deg); box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .6);
+    }
+    .sobre-texto { position: relative; }
+    .sobre-texto .titulo-secao { font-size: clamp(2.3rem, 4.4vw, 3.7rem); }
+    .meta-sobre { margin: 1.2rem 0 0; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(243, 234, 216, .7); }
+    .facetas { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.1rem 0 1.4rem; }
+    .faceta { font-size: .78rem; font-weight: 700; padding: .4rem .85rem; border-radius: 999px; border: 1px solid rgba(228, 194, 122, .55); color: var(--ouro-claro); }
+    .sobre-texto > p:not(.kicker):not(.meta-sobre) { color: rgba(243, 234, 216, .84); max-width: 48ch; font-size: 1.05rem; margin: 0; }
+    .promessas { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem 1.2rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px dashed rgba(201, 151, 63, .45); }
+    .promessas li { display: flex; gap: .55rem; align-items: flex-start; font-size: .86rem; font-weight: 600; line-height: 1.35; color: var(--areia); }
+    .promessas svg { flex: none; width: 20px; height: 20px; color: var(--ouro-claro); }
+
+    /* ===================== DESTAQUES ===================== */
+    .destaques { background: var(--papel); }
+    .destaque-grade { display: grid; grid-template-columns: minmax(280px, 400px) 1fr; gap: clamp(1.8rem, 5vw, 4rem); align-items: start; }
+    .palco { position: sticky; top: calc(var(--topo) + 20px); }
+    .tela {
+      position: relative; aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; background-color: var(--mata);
+      box-shadow: 0 40px 70px -35px rgba(15, 42, 29, .7); border: 6px solid var(--mata);
+    }
+    .tela iframe, .tela video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; object-fit: cover; }
+    .poster { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; cursor: pointer; display: block; text-align: left; color: var(--areia); background: transparent; }
+    .poster[disabled] { cursor: default; }
+    .poster img { width: 100%; height: 100%; object-fit: cover; }
+    .poster::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(10, 31, 21, .85)); }
+    .play {
+      position: absolute; inset: 0; margin: auto; z-index: 2; width: 74px; height: 74px; border-radius: 50%;
+      background: rgba(251, 246, 236, .95); display: grid; place-items: center; transition: transform .3s; box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .6);
+    }
+    .play svg { width: 26px; height: 26px; margin-left: 4px; fill: var(--mata); }
+    .poster:not([disabled]):hover .play { transform: scale(1.08); }
+    .poster .info-tela { position: absolute; left: 18px; right: 18px; bottom: 18px; z-index: 2; }
+    .poster .info-tela strong { display: block; font-family: var(--serifa); font-size: 1.8rem; line-height: 1.05; font-weight: 500; }
+    .poster .info-tela span { font-size: .8rem; opacity: .85; }
+    .em-breve {
+      position: absolute; top: 14px; left: 14px; z-index: 2; background: var(--ouro); color: var(--mata);
+      font-size: .66rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 999px;
+    }
+    .abrir-externo { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1rem; font-size: .85rem; font-weight: 700; color: var(--musgo); text-decoration: none; }
+    .abrir-externo:hover { text-decoration: underline; }
+    .abrir-externo[hidden] { display: none; }
+
+    .lista-destaques { display: grid; gap: .8rem; }
+    .lista-titulo { font-size: .74rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--tinta-2); margin: 0 0 .8rem; }
+    .item-destaque {
+      display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: center; text-align: left; width: 100%;
+      padding: .8rem; border-radius: var(--raio-g); border: 1.5px solid var(--linha); background: var(--papel); color: inherit; cursor: pointer;
+      transition: border-color .25s, background .25s, transform .25s;
+    }
+    .item-destaque:hover { border-color: var(--musgo); transform: translateX(4px); }
+    .item-destaque[aria-pressed="true"] { border-color: var(--mata); background: #fff; box-shadow: var(--sombra); }
+    .item-destaque .mini { display: block; width: 64px; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; position: relative; }
+    .item-destaque .mini img { width: 100%; height: 100%; object-fit: cover; }
+    .item-destaque .num { display: block; font-size: .72rem; font-weight: 700; color: var(--tinta-2); letter-spacing: .1em; }
+    .item-destaque[aria-pressed="true"] .num::after { content: " · tocando"; color: var(--urucum); }
+    .item-destaque .titulo-item { display: block; font-family: var(--serifa); font-size: 1.65rem; line-height: 1.05; font-weight: 500; margin: .15rem 0 .2rem; }
+    .item-destaque .desc { display: block; font-size: .88rem; color: var(--tinta-2); margin: 0 0 .55rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag { font-size: .68rem; font-weight: 700; padding: .25rem .6rem; border-radius: 999px; background: var(--areia); color: var(--mata); }
+    .tag.forte { background: var(--mata); color: var(--areia); }
+    .tag.ouro { background: var(--ouro); color: var(--mata); }
+
+    /* ===================== BLACK FRIDAY (destaques) ===================== */
+    .black { background: #12110e; color: var(--areia); overflow: hidden; padding-bottom: 2.5rem; }
+    .black .apoio { color: rgba(243, 234, 216, .78); }
+    .black .kicker { color: #ef6a4c; }
+    .black .kicker::before { background: #e0442a; box-shadow: 0 0 0 4px rgba(224, 68, 42, .25); }
+    .black .titulo-secao { max-width: 12ch; }
+    .black .script {
+      display: inline-block; font-family: "Kaushan Script", var(--serifa); font-weight: 400; color: #e0442a;
+      font-size: 1.12em; line-height: 1.15; transform: rotate(-4deg); margin: .1em 0;
+    }
+    .cabeca-lado { display: grid; gap: 1.2rem; justify-items: start; }
+    .btn-black { background: #e0442a; color: #fff; }
+    .btn-black:hover { background: #c7361f; }
+    .black .lista-titulo { color: rgba(243, 234, 216, .7); }
+    .black .tela { border-color: #26231d; }
+    .black .abrir-externo { color: #ef6a4c; }
+    .black .item-destaque { background: rgba(243, 234, 216, .04); border-color: rgba(243, 234, 216, .14); }
+    .black .item-destaque:hover { border-color: #e0442a; }
+    .black .item-destaque[aria-pressed="true"] { background: rgba(243, 234, 216, .09); border-color: #e0442a; box-shadow: none; }
+    .black .item-destaque .num, .black .item-destaque .desc { color: rgba(243, 234, 216, .7); }
+    .black .item-destaque[aria-pressed="true"] .num::after { color: #ef6a4c; }
+    .black .tag { background: rgba(243, 234, 216, .12); color: var(--areia); }
+    .black .tag.forte { background: #e0442a; color: #fff; }
+    /* fitas cruzadas */
+    .fitas { position: relative; height: 120px; margin-top: clamp(3rem, 6vw, 4.5rem); }
+    .fita {
+      position: absolute; left: -5%; width: 110%; display: flex; overflow: hidden; white-space: nowrap;
+      padding: .7rem 0; font: 800 .9rem/1 var(--corpo); letter-spacing: .16em;
+    }
+    .fita span { flex: none; padding-right: .5em; animation: correr-fita 45s linear infinite; }
+    @keyframes correr-fita { to { transform: translateX(-100%); } }
+    .fita.vermelha { top: 18px; background: #e0442a; color: #fff; transform: rotate(-2.5deg); z-index: 2; }
+    .fita.clara { top: 58px; background: var(--areia); color: #12110e; transform: rotate(2deg); }
+    .fita.clara span { animation-direction: reverse; }
+
+    /* ===================== NICHOS ===================== */
+    .abas { display: flex; flex-wrap: wrap; gap: .5rem; padding: .2rem 0 .4rem; margin-bottom: 1.6rem; }
+    .aba {
+      flex: none; display: inline-flex; align-items: center; gap: .55rem; min-height: 46px; padding: .6rem 1.1rem; border-radius: 999px; cursor: pointer;
+      background: transparent; color: var(--tinta); border: 1.5px solid var(--linha); font-size: .88rem; font-weight: 600; transition: all .25s;
+    }
+    .aba:hover { border-color: var(--mata); }
+    .aba b { font-size: .72rem; min-width: 1.6rem; height: 1.6rem; display: grid; place-items: center; border-radius: 999px; background: var(--areia-2); color: var(--mata); }
+    .aba[aria-pressed="true"] { background: var(--mata); color: var(--areia); border-color: var(--mata); }
+    .aba[aria-pressed="true"] b { background: var(--ouro); }
+    .nicho-desc { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 2rem; margin-bottom: 1.6rem; }
+    .nicho-desc h3 { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+    .nicho-desc p { margin: 0; color: var(--tinta-2); }
+    .grade-videos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: clamp(1rem, 2vw, 1.6rem); }
+    .card-video { display: block; width: 100%; padding: 0; border: 0; background: none; text-align: left; color: inherit; cursor: pointer; font: inherit; border-radius: 18px; }
+    .card-video[disabled] { cursor: default; }
+    .card-video .capa-video { display: block; position: relative; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; box-shadow: var(--sombra); transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+    .card-video:not([disabled]):hover .capa-video { transform: translateY(-5px); }
+    .card-video .capa-video img { width: 100%; height: 100%; object-fit: cover; }
+    .card-video .play { width: 56px; height: 56px; }
+    .card-video .play svg { width: 20px; height: 20px; }
+    .card-video .legenda { bottom: 14px; }
+    .card-video .rodape-card { display: block; padding-top: .8rem; }
+    .card-video strong { display: block; font-family: var(--serifa); font-size: 1.4rem; line-height: 1.1; font-weight: 600; }
+    .card-video small { display: block; font-size: .8rem; color: var(--tinta-2); margin: .2rem 0 .5rem; }
+    .card-video.entrando { animation: surgir .45s ease both; }
+    @keyframes surgir { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+    /* ===================== YOUTUBE ===================== */
+    .youtube { background: var(--papel); }
+    .grade-yt { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: clamp(1rem, 2vw, 1.6rem); }
+    .card-yt { display: block; width: 100%; padding: 0; border: 0; background: none; text-align: left; color: inherit; cursor: pointer; font: inherit; border-radius: 16px; }
+    .card-yt .capa-video { display: block; position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: var(--sombra); transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+    .card-yt:hover .capa-video { transform: translateY(-4px); }
+    .card-yt img { width: 100%; height: 100%; object-fit: cover; }
+    .card-yt .play { width: 60px; height: 60px; }
+    .card-yt .play svg { width: 22px; height: 22px; }
+    .card-yt strong { display: block; font-family: var(--serifa); font-size: 1.45rem; line-height: 1.1; font-weight: 600; margin-top: .8rem; }
+    .card-yt small { display: block; font-size: .82rem; color: var(--tinta-2); margin-top: .2rem; }
+
+    /* ===================== FOTOS UGC ===================== */
+    .fotos-grade { columns: 4 230px; column-gap: 1rem; }
+    .foto-ugc { break-inside: avoid; margin: 0 0 1rem; position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--sombra); background: var(--areia-2); }
+    .foto-ugc img { width: 100%; height: auto; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+    .foto-ugc:hover img { transform: scale(1.03); }
+    .foto-ugc figcaption {
+      position: absolute; left: 10px; bottom: 10px; max-width: calc(100% - 20px);
+      background: rgba(15, 42, 29, .88); color: var(--areia); font-size: .74rem; font-weight: 700; padding: .4rem .75rem; border-radius: 999px;
+    }
+    .foto-ugc figcaption span { color: var(--ouro-claro); font-weight: 600; }
+
+    /* ===================== CENÁRIOS ===================== */
+    .cenarios { overflow: hidden; }
+    .cenarios .rio { position: absolute; left: 0; bottom: 8%; width: 100%; height: 160px; opacity: .4; pointer-events: none; }
+    .cenarios-grade { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; position: relative; }
+    .cenario .foto { aspect-ratio: 3 / 4.4; border-radius: 999px 999px 18px 18px; overflow: hidden; position: relative; border: 1px solid rgba(228, 194, 122, .3); }
+    .cenario:nth-child(even) { margin-top: 3rem; }
+    .cenario .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .cenario h3 { font-size: 1.6rem; margin: 1rem 0 .3rem; color: var(--ouro-claro); }
+    .cenario p { font-size: .88rem; color: rgba(243, 234, 216, .78); margin: 0; }
+    .cenario .legenda { bottom: 12px; font-size: .64rem; }
+
+    /* ===================== SERVIÇOS ===================== */
+    .frentes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .frente { background: var(--papel); border-radius: var(--raio-g); padding: clamp(1.6rem, 3vw, 2.2rem); border: 1px solid var(--linha); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .frente:nth-child(2) { background: var(--mata); color: var(--areia); border-color: var(--mata); }
+    .frente:nth-child(2) p { color: rgba(243, 234, 216, .8); }
+    .frente:nth-child(2) .destino { color: var(--ouro-claro); }
+    .frente .selo-frente { align-self: flex-start; font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; padding: .3rem .7rem; border-radius: 999px; background: var(--ouro); color: var(--mata); }
+    .frente .destino { font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--urucum); margin: 1.4rem 0 .4rem; }
+    .frente h3 { font-size: 2.2rem; margin-bottom: .7rem; }
+    .frente p { color: var(--tinta-2); font-size: .95rem; flex: 1; }
+    .frente .btn { align-self: flex-start; margin-top: .6rem; }
+    .frente .folha-deco { position: absolute; right: -24px; top: -16px; width: 90px; height: 180px; opacity: .2; color: var(--ouro); pointer-events: none; transform: rotate(20deg); }
+
+    .formatos { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--linha); display: grid; grid-template-columns: auto 1fr; gap: 1rem 2.5rem; align-items: start; }
+    .formatos h3 { font-size: 1.9rem; }
+    .formatos h3 em { color: var(--urucum); }
+    .formatos ul { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .formatos li { font-size: .88rem; font-weight: 600; padding: .55rem 1rem; border-radius: 999px; background: var(--areia-2); color: var(--mata); }
+
+    /* ===================== NÚMEROS E DEPOIMENTOS ===================== */
+    .numeros { background: var(--mata-2); }
+    .metricas { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--linha-clara); margin-bottom: clamp(3.5rem, 7vw, 5rem); }
+    .metrica { padding: 1.8rem 1.4rem 0 0; }
+    .metrica + .metrica { padding-left: 1.4rem; border-left: 1px solid var(--linha-clara); }
+    .metrica .valor { display: block; font-family: var(--serifa); font-size: clamp(3.2rem, 6vw, 5.4rem); line-height: 1; color: var(--ouro-claro); font-weight: 500; }
+    .metrica .unidade { font-size: .42em; font-style: italic; margin-left: .12em; }
+    .metrica .rotulo { display: block; margin-top: .5rem; color: rgba(243, 234, 216, .8); font-size: .92rem; }
+    .placeholder { font-style: italic; opacity: .55; }
+    .depoimentos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.2rem; }
+    .depoimento { grid-column: span 2; background: var(--areia); color: var(--tinta); border-radius: var(--raio-g); padding: clamp(1.6rem, 3vw, 2.3rem); margin: 0; display: flex; flex-direction: column; }
+    .depoimento.grande { grid-column: span 3; }
+    .depoimento .logo-marca { height: 42px; width: auto; max-width: 160px; object-fit: contain; mix-blend-mode: multiply; }
+    .depoimento .logo-marca.quadrado { height: 48px; border-radius: 8px; mix-blend-mode: normal; }
+    .depoimento .aspas { font-family: var(--serifa); font-size: 4.4rem; line-height: .5; height: 1.6rem; color: var(--ouro); }
+    .depoimento blockquote { margin: 0 0 1.4rem; font-family: var(--serifa); font-size: clamp(1.25rem, 1.8vw, 1.45rem); line-height: 1.35; flex: 1; }
+    .depoimento figcaption { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--linha); padding-top: 1rem; flex-wrap: wrap; }
+    .depoimento strong { display: block; font-size: .92rem; }
+    .depoimento small { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--rio); }
+
+    /* ===================== CONTATO ===================== */
+    .contato-grade { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start; }
+    .contato-texto .titulo-secao { font-size: clamp(3rem, 6.8vw, 5.6rem); }
+    .contato-texto > p { color: var(--tinta-2); max-width: 42ch; margin: 1.4rem 0 1.2rem; font-size: 1.06rem; }
+    .prazo { display: flex; gap: .8rem; align-items: flex-start; background: var(--areia-2); border-radius: var(--raio); padding: 1rem 1.1rem; font-size: .9rem; margin-bottom: 1.8rem; }
+    .prazo svg { width: 22px; height: 22px; flex: none; color: var(--musgo); }
+    .contato-botoes { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .contato-dados { margin-top: 2rem; border-top: 1px solid var(--linha); }
+    .contato-dados li { display: flex; justify-content: space-between; align-items: center; gap: .4rem 1rem; padding: .85rem 0; border-bottom: 1px solid var(--linha); font-size: .93rem; flex-wrap: wrap; }
+    .contato-dados > li > span:first-child { color: var(--tinta-2); }
+    .contato-dados a { text-decoration: none; font-weight: 600; word-break: break-word; }
+    .contato-dados a:hover { color: var(--urucum); }
+    .email-linha { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+    .copiar { background: none; border: 1.5px solid var(--linha); border-radius: 999px; padding: .35rem .8rem; font-size: .76rem; font-weight: 700; cursor: pointer; color: var(--mata); min-height: 34px; }
+    .copiar:hover { border-color: var(--mata); }
+
+    .cartao-form { background: var(--papel); border-radius: var(--raio-g); box-shadow: var(--sombra); padding: clamp(1.6rem, 4vw, 2.8rem); border: 1px solid var(--linha); }
+    .cartao-form form > h3 { font-size: 2rem; margin-bottom: 1.4rem; }
+    .cartao-form form > h3 em { color: var(--urucum); }
+    .duas { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+    .campo { margin-bottom: 1.1rem; }
+    .campo label { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .45rem; color: var(--tinta-2); }
+    .campo input, .campo textarea, .campo select {
+      width: 100%; font: 400 1rem/1.5 var(--corpo); color: var(--tinta); background-color: #fff;
+      border: 1.5px solid var(--linha); border-radius: var(--raio); padding: .8rem 1rem; transition: border-color .2s, box-shadow .2s;
+    }
+    .campo select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%231b1813' stroke-width='1.6'/></svg>"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .campo textarea { min-height: 130px; resize: vertical; }
+    .campo input:focus, .campo textarea:focus, .campo select:focus { outline: none; border-color: var(--musgo); box-shadow: 0 0 0 4px rgba(47, 90, 60, .18); }
+    .campo [aria-invalid="true"] { border-color: #b3261e; }
+    .erro { color: #b3261e; font-size: .8rem; margin: .3rem 0 0; }
+    .erro:empty { display: none; }
+    .cartao-form form .btn, .modal form .btn { width: 100%; }
+    .sucesso { text-align: center; padding: 1.5rem 0; }
+    .sucesso .icone { width: 64px; height: 64px; border-radius: 50%; background: var(--mata); color: var(--ouro-claro); display: grid; place-items: center; margin: 0 auto 1.2rem; }
+    .sucesso .icone svg { width: 28px; height: 28px; }
+    .sucesso h3 { font-size: 2.2rem; margin-bottom: .6rem; }
+    .sucesso h3 em { color: var(--urucum); }
+    .sucesso p { color: var(--tinta-2); }
+    .sucesso:focus { outline: none; }
+
+    /* ===================== RODAPÉ ===================== */
+    .rodape { background: var(--mata); color: var(--areia); padding: clamp(3.5rem, 7vw, 5rem) 0 2rem; position: relative; overflow: hidden; }
+    .rodape .palmeira { position: absolute; right: -60px; bottom: -40px; width: 320px; opacity: .25; transform: scaleX(-1); }
+    .rodape-topo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; position: relative; }
+    .rodape-nome { font-family: var(--serifa); font-size: clamp(3rem, 8vw, 6rem); line-height: .9; margin: 0; }
+    .rodape-nome em { color: var(--ouro-claro); }
+    .rodape-sub { font-size: .78rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(243, 234, 216, .7); margin: .8rem 0 0; }
+    .redes { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .redes a { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; font-size: .88rem; font-weight: 600; padding: .6rem 1rem; min-height: 44px; border: 1.5px solid var(--linha-clara); border-radius: 999px; transition: all .25s; }
+    .redes a:hover { background: var(--ouro); color: var(--mata); border-color: var(--ouro); }
+    .redes svg { width: 16px; height: 16px; }
+    .rodape-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem; margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--linha-clara); font-size: .82rem; color: rgba(243, 234, 216, .7); position: relative; }
+
+    /* ===================== JANELAS (vídeo e mídia kit) ===================== */
+    .fundo-modal {
+      position: fixed; inset: 0; z-index: 300; background: rgba(10, 31, 21, .74);
+      -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
+      display: grid; place-items: center; padding: 16px; opacity: 0; transition: opacity .3s;
+    }
+    .fundo-modal[hidden] { display: none; }
+    .fundo-modal.aberto { opacity: 1; }
+    .modal {
+      position: relative; width: min(460px, 100%); max-height: calc(100dvh - 32px); overflow-y: auto;
+      background: var(--areia); border-radius: var(--raio-g); padding: clamp(1.6rem, 5vw, 2.4rem);
+      box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .6); transform: translateY(16px) scale(.98); transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+    }
+    .fundo-modal.aberto .modal { transform: none; }
+    .modal-kit .topo-kit { margin: calc(-1 * clamp(1.6rem, 5vw, 2.4rem)) calc(-1 * clamp(1.6rem, 5vw, 2.4rem)) 1.4rem; padding: 1.8rem clamp(1.6rem, 5vw, 2.4rem) 1.5rem; background: var(--mata); color: var(--areia); position: relative; overflow: hidden; }
+    .modal-kit .topo-kit .palmeira { position: absolute; right: -40px; top: -30px; width: 170px; opacity: .45; }
+    .modal-kit h2 { font-size: clamp(2rem, 6vw, 2.5rem); position: relative; padding-right: 2.5rem; }
+    .modal-kit h2 em { color: var(--ouro-claro); }
+    .modal-kit .kicker { position: relative; margin-bottom: .7rem; color: var(--ouro-claro); }
+    .modal p { color: var(--tinta-2); font-size: .95rem; }
+    .modal .nota { font-size: .78rem; text-align: center; margin: .9rem 0 0; }
+    .fechar { position: absolute; top: 12px; right: 12px; z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(251, 246, 236, .14); color: var(--areia); cursor: pointer; display: grid; place-items: center; }
+    .fechar:hover { background: rgba(251, 246, 236, .26); }
+    .fechar svg { width: 20px; height: 20px; }
+    .modal-video { background: transparent; box-shadow: none; padding: 56px 0 0; width: min(400px, 100%); }
+    .modal-video .tela { max-height: calc(100dvh - 190px); margin-inline: auto; }
+    .modal-video .fechar { top: 0; right: 0; background: rgba(251, 246, 236, .18); }
+    .modal-video .info-modal { color: var(--areia); text-align: center; margin-top: .9rem; }
+    .modal-video .info-modal strong { font-family: var(--serifa); font-size: 1.5rem; display: block; line-height: 1.1; font-weight: 500; }
+    .modal-video .info-modal a { color: var(--ouro-claro); font-size: .85rem; font-weight: 700; }
+    .modal-video.horizontal { width: min(960px, 100%); }
+    .modal-video.horizontal .tela { aspect-ratio: 16 / 9; max-height: none; border-radius: 16px; }
+
+    /* ===================== ANIMAÇÃO DE ENTRADA ===================== */
+    .js .revelar { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--atraso, 0s); }
+    .js .revelar.visivel { opacity: 1; transform: none; }
+
+    /* ===================== RESPONSIVO ===================== */
+    @media (max-width: 1023px) {
+      .cenarios-grade { grid-template-columns: repeat(3, 1fr); }
+      .cenario:nth-child(even) { margin-top: 0; }
+      .cenario:nth-child(3n + 2) { margin-top: 2.5rem; }
+      .frentes { grid-template-columns: 1fr; }
+      .metricas { grid-template-columns: repeat(2, 1fr); }
+      .metrica, .metrica + .metrica { padding: 1.6rem 1.2rem 1.6rem 0; border-left: 0; border-bottom: 1px solid var(--linha-clara); }
+      .metrica:nth-child(2n) { padding-left: 1.2rem; border-left: 1px solid var(--linha-clara); }
+    }
+    @media (max-width: 899px) {
+      .capa-grade, .sobre-cartao, .contato-grade, .destaque-grade { grid-template-columns: 1fr; }
+      .capa-foto { width: min(100%, 360px); margin-top: 1rem; }
+      .selo-giro { width: 104px; height: 104px; right: -8px; }
+      .palco { position: relative; top: 0; max-width: 360px; width: 100%; margin-inline: auto; }
+      .depoimentos { grid-template-columns: 1fr; }
+      .depoimento, .depoimento.grande { grid-column: auto; }
+      .formatos { grid-template-columns: 1fr; }
+      .sobre-fotos { max-width: 320px; width: 100%; justify-self: center; }
+      .promessas { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 599px) {
+      body { font-size: 1rem; }
+      .nome em { padding-left: 1.2rem; }
+      .botoes .btn { flex: 1 1 calc(50% - .7rem); }
+      .cenarios-grade { grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+      .cenario:nth-child(3n + 2) { margin-top: 0; }
+      .cenario:nth-child(even) { margin-top: 2rem; }
+      .cenario h3 { font-size: 1.35rem; }
+      .duas { grid-template-columns: 1fr; }
+      .item-destaque .titulo-item { font-size: 1.4rem; }
+      .selo-marca { width: 86px; height: 86px; }
+      .faixa ul { gap: .7rem; padding-right: .7rem; }
+      .metrica .valor { font-size: 2.8rem; }
+      .grade-videos { grid-template-columns: repeat(2, 1fr); }
+      .card-video strong { font-size: 1.2rem; }
+      .abas { gap: .4rem; }
+      .aba { min-height: 40px; padding: .45rem .8rem; font-size: .8rem; gap: .4rem; }
+      .aba b { min-width: 1.4rem; height: 1.4rem; font-size: .66rem; }
+      .fotos-grade { columns: 2; column-gap: .7rem; }
+      .foto-ugc { margin-bottom: .7rem; }
+      .foto-ugc figcaption { font-size: .66rem; left: 6px; bottom: 6px; max-width: calc(100% - 12px); }
+    }
+
+    /* ===================== MOVIMENTO REDUZIDO ===================== */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+      .js .revelar { opacity: 1; transform: none; }
+      .faixa-trilho { animation: none; width: auto; }
+      .faixa-trilho ul { flex-wrap: wrap; justify-content: center; row-gap: .6rem; }
+      .faixa-trilho ul[aria-hidden="true"] { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Desenhos reaproveitados: folha com nervuras e elementos do Pará -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="folha" viewBox="0 0 100 200"><path d="M50 4C88 46 92 136 50 196C8 136 12 46 50 4Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M50 14V190M50 50l-22-16M50 50l22-16M50 82l-28-18M50 82l28-18M50 114l-30-18M50 114l30-18M50 146l-26-16M50 146l26-16" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <!-- Desenhos do Pará em linha fina: açaí, cuia de tacacá, vitória-régia, canoa, palafita e peixe -->
+    <symbol id="d-acai" viewBox="0 0 200 210"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M100 6C98 40 104 70 100 104"/><path d="M100 6c-6-4-14-2-18 4M100 6c6-4 14-2 18 4"/><path d="M100 40C80 60 60 80 44 112"/><circle cx="80.4" cy="70.7" r="5.6"/><circle cx="63.3" cy="69.2" r="5.6"/><circle cx="68.3" cy="85.7" r="5.6"/><circle cx="50.9" cy="86.2" r="5.6"/><circle cx="57.0" cy="102.8" r="5.6"/><circle cx="39.2" cy="105.9" r="5.6"/><circle cx="44" cy="117" r="5.6"/><path d="M100 40C120 60 140 80 156 112"/><circle cx="130.2" cy="61.5" r="5.6"/><circle cx="125.8" cy="78.0" r="5.6"/><circle cx="143.0" cy="77.4" r="5.6"/><circle cx="137.5" cy="93.9" r="5.6"/><circle cx="155.1" cy="95.7" r="5.6"/><circle cx="148.3" cy="112.4" r="5.6"/><circle cx="156" cy="117" r="5.6"/><path d="M100 70C84 92 72 118 66 150"/><circle cx="88.4" cy="103.0" r="5.6"/><circle cx="71.8" cy="105.9" r="5.6"/><circle cx="81.3" cy="120.1" r="5.6"/><circle cx="64.9" cy="125.1" r="5.6"/><circle cx="75.7" cy="138.6" r="5.6"/><circle cx="59.7" cy="145.8" r="5.6"/><circle cx="66" cy="155" r="5.6"/><path d="M100 70C116 92 128 118 134 150"/><circle cx="124.2" cy="97.0" r="5.6"/><circle cx="115.3" cy="111.3" r="5.6"/><circle cx="131.9" cy="115.3" r="5.6"/><circle cx="121.7" cy="129.1" r="5.6"/><circle cx="137.9" cy="135.2" r="5.6"/><circle cx="126.6" cy="148.5" r="5.6"/><circle cx="134" cy="155" r="5.6"/><path d="M100 100C94 130 92 160 92 194"/><circle cx="101.4" cy="138.8" r="5.6"/><circle cx="86.6" cy="147.8" r="5.6"/><circle cx="99.9" cy="159.0" r="5.6"/><circle cx="85.4" cy="168.9" r="5.6"/><circle cx="99.1" cy="180.1" r="5.6"/><circle cx="85.0" cy="190.9" r="5.6"/><circle cx="92" cy="199" r="5.6"/><path d="M100 100C108 130 110 160 112 194"/><circle cx="114.3" cy="137.2" r="5.6"/><circle cx="101.6" cy="149.0" r="5.6"/><circle cx="116.5" cy="158.0" r="5.6"/><circle cx="103.4" cy="169.7" r="5.6"/><circle cx="118.1" cy="179.5" r="5.6"/><circle cx="104.8" cy="191.4" r="5.6"/><circle cx="112" cy="199" r="5.6"/></g></symbol>
+    <symbol id="d-tacaca" viewBox="0 0 200 180"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M28 96C34 170 166 170 172 96"/><ellipse cx="100" cy="96" rx="72" ry="15"/><ellipse cx="100" cy="99" rx="60" ry="10"/><path d="M48 122C80 134 120 134 152 122M62 144C88 152 112 152 138 144"/><path d="M118 94C130 70 160 72 162 88C162 100 150 103 143 96"/><path d="M134 76l-5 11M145 73l-3 12M155 78l-4 10M162 86C172 78 178 70 182 60"/><path d="M66 92C56 72 70 56 90 58C90 76 82 88 66 92Z"/><path d="M66 92L88 60"/><path d="M82 95C90 76 110 70 118 80C108 92 96 97 82 95Z"/><path d="M82 95L116 81"/><circle cx="100" cy="70" r="7"/><path d="M97 68h.1M102 67h.1M100 72h.1M96 72h.1M104 71h.1"/><path d="M70 48C62 38 78 32 70 20M100 44C92 34 108 28 100 14M130 48C122 38 138 32 130 20"/></g></symbol>
+    <symbol id="d-vitoria" viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M100 100L93 12A88 88 0 1 0 107 12Z"/><path d="M100 100L95 22A79 79 0 1 0 105 22"/><path d="M100 100Q116.3 63.5 124.4 24.9"/><path d="M100 100Q126.8 70.3 146.4 36.1"/><path d="M100 100Q134.6 80.0 163.9 53.6"/><path d="M100 100Q139.1 91.7 175.1 75.6"/><path d="M100 100Q139.8 104.2 179.0 100.0"/><path d="M100 100Q136.5 116.3 175.1 124.4"/><path d="M100 100Q129.7 126.8 163.9 146.4"/><path d="M100 100Q120.0 134.6 146.4 163.9"/><path d="M100 100Q108.3 139.1 124.4 175.1"/><path d="M100 100Q95.8 139.8 100.0 179.0"/><path d="M100 100Q83.7 136.5 75.6 175.1"/><path d="M100 100Q73.2 129.7 53.6 163.9"/><path d="M100 100Q65.4 120.0 36.1 146.4"/><path d="M100 100Q60.9 108.3 24.9 124.4"/><path d="M100 100Q60.2 95.8 21.0 100.0"/><path d="M100 100Q63.5 83.7 24.9 75.6"/><path d="M100 100Q70.3 73.2 36.1 53.6"/><path d="M100 100Q80.0 65.4 53.6 36.1"/><path d="M100 100Q91.7 60.9 75.6 24.9"/><path d="M112.2 68.3Q114.5 74.9 121.4 73.6"/><path d="M121.4 73.6Q121.6 80.6 128.5 81.5"/><path d="M128.5 81.5Q126.5 88.2 132.8 91.2"/><path d="M132.8 91.2Q128.8 97.0 134.0 101.8"/><path d="M134.0 101.8Q128.4 106.0 131.7 112.2"/><path d="M131.7 112.2Q125.1 114.5 126.4 121.4"/><path d="M126.4 121.4Q119.4 121.6 118.5 128.5"/><path d="M118.5 128.5Q111.8 126.5 108.8 132.8"/><path d="M108.8 132.8Q103.0 128.8 98.2 134.0"/><path d="M98.2 134.0Q94.0 128.4 87.8 131.7"/><path d="M87.8 131.7Q85.5 125.1 78.6 126.4"/><path d="M78.6 126.4Q78.4 119.4 71.5 118.5"/><path d="M71.5 118.5Q73.5 111.8 67.2 108.8"/><path d="M67.2 108.8Q71.2 103.0 66.0 98.2"/><path d="M66.0 98.2Q71.6 94.0 68.3 87.8"/><path d="M68.3 87.8Q74.9 85.5 73.6 78.6"/><path d="M73.6 78.6Q80.6 78.4 81.5 71.5"/><path d="M81.5 71.5Q88.2 73.5 91.2 67.2"/><path d="M120.1 47.7Q125.5 55.8 135.2 56.5"/><path d="M135.2 56.5Q137.9 65.9 147.0 69.5"/><path d="M147.0 69.5Q146.6 79.3 154.1 85.5"/><path d="M154.1 85.5Q150.7 94.7 155.9 102.9"/><path d="M155.9 102.9Q149.9 110.6 152.3 120.1"/><path d="M152.3 120.1Q144.2 125.5 143.5 135.2"/><path d="M143.5 135.2Q134.1 137.9 130.5 147.0"/><path d="M130.5 147.0Q120.7 146.6 114.5 154.1"/><path d="M114.5 154.1Q105.3 150.7 97.1 155.9"/><path d="M97.1 155.9Q89.4 149.9 79.9 152.3"/><path d="M79.9 152.3Q74.5 144.2 64.8 143.5"/><path d="M64.8 143.5Q62.1 134.1 53.0 130.5"/><path d="M53.0 130.5Q53.4 120.7 45.9 114.5"/><path d="M45.9 114.5Q49.3 105.3 44.1 97.1"/><path d="M44.1 97.1Q50.1 89.4 47.7 79.9"/><path d="M47.7 79.9Q55.8 74.5 56.5 64.8"/><path d="M56.5 64.8Q65.9 62.1 69.5 53.0"/><path d="M69.5 53.0Q79.3 53.4 85.5 45.9"/></g></symbol>
+    <symbol id="d-canoa" viewBox="0 0 130 240"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M60 8C96 50 98 180 60 232C22 180 24 50 60 8Z"/><path d="M60 26C86 62 88 172 60 214C34 172 36 62 60 26Z"/><path d="M37 80H83M34 120H86M37 162H83"/><path d="M14 204L104 70"/><path d="M104 70C110 56 122 48 120 40C110 40 100 52 98 64Z"/></g></symbol>
+    <symbol id="d-palafita" viewBox="0 0 220 200"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 72L110 30L202 72"/><path d="M34 72V140H186V72"/><path d="M46 76V136"/><path d="M58 76V136"/><path d="M106 76V136"/><path d="M118 76V136"/><path d="M166 76V136"/><path d="M178 76V136"/><path d="M70 90h26v24H70zM130 140V90h24v50"/><path d="M44 140V186M80 140V186M116 140V186M152 140V186M178 140V186"/><path d="M0 176C20 170 40 182 60 176S100 170 120 176S160 182 180 176S210 170 220 176"/><path d="M10 190C30 184 50 196 70 190S110 184 130 190S170 196 190 190"/></g></symbol>
+    <symbol id="d-peixe" viewBox="0 0 240 140"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 70C60 12 160 12 200 70C160 128 60 128 20 70Z"/><path d="M200 70L234 38L226 70L234 102Z"/><circle cx="50" cy="62" r="5"/><path d="M70 38C84 56 84 84 70 102"/><path d="M108 22C118 6 142 6 152 24M110 118C118 132 134 132 142 118"/><path d="M92 46q8 7 0 14"/><path d="M92 60q8 7 0 14"/><path d="M92 74q8 7 0 14"/><path d="M92 88q8 7 0 14"/><path d="M108 53q8 7 0 14"/><path d="M108 67q8 7 0 14"/><path d="M108 81q8 7 0 14"/><path d="M108 95q8 7 0 14"/><path d="M124 46q8 7 0 14"/><path d="M124 60q8 7 0 14"/><path d="M124 74q8 7 0 14"/><path d="M124 88q8 7 0 14"/><path d="M140 53q8 7 0 14"/><path d="M140 67q8 7 0 14"/><path d="M140 81q8 7 0 14"/><path d="M140 95q8 7 0 14"/><path d="M156 46q8 7 0 14"/><path d="M156 60q8 7 0 14"/><path d="M156 74q8 7 0 14"/><path d="M156 88q8 7 0 14"/><path d="M172 53q8 7 0 14"/><path d="M172 67q8 7 0 14"/><path d="M172 81q8 7 0 14"/></g></symbol>
+  </svg>
+
+  <!-- ===================== TOPO ===================== -->
+  <!-- FAIXA DA BLACK FRIDAY: a contagem de dias é automática e a faixa some sozinha depois da data -->
+  <div class="aviso-black" role="region" aria-label="Aviso de Black Friday">
+    <span class="selo-black">Black Friday</span>
+    <strong id="faltam-dias">Faltam alguns dias</strong>
+    <span class="aviso-texto">A agenda de novembro já está abrindo.</span>
+    <a href="https://wa.me/5593992282674?text=Oi%2C%20Juliana!%20Quero%20reservar%20agenda%20para%20a%20Black%20Friday." target="_blank" rel="noopener">reservar agenda →</a>
+  </div>
+
+  <header class="topo" id="topo">
+    <div class="wrap">
+      <a class="assinatura-topo" href="#inicio">Juliana Araújo</a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu" id="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#destaques">Destaques</a></li>
+          <li><a href="#nichos">Nichos</a></li>
+          <li><a href="#fotos">Fotos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a class="btn btn-ouro" href="#contato">Fechar parceria</a></li>
+        </ul>
+      </nav>
+      <a class="topo-insta" href="https://www.instagram.com/juh.arauju/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+        @juh.arauju
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===================== 1. CAPA ===================== -->
+    <section class="capa escuro" id="inicio" aria-labelledby="titulo-capa" data-cor-fim="#0b2117">
+      <svg class="rio" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 300C120 300 140 120 260 120S380 330 500 300 600 70 720 100 860 340 980 280 1120 80 1240 140" fill="none" stroke="#c9973f" stroke-width="1.3" vector-effect="non-scaling-stroke"/><path d="M-20 318C120 318 150 140 262 140S392 350 502 320 612 90 722 120 870 358 982 300 1130 100 1240 160" fill="none" stroke="#c9973f" stroke-width=".6" opacity=".6" vector-effect="non-scaling-stroke"/></svg>
+      <svg class="palmeira p1" viewBox="0 0 300 300" aria-hidden="true"></svg>
+      <svg class="palmeira p2" viewBox="0 0 300 300" aria-hidden="true"></svg>
+
+      <div class="wrap capa-grade">
+        <div>
+          <p class="ola revelar">Olá, eu sou a</p>
+          <h1 class="nome revelar" id="titulo-capa" style="--atraso:.06s">Juliana <em>Araújo</em></h1>
+          <span class="linha-papel revelar" style="--atraso:.12s">Atriz e creator na Amazônia</span>
+          <p class="frase revelar" style="--atraso:.16s">Crio conteúdo que nasce do meu território: vídeos verdadeiros, com estética e propósito, para marcas que querem ser lembradas e escolhidas.</p>
+          <div class="capa-meta revelar" style="--atraso:.2s">
+            <ul class="numeros-capa">
+              <li><strong>+100</strong><span>vídeos entregues</span></li>
+              <li><strong>+70</strong><span>marcas atendidas</span></li>
+              <li><strong>+1,4<small>mi</small></strong><span>views em 30 dias</span></li>
+            </ul>
+            <ul class="chips" aria-label="Alguns nichos">
+              <li class="chip">Turismo &amp; Amazônia</li>
+              <li class="chip">Skincare &amp; Beleza</li>
+              <li class="chip">Marketing &amp; Estratégia</li>
+              <li class="chip">e muito mais</li>
+            </ul>
+          </div>
+          <div class="botoes revelar" style="--atraso:.26s">
+            <a class="btn btn-ouro" href="#destaques">Ver portfólio</a>
+            <a class="btn btn-linha" href="#contato">Fechar parceria</a>
+          </div>
+        </div>
+
+        <div class="capa-foto revelar" style="--atraso:.18s">
+          <!--
+            FOTO DA CAPA SEM FUNDO: são dois arquivos que trabalham juntos.
+            "capa-foto.jpg" é a foto e "capa-mascara.png" diz o que aparece (branco) e o que some (transparente).
+            Assim a foto fica leve e funciona até abrindo o arquivo direto do computador.
+            Para trocar, me mande a nova foto que eu gero os dois arquivos.
+          -->
+          <div class="brilho" aria-hidden="true"></div>
+          <svg class="recorte" viewBox="0 0 677 1100" role="img" aria-label="Juliana Araújo de blazer branco, braços cruzados, olhando para a câmera">
+            <defs><mask id="mascara-capa" style="mask-type:alpha"><image href="fotos/capa-mascara.png" width="677" height="1100"/></mask></defs>
+            <image href="fotos/capa-foto.jpg" width="677" height="1100" mask="url(#mascara-capa)"/>
+          </svg>
+          <div class="selo-giro" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><defs><path id="circulo" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="currentColor"><textPath href="#circulo" textLength="284" lengthAdjust="spacing">CREATOR DA AMAZÔNIA ·</textPath></text></svg>
+            <span class="centro"><svg viewBox="0 0 100 200"><use href="#folha"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faixa de marcas: os nomes vêm do array "marcas" no script -->
+      <div class="faixa">
+        <p class="faixa-titulo">Marcas que já confiaram no meu trabalho</p>
+        <div class="faixa-janela"><div class="faixa-trilho" id="faixa-trilho"></div></div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. SOBRE ===================== -->
+    <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="wrap">
+        <div class="sobre-cartao escuro revelar">
+          <svg class="palmeira" viewBox="0 0 300 300" aria-hidden="true"></svg>
+          <div class="sobre-fotos">
+            <!-- FOTOS DO SOBRE: para trocar, mude o nome do arquivo no src -->
+            <div class="f1 g1"><img src="fotos/01-camisa-celular.jpg" alt="Juliana Araújo sorrindo enquanto olha o celular, de camisa branca e brincos de miçanga" loading="lazy" style="object-position:50% 35%"></div>
+            <div class="f2 g2"><img src="fotos/02-sofa-sorrindo.jpg" alt="Juliana Araújo sentada no sofá, sorrindo" loading="lazy" style="object-position:40% 32%"></div>
+            <span class="selo-marcas">+70 marcas atendidas</span>
+          </div>
+
+          <div class="sobre-texto">
+            <p class="kicker">Sobre mim</p>
+            <h2 class="titulo-secao" id="titulo-sobre">Eu vivo a <em>Amazônia</em> e conto o que vejo com verdade</h2>
+            <p class="meta-sobre">24 anos · Altamira, Pará · Amazônia</p>
+            <ul class="facetas" aria-label="O que eu faço">
+              <li class="faceta">Atriz</li>
+              <li class="faceta">UGC Creator</li>
+              <li class="faceta">Estrategista de conteúdo</li>
+            </ul>
+            <p>Crio conteúdos que nascem do meu território, com autenticidade, propósito e estética, e que transformam produtos em experiências.</p>
+            <ul class="promessas">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Roteiro aprovado antes de gravar</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Uma rodada de ajuste inclusa</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Entrega em até 72 horas úteis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. DESTAQUES ===================== -->
+    <section class="secao destaques black" id="destaques" aria-labelledby="titulo-destaques">
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="kicker revelar">Black Friday · tráfego pago</p>
+            <h2 class="titulo-secao revelar" id="titulo-destaques">Sua marca na <span class="script">Black Friday</span> comigo</h2>
+          </div>
+          <div class="cabeca-lado revelar">
+            <p class="apoio">Vídeos criativos para tráfego pago, feitos para vender na data mais disputada do ano. Toque num item da lista para ver os anúncios.</p>
+            <a class="btn btn-black" href="https://wa.me/5593992282674?text=Oi%2C%20Juliana!%20Quero%20v%C3%ADdeos%20para%20a%20Black%20Friday%20da%20minha%20marca." target="_blank" rel="noopener">Quero minha marca na Black</a>
+          </div>
+        </div>
+        <!-- Os destaques vêm do array "destaques" no script (o link do vídeo e a capa ficam lá) -->
+        <div class="destaque-grade">
+          <div class="palco revelar">
+            <div class="tela" id="tela-destaque"></div>
+            <a class="abrir-externo" id="abrir-destaque" href="#" target="_blank" rel="noopener" hidden>Abrir o vídeo no app
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          </div>
+          <div>
+            <p class="lista-titulo revelar">Anúncios para tráfego pago</p>
+            <div class="lista-destaques" id="lista-destaques"></div>
+          </div>
+        </div>
+      </div>
+      <!-- faixas cruzadas de Black Friday -->
+      <div class="fitas" aria-hidden="true">
+        <div class="fita vermelha"><span>BLACK FRIDAY ✦ VÍDEOS QUE VENDEM ✦ BLACK FRIDAY ✦ TRÁFEGO PAGO ✦ BLACK FRIDAY ✦ VÍDEOS QUE VENDEM ✦ BLACK FRIDAY ✦ TRÁFEGO PAGO ✦ </span><span>BLACK FRIDAY ✦ VÍDEOS QUE VENDEM ✦ BLACK FRIDAY ✦ TRÁFEGO PAGO ✦ BLACK FRIDAY ✦ VÍDEOS QUE VENDEM ✦ BLACK FRIDAY ✦ TRÁFEGO PAGO ✦ </span></div>
+        <div class="fita clara"><span>BLACK FRIDAY ✦ COMPRE AGORA ✦ BLACK FRIDAY ✦ UGC ✦ BLACK FRIDAY ✦ COMPRE AGORA ✦ BLACK FRIDAY ✦ UGC ✦ BLACK FRIDAY ✦ COMPRE AGORA ✦ </span><span>BLACK FRIDAY ✦ COMPRE AGORA ✦ BLACK FRIDAY ✦ UGC ✦ BLACK FRIDAY ✦ COMPRE AGORA ✦ BLACK FRIDAY ✦ UGC ✦ BLACK FRIDAY ✦ COMPRE AGORA ✦ </span></div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. NICHOS ===================== -->
+    <section class="secao" id="nichos" aria-labelledby="titulo-nichos">
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="kicker revelar">Nichos</p>
+            <h2 class="titulo-secao revelar" id="titulo-nichos">Nichos que eu <em>gravo</em></h2>
+          </div>
+          <p class="apoio revelar">Separei os vídeos por nicho. Escolha o seu e toque num vídeo para assistir.</p>
+        </div>
+        <div class="abas revelar" id="abas" role="group" aria-label="Escolher nicho"></div>
+        <div class="nicho-desc" id="nicho-desc" aria-live="polite"></div>
+        <!-- Os vídeos vêm do array "nichos" no script -->
+        <div class="grade-videos" id="grade-videos"></div>
+      </div>
+    </section>
+
+    <!-- ===================== YOUTUBE ===================== -->
+    <section class="secao youtube" id="youtube" aria-labelledby="titulo-youtube">
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="kicker revelar">YouTube e sites</p>
+            <h2 class="titulo-secao revelar" id="titulo-youtube">Sua marca no <em>YouTube</em></h2>
+          </div>
+          <p class="apoio revelar">Vídeos na horizontal, para o canal, para o site da marca ou para rodar como anúncio.</p>
+        </div>
+        <!-- Os vídeos horizontais vêm do array "videosYoutube" no script -->
+        <div class="grade-yt" id="grade-yt"></div>
+      </div>
+    </section>
+
+    <!-- ===================== FOTOS UGC ===================== -->
+    <section class="secao" id="fotos" aria-labelledby="titulo-fotos">
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="kicker revelar">Fotos UGC</p>
+            <h2 class="titulo-secao revelar" id="titulo-fotos">Fotos pra sua <em>marca</em></h2>
+          </div>
+          <p class="apoio revelar">Fotos de produto com cara de gente de verdade, para o perfil, o anúncio e a loja.</p>
+        </div>
+        <!-- As fotos vêm do array "fotos" no script -->
+        <div class="fotos-grade" id="fotos-grade"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. CENÁRIOS ===================== -->
+    <section class="secao escuro cenarios" id="cenarios" aria-labelledby="titulo-cenarios">
+      <svg class="rio" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 120C140 120 160 30 300 40S460 180 600 150 760 20 900 50 1080 170 1240 110" fill="none" stroke="#c9973f" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="kicker revelar">Cenários</p>
+            <h2 class="titulo-secao revelar" id="titulo-cenarios">Cenários que só a <em>Amazônia</em> tem</h2>
+          </div>
+          <p class="apoio revelar">Gravo onde a sua marca ganha alma: rio, floresta, praias de água doce, sabores e a vida da cidade.</p>
+        </div>
+        <!-- Os cenários vêm do array "cenarios" no script -->
+        <ul class="cenarios-grade" id="cenarios-grade"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== 6. SERVIÇOS ===================== -->
+    <section class="secao" id="servicos" aria-labelledby="titulo-servicos">
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="kicker revelar">O que eu faço</p>
+            <h2 class="titulo-secao revelar" id="titulo-servicos">Como eu <em>te ajudo</em></h2>
+          </div>
+          <p class="apoio revelar">No UGC, eu gravo e a sua marca usa o vídeo onde quiser. Na publi, o conteúdo vai no meu perfil. E na Amazônia, eu levo o seu público junto.</p>
+        </div>
+        <!-- As três frentes vêm do array "frentes" e a lista do array "formatos" no script -->
+        <div class="frentes" id="frentes"></div>
+        <div class="formatos revelar">
+          <h3>Serviços &amp; <em>formatos</em></h3>
+          <ul id="formatos"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. NÚMEROS E DEPOIMENTOS ===================== -->
+    <section class="secao escuro numeros" id="depoimentos" aria-labelledby="titulo-numeros">
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="kicker revelar">Números e depoimentos</p>
+            <h2 class="titulo-secao revelar" id="titulo-numeros">O que as marcas <em>dizem</em></h2>
+          </div>
+          <p class="apoio revelar">Os números do meu trabalho e o que ouvi de quem já gravou comigo.</p>
+        </div>
+        <!-- Métricas: array "metricas" no script -->
+        <ul class="metricas" id="metricas"></ul>
+        <!-- Depoimentos: array "depoimentos" no script -->
+        <div class="depoimentos" id="lista-depoimentos"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. CONTATO ===================== -->
+    <section class="secao" id="contato" aria-labelledby="titulo-contato">
+      <div class="wrap contato-grade">
+        <div class="contato-texto">
+          <p class="kicker revelar">Contato</p>
+          <h2 class="titulo-secao revelar" id="titulo-contato">Bora gravar pra sua <em>marca</em>?</h2>
+          <p class="revelar">Me conta sobre o produto e o que você espera do conteúdo. Eu volto com ideia de roteiro e orçamento.</p>
+          <div class="prazo revelar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>
+            <span><strong>Prazo de entrega:</strong> até 72 horas úteis depois do roteiro aprovado e do produto em mãos.</span>
+          </div>
+          <div class="contato-botoes revelar">
+            <a class="btn btn-mata" href="https://wa.me/5593992282674?text=Oi%2C%20Juliana!%20Vim%20pelo%20seu%20portf%C3%B3lio." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/></svg>WhatsApp</a>
+            <a class="btn btn-linha" href="mailto:julianaaraujougc@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg>E-mail</a>
+            <a class="btn btn-linha" href="https://www.instagram.com/juh.arauju/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Instagram</a>
+          </div>
+          <ul class="contato-dados revelar">
+            <li><span>WhatsApp</span><a href="https://wa.me/5593992282674" target="_blank" rel="noopener">(93) 99228-2674</a></li>
+            <li><span>E-mail</span><span class="email-linha"><a href="mailto:julianaaraujougc@gmail.com">julianaaraujougc@gmail.com</a><button class="copiar" type="button" id="copiar-email">copiar e-mail</button></span></li>
+            <li><span>Instagram</span><a href="https://www.instagram.com/juh.arauju/" target="_blank" rel="noopener">@juh.arauju</a></li>
+            <li><span>Cidade</span><strong style="font-weight:600">Altamira, Pará</strong></li>
+          </ul>
+        </div>
+
+        <div class="cartao-form revelar" style="--atraso:.1s">
+          <!--
+            FORMULÁRIO: hoje ele mostra a confirmação na tela, mas ainda não envia a mensagem.
+            Para receber no seu e-mail, crie um formulário grátis no Formspree (formspree.io) e me peça para ligar aqui.
+          -->
+          <form id="form-contato" novalidate>
+            <h3>Se preferir, responde <em>por aqui</em></h3>
+            <div class="duas">
+              <div class="campo">
+                <label for="c-nome">Nome</label>
+                <input id="c-nome" name="nome" type="text" autocomplete="name" required aria-describedby="c-nome-erro">
+                <p class="erro" id="c-nome-erro" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="c-email">E-mail</label>
+                <input id="c-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="c-email-erro">
+                <p class="erro" id="c-email-erro" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="duas">
+              <div class="campo">
+                <label for="c-marca">Marca ou empresa</label>
+                <input id="c-marca" name="marca" type="text" autocomplete="organization">
+              </div>
+              <div class="campo">
+                <label for="c-formato">O que você precisa</label>
+                <select id="c-formato" name="formato">
+                  <option value="">Escolha um formato</option>
+                  <option>UGC para anúncio</option>
+                  <option>UGC para loja virtual</option>
+                  <option>Publi no meu perfil</option>
+                  <option>Conteúdo cinematográfico ou turismo</option>
+                  <option>Mais de um formato</option>
+                  <option>Ainda não sei</option>
+                </select>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="c-msg">Conta sobre o projeto</label>
+              <textarea id="c-msg" name="mensagem" required aria-describedby="c-msg-erro" placeholder="Produto, objetivo e prazo."></textarea>
+              <p class="erro" id="c-msg-erro" aria-live="polite"></p>
+            </div>
+            <button class="btn btn-mata" type="submit">Enviar mensagem</button>
+          </form>
+          <div class="sucesso" id="contato-sucesso" hidden tabindex="-1">
+            <div class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h3>Recebi sua <em>mensagem</em>!</h3>
+            <p>Que alegria ter você por aqui. Em breve eu volto com ideia de roteiro e orçamento.</p>
+            <button class="btn btn-linha" type="button" id="nova-mensagem">Enviar outra mensagem</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <svg class="palmeira" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <div class="wrap">
+      <div class="rodape-topo">
+        <div>
+          <p class="rodape-nome">Juliana <em>Araújo</em></p>
+          <p class="rodape-sub">Atriz e creator na Amazônia</p>
+        </div>
+        <ul class="redes" aria-label="Minhas redes">
+          <li><a href="https://www.instagram.com/juh.arauju/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>@juh.arauju</a></li>
+          <li><a href="https://wa.me/5593992282674" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/></svg>WhatsApp</a></li>
+          <li><a href="mailto:julianaaraujougc@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg>E-mail</a></li>
+        </ul>
+      </div>
+      <div class="rodape-base">
+        <span>© <span id="ano">2026</span> Juliana Araújo · Portfólio UGC</span>
+        <span>Altamira, Pará · Amazônia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== BARRA DE BAIXO (celular) ===================== -->
+  <nav class="barra" aria-label="Navegação rápida">
+    <a href="#inicio" data-secao="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5L12 4l8 6.5V20h-5v-6H9v6H4z"/></svg>Início</a>
+    <a href="#destaques" data-secao="destaques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>Destaques</a>
+    <a href="#contato" class="central" data-secao="contato"><span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 18.5l1.2-3.6A7.5 7.5 0 1 1 8 18z"/></svg></span>Parceria</a>
+    <a href="#nichos" data-secao="nichos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Nichos</a>
+    <button type="button" id="botao-mais" aria-expanded="false" aria-controls="folha-mais"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>Mais</button>
+  </nav>
+  <nav class="folha-mais" id="folha-mais" aria-label="Mais seções">
+    <a href="#sobre">Sobre mim <span>quem eu sou</span></a>
+    <a href="#youtube">YouTube <span>vídeos horizontais</span></a>
+    <a href="#fotos">Fotos <span>fotos UGC</span></a>
+    <a href="#cenarios">Cenários <span>Amazônia</span></a>
+    <a href="#servicos">Serviços <span>UGC e publi</span></a>
+    <a href="#depoimentos">Depoimentos <span>marcas</span></a>
+    <a href="#contato">Contato <span>orçamento</span></a>
+  </nav>
+
+  <!-- ===================== JANELA DE VÍDEO (nichos) ===================== -->
+  <div class="fundo-modal" id="modal-video" hidden>
+    <div class="modal modal-video" id="caixa-video" role="dialog" aria-modal="true" aria-labelledby="video-titulo">
+      <button class="fechar" type="button" data-fechar aria-label="Fechar vídeo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="tela" id="tela-modal"></div>
+      <div class="info-modal"><strong id="video-titulo"></strong><a id="video-link" href="#" target="_blank" rel="noopener">Abrir o vídeo no app</a></div>
+    </div>
+  </div>
+
+  <!-- ===================== CARD DO MÍDIA KIT (7 segundos, uma vez por visita) ===================== -->
+  <div class="fundo-modal" id="modal-kit" hidden>
+    <div class="modal modal-kit" role="dialog" aria-modal="true" aria-labelledby="kit-titulo" aria-describedby="kit-texto">
+      <button class="fechar" type="button" data-fechar aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <!-- MÍDIA KIT: hoje mostra a confirmação na tela, mas não envia os dados. Dá para ligar ao Formspree ou Mailchimp. -->
+      <div class="topo-kit">
+        <svg class="palmeira" viewBox="0 0 300 300" aria-hidden="true"></svg>
+        <p class="kicker">Presente para marcas</p>
+        <h2 id="kit-titulo">Quer meu mídia kit <em>completo</em>?</h2>
+      </div>
+      <form id="form-kit" novalidate>
+        <p id="kit-texto">Formatos, valores e resultados reunidos em um arquivo para você decidir com calma.</p>
+        <div class="campo">
+          <label for="k-nome">Seu nome</label>
+          <input id="k-nome" name="nome" type="text" autocomplete="name" required aria-describedby="k-nome-erro">
+          <p class="erro" id="k-nome-erro" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="k-email">Seu e-mail</label>
+          <input id="k-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="k-email-erro">
+          <p class="erro" id="k-email-erro" aria-live="polite"></p>
+        </div>
+        <button class="btn btn-mata" type="submit">Quero receber</button>
+        <p class="nota">Nada de caixa de entrada lotada: só o mídia kit e, de vez em quando, uma novidade boa.</p>
+      </form>
+      <div class="sucesso" id="kit-sucesso" hidden tabindex="-1">
+        <div class="icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3>Prontinho!</h3>
+        <p>Seu mídia kit vai chegar no e-mail que você deixou. Até já!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =====================================================================
+       SEUS DADOS: edite só esta parte, sem mexer no HTML.
+
+       COMO COLOCAR UM VÍDEO: cole o link no campo "link". Funciona com:
+       - Instagram (link do reels ou do post)
+       - Google Drive (o arquivo precisa estar como "Qualquer pessoa com o link pode ver")
+       - YouTube e TikTok
+       - arquivo .mp4 salvo junto com o site, ex.: "videos/meu-video.mp4"
+       COMO COLOCAR A CAPA: vídeo do YouTube já mostra a capa sozinho. Para outra capa, salve a imagem
+       junto com o site e coloque o caminho no campo "capa", ex.: "fotos/minha-capa.jpg".
+       Vídeo sem link aparece como "em breve".
+       ===================================================================== */
+
+    /* Marcas da faixa da capa, cada uma num círculo.
+       logo: arquivo na pasta "fotos/marcas". alto: true para logos mais altos que largos (ganham mais espaço). */
+    const marcas = [
+      { nome: "L'Oréal", logo: "fotos/marcas/loreal.png" },
+      { nome: "Dove", logo: "fotos/marcas/dove.png", alto: true },
+      { nome: "Pantene", logo: "fotos/marcas/pantene.png" },
+      { nome: "Samsung", logo: "fotos/marcas/samsung.png" },
+      { nome: "Mercado Livre", logo: "fotos/marcas/mercadolivre.png" },
+      { nome: "Eudora", logo: "fotos/marcas/eudora.png" },
+      { nome: "Omo", logo: "fotos/marcas/omo.png" },
+      { nome: "Sensodyne", logo: "fotos/marcas/sensodyne.png", alto: true },
+      { nome: "Ibis Styles", logo: "fotos/marcas/ibisstyles.png", alto: true },
+      { nome: "Beleza Brasileira", logo: "fotos/marcas/belezabrasileira.png", alto: true },
+      { nome: "Bumbum Cream", logo: "fotos/marcas/bumbum.png", alto: true },
+      { nome: "Ekilibre", logo: "fotos/marcas/ekilibre.png" },
+      { nome: "Amauê", logo: "fotos/marcas/amaue.png" },
+      { nome: "Headline Profissional", logo: "fotos/marcas/headline.png" },
+      { nome: "Belletonn", logo: "fotos/marcas/belletonn.png" },
+      { nome: "Alva Personal Care", logo: "fotos/marcas/alva.png", alto: true },
+      { nome: "Avozon", logo: "fotos/marcas/avozon.png" },
+      { nome: "Insider", logo: "fotos/marcas/insider.png" },
+      { nome: "Gocase", logo: "fotos/marcas/gocase.png" },
+      { nome: "Bagaggio", logo: "fotos/marcas/bagaggio.png" },
+      { nome: "Maná Super Foods", logo: "fotos/marcas/mana.png" },
+      { nome: "Toda Up", logo: "fotos/marcas/todaup.png", alto: true },
+      { nome: "Ulanzi", logo: "fotos/marcas/ulanzi.png" },
+      { nome: "Creamy Skincare", logo: "fotos/marcas/creamy.png" },
+      { nome: "Vizzela", logo: "fotos/marcas/vizzela.png" },
+      { nome: "Alphahall Cosmétiques", logo: "fotos/marcas/alphahall.png", alto: true },
+      { nome: "MSA Cosméticos", logo: "fotos/marcas/msa.png" },
+      { nome: "Feito Brasil", logo: "fotos/marcas/feitobrasil.png" }
+    ];
+
+    /* Conteúdos em destaque (a lista ao lado do vídeo grande).
+       A capa dos vídeos do YouTube aparece sozinha. Se quiser outra, coloque o arquivo no campo "capa". */
+    const destaques = [
+      { titulo: "Sérum de açaí", descricao: "Anúncio para tráfego pago.", tags: ["Tráfego pago", "UGC"], link: "https://youtube.com/shorts/I4uLBmAu8ps", capa: "", degrade: "g1" },
+      { titulo: "Sabonete", descricao: "Anúncio para tráfego pago.", tags: ["Tráfego pago", "UGC"], link: "https://youtube.com/shorts/xEXFjm8Yomc", capa: "", degrade: "g2" },
+      { titulo: "Desodorante", descricao: "Anúncio para tráfego pago.", tags: ["Tráfego pago", "UGC"], link: "https://youtube.com/shorts/ysNi2DKvtnk", capa: "", degrade: "g3" },
+      { titulo: "Hidratante bifásico", descricao: "Anúncio para tráfego pago.", tags: ["Tráfego pago", "UGC"], link: "https://youtube.com/shorts/fgbBLj9dBbw", capa: "", degrade: "g5" }
+    ];
+
+    /* Nichos e vídeos de cada um. O número ao lado do nome do nicho é contado sozinho.
+       titulo: marca ou lugar. sobre: uma linha sobre o vídeo. tag: opcional, ex.: "UGC", "Publi", "Unboxing". */
+    const nichos = [
+      { nome: "Hotelaria & Gastronomia", descricao: "Hospedagem, sabores e lugares para viver.", videos: [
+        { titulo: "Ibis Styles", sobre: "Hospedagem", link: "https://youtube.com/shorts/NsvjBt1By3E" },
+        { titulo: "Ambe Floresta", sobre: "Experiência na floresta", link: "https://youtube.com/shorts/wfvQgNw0r-Y" },
+        { titulo: "Theatro da Paz", sobre: "Cultura em Belém", link: "https://youtube.com/shorts/ucWapHP6Gpc" },
+        { titulo: "Ilha do Murutucum", sobre: "Passeio e gastronomia", link: "https://youtube.com/shorts/gFqTmWmi7to" }
+      ]},
+      { nome: "Skincare", descricao: "Rotina de cuidados com a pele.", videos: [
+        { titulo: "Skincare", sobre: "Rotina de cuidados", link: "https://youtube.com/shorts/irjrocWOYS8" },
+        { titulo: "Amauê", sobre: "Skincare amazônico", link: "https://youtube.com/shorts/S8SBUurtM18" },
+        { titulo: "Skincare", sobre: "Rotina de cuidados", link: "https://youtube.com/shorts/gTyTnqvRZmQ" },
+        { titulo: "Skincare", sobre: "Rotina de cuidados", link: "https://youtube.com/shorts/o0uTVrvXEs0" }
+      ]},
+      { nome: "Beleza", descricao: "Beleza com olhar cinematográfico.", videos: [
+        { titulo: "Feito Brasil", sobre: "Beleza cinematográfica", link: "https://youtube.com/shorts/sq6LiFdQRog" },
+        { titulo: "Belletonn", sobre: "Beleza cinematográfica", link: "https://youtube.com/shorts/IDbBWUvPyok" },
+        { titulo: "Avozon", sobre: "Unboxing", tag: "Unboxing", link: "https://youtube.com/shorts/1S_BKKN-IKQ" },
+        { titulo: "Ekilibre Amazônia", sobre: "Cosméticos da floresta", link: "https://youtube.com/shorts/I1KqRufbHmA" }
+      ]},
+      { nome: "Outlet & Moda", descricao: "Looks, coleções e achados.", videos: [
+        { titulo: "Insider", sobre: "Coleção outono", link: "https://youtube.com/shorts/4lzPj8MjvCA" },
+        { titulo: "Insider", sobre: "Moda", link: "https://youtube.com/shorts/JYoV5JN4nr4" },
+        { titulo: "Insider", sobre: "Moda", link: "https://youtube.com/shorts/-STqHDvlDaI" },
+        { titulo: "Insider", sobre: "Moda", link: "https://youtube.com/shorts/L-0qYMaJazo" }
+      ]},
+      { nome: "Casa & Plantas", descricao: "Decoração com plantas.", videos: [
+        { titulo: "Decoração com plantas", sobre: "Casa e decoração", link: "https://youtube.com/shorts/-nXiCsFHdio" },
+        { titulo: "Altamira Plantas", sobre: "Casa e decoração", link: "https://youtube.com/shorts/HvHjjagZ1so" },
+        { titulo: "Vaso Platiê", sobre: "Casa e decoração", link: "https://youtube.com/shorts/u7CcDERckqs" },
+        { titulo: "Plantas para casa", sobre: "Casa e decoração", link: "https://youtube.com/shorts/Kv2pn5XyWaE" }
+      ]},
+      { nome: "App & IA", descricao: "Aplicativos, inteligência artificial e compras online.", videos: [
+        { titulo: "App e IA", sobre: "Tecnologia no dia a dia", link: "https://youtube.com/shorts/Y_mMxb74_d0" },
+        { titulo: "Mercado Livre", sobre: "Compras online", link: "https://youtube.com/shorts/94DZkMZk9Bw" },
+        { titulo: "Aplicativo", sobre: "Teste de app", link: "https://youtube.com/shorts/hmtb4oVN8zY" },
+        { titulo: "Aplicativo", sobre: "Teste de app", link: "https://youtube.com/shorts/-O93o8_IFls" }
+      ]},
+      { nome: "Turismo & Amazônia", descricao: "Roteiros e experiências pela Amazônia.", videos: [
+        { titulo: "Óbidos", sobre: "Roteiro pela cidade", link: "https://youtube.com/shorts/4hYSjc8FmLw" },
+        { titulo: "Catedral de Óbidos", sobre: "Turismo e história", link: "https://youtube.com/shorts/CncE1F88vaQ" },
+        { titulo: "Raízes do Xingu", sobre: "Experiência no Xingu", link: "https://youtube.com/shorts/h2qvc3rJhDw" },
+        { titulo: "Vale do Paraíso", sobre: "Natureza e passeio", link: "https://youtube.com/shorts/aj6unu4RH94" }
+      ]}
+    ];
+
+    /* Vídeos horizontais (YouTube e sites). */
+    const videosYoutube = [
+      { titulo: "Trilha de produtos", sobre: "Ekilibre Amazônia", link: "https://youtu.be/CCibgzfYq6M" },
+      { titulo: "Protetor físico", sobre: "Ekilibre Amazônia · vídeo para site", link: "https://youtu.be/DVgl3uCveZ0" },
+      { titulo: "Sérum de açaí", sobre: "Ekilibre Amazônia", link: "https://youtu.be/eXePIxWQnww" },
+      { titulo: "Manteiga de cupuaçu", sobre: "Ekilibre Amazônia", link: "https://youtu.be/4oF9QDxml9Q" },
+      { titulo: "Desodorante", sobre: "Ekilibre Amazônia", link: "https://youtu.be/gbIRF9ZgnWo" },
+      { titulo: "Creme facial noturno", sobre: "Ekilibre Amazônia", link: "https://youtu.be/t13AA3HZMxI" }
+    ];
+
+    /* Fotos UGC (a galeria). foto: arquivo dentro da pasta "fotos". marca e produto aparecem na etiqueta. */
+    const fotos = [
+      { foto: "fotos/20-ekilibre-serum.jpg", marca: "Ekilibre", produto: "Sérum amazônico" },
+      { foto: "fotos/12-headline-karite.jpg", marca: "Headline", produto: "Karité Absoluto" },
+      { foto: "fotos/15-paixao-body-splash.jpg", marca: "Paixão", produto: "Body splash" },
+      { foto: "fotos/18-amaue-rio.jpg", marca: "Amauê", produto: "Sabonete facial" },
+      { foto: "fotos/16-evessence-lintime.jpg", marca: "Évessence", produto: "L'Intime" },
+      { foto: "fotos/11-sabonetes-por-do-sol.jpg", marca: "", produto: "Sabonetes em barra" },
+      { foto: "fotos/14-mascara-capilar.jpg", marca: "", produto: "Máscara fortalecedora" },
+      { foto: "fotos/17-evessence-bloome.jpg", marca: "Évessence", produto: "Bloomé e Flamme" },
+      { foto: "fotos/04-camisa-estudio.jpg", marca: "", produto: "Moda e estilo" },
+      { foto: "fotos/07-blazer-celular.jpg", marca: "", produto: "Lifestyle" }
+    ];
+
+    /* Cenários da Amazônia. foto: arquivo dentro da pasta "fotos".
+       posicao (opcional): qual parte da foto aparece no recorte, ex.: "50% 30%" (horizontal e vertical). */
+    const cenarios = [
+      { nome: "Rio Xingu", texto: "Água, céu e pôr do sol para vídeos que respiram.", foto: "fotos/05-rio-xingu-canoa.jpg", degrade: "g1" },
+      { nome: "Cachoeiras", texto: "Pedra, água e floresta em volta.", foto: "fotos/13-cachoeira.jpg", degrade: "g6" },
+      { nome: "Praias de rio", texto: "Areia, barco e luz dourada no fim de tarde.", foto: "fotos/21-praia-rio-barco.jpg", posicao: "35% 75%", degrade: "g4" },
+      { nome: "Varanda com rede", texto: "Rede, samambaias e o jeito amazônico de morar.", foto: "fotos/22-varanda-rede-plantas.jpg", posicao: "45% 50%", degrade: "g2" },
+      { nome: "Estúdio", texto: "Fundo limpo para produto e moda.", foto: "fotos/19-camiseta-verde-estudio.jpg", degrade: "g3" }
+    ];
+
+    /* Desenhos do Pará espalhados pelas seções, bem sutis, como textura.
+       desenho: "acai", "tacaca", "vitoria", "canoa", "palafita" ou "peixe".
+       onde: a seção (ex.: "#sobre"). lugar: posição (ex.: { right: "-40px", top: "30px" }).
+       tamanho em pixels, giro em graus. soComputador: true esconde no celular. */
+    const desenhosPara = [
+      { onde: "#sobre",       desenho: "vitoria",  lugar: { right: "-70px", top: "24px" },   tamanho: 240, giro: 0 },
+      { onde: "#destaques",   desenho: "acai",     lugar: { right: "-24px", top: "40px" },   tamanho: 190, giro: 12 },
+      { onde: "#nichos",      desenho: "tacaca",   lugar: { left: "-36px", top: "36px" },    tamanho: 200, giro: -8 },
+      { onde: "#nichos",      desenho: "palafita", lugar: { right: "-40px", bottom: "80px" }, tamanho: 240, giro: 0, soComputador: true },
+      { onde: "#youtube",     desenho: "canoa",    lugar: { right: "3%", top: "24px" },      tamanho: 120, giro: 28 },
+      { onde: "#fotos",       desenho: "peixe",    lugar: { left: "-60px", top: "40px" },    tamanho: 230, giro: -10 },
+      { onde: "#cenarios",    desenho: "vitoria",  lugar: { right: "-80px", top: "-10px" },  tamanho: 260, giro: 20 },
+      { onde: "#servicos",    desenho: "acai",     lugar: { left: "-40px", bottom: "30px" }, tamanho: 180, giro: -14, soComputador: true },
+      { onde: "#depoimentos", desenho: "tacaca",   lugar: { right: "-30px", top: "40px" },   tamanho: 200, giro: 6 },
+      { onde: "#contato",     desenho: "palafita", lugar: { left: "-50px", bottom: "40px" }, tamanho: 230, giro: 0, soComputador: true },
+      { onde: "#contato",     desenho: "canoa",    lugar: { right: "4%", top: "30px" },      tamanho: 110, giro: -24 }
+    ];
+
+    /* As três frentes de trabalho. */
+    const frentes = [
+      { selo: "UGC", destino: "Vai pro seu anúncio e pra sua loja", titulo: "UGC que vende", texto: "Vídeos autênticos para anúncios e loja virtual, com gancho forte e cara de recomendação sincera, pensados para converter." },
+      { selo: "Publi", destino: "Vai no meu perfil", titulo: "Posts patrocinados", texto: "Sua marca no @juh.arauju, com a minha cara, falando com uma audiência que confia em mim." },
+      { selo: "Amazônia", destino: "Vai pro mundo", titulo: "Cinematográfico & turismo", texto: "Roteiros e experiências pela Amazônia, gastronomia e hotelaria, com olhar de cinema e alma de território." }
+    ];
+
+    /* Lista completa de serviços e formatos. */
+    const formatos = [
+      "Roteiros criativos", "UGC que vende", "Conteúdo cinematográfico", "Posts patrocinados",
+      "Anúncios e e-commerce", "YouTube e sites", "Fotos e carrosséis", "Gestão de campanhas UGC"
+    ];
+
+    /* Métricas com contador animado (dados de outubro de 2026).
+       casas: quantas casas depois da vírgula (1 mostra 1,4). valor: null mostra "00". */
+    const metricas = [
+      { valor: 70,  casas: 0, prefixo: "+", sufixo: "", rotulo: "marcas atendidas" },
+      { valor: 100, casas: 0, prefixo: "+", sufixo: "", rotulo: "vídeos entregues" },
+      { valor: 49,  casas: 0, prefixo: "+", sufixo: " mil", rotulo: "seguidores no Instagram (19,5 mil) e no TikTok (29,5 mil)" },
+      { valor: 1.4, casas: 1, prefixo: "", sufixo: " mi", rotulo: "visualizações no Instagram nos últimos 30 dias" }
+    ];
+
+    /* Depoimentos reais das marcas.
+       tipo: "Mensagem da marca", "Avaliação da marca" ou "Comentário no Instagram".
+       logo: arquivo na pasta "fotos/logos" (deixe "" para mostrar só o nome).
+       grande: true deixa o card mais largo. quadrado: true para logo quadrado, como o do Ibis. */
+    const depoimentos = [
+      { texto: "Ju, bom dia! Conteúdo aprovadíssimo! Estética impecável, qualidade boa e trouxe referências que tem tudo a ver com a nossa marca! Parabéns pelo trabalho!", marca: "Avozon", tipo: "Mensagem da marca", logo: "fotos/logos/avozon.png", grande: true },
+      { texto: "Boa tarde amigaaa, tudo bem? 🥰 Tá aprovadíssimo, adoramos viu? 🥹💙", marca: "Headline Profissional", tipo: "Mensagem da marca", logo: "fotos/logos/headline.png", grande: true },
+      { texto: "Nós que agradecemos! Parabéns pelo lindo trabalho. ❤️", marca: "Ibis Styles", tipo: "Mensagem da marca", logo: "fotos/logos/ibis-styles.png", quadrado: true },
+      { texto: "Maravilhosa ✨💙", marca: "Belletonn", tipo: "Comentário no Instagram", logo: "fotos/logos/belletonn.png" },
+      { texto: "AMAMOSSS 💙", marca: "Alva Personal Care", tipo: "Comentário no Instagram", logo: "fotos/logos/alva.png" }
+    ];
+
+    /* =====================================================================
+       DAQUI PARA BAIXO É O FUNCIONAMENTO DA PÁGINA. Não precisa mexer.
+       ===================================================================== */
+
+    const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const $ = (s, el = document) => el.querySelector(s);
+    const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+    const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const formatar = (n, casas = 0) => n.toLocaleString('pt-BR', { minimumFractionDigits: casas, maximumFractionDigits: casas });
+    const iconePlay = '<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>';
+    // Se a capa do YouTube num tamanho não existir, tenta a capa menor
+    const imagem = (src) => (src
+      ? `<img src="${esc(src)}" alt="" loading="lazy" onerror="if(this.src.indexOf('hqdefault')<0&&this.src.indexOf('ytimg')>0){this.src=this.src.replace(/[a-z0-9]+\\.jpg$/,'hqdefault.jpg')}">`
+      : '');
+    const idYoutube = (url) => { const m = (url || '').match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{11})/); return m ? m[1] : null; };
+    // Capa do vídeo: a que você escolheu ou, no YouTube, a capa do próprio vídeo
+    function capaDe(item, tamanho) {
+      if (item.capa) return item.capa;
+      const id = idYoutube(item.link);
+      return id ? `https://i.ytimg.com/vi/${id}/${tamanho}.jpg` : '';
+    }
+
+    // Descobre de onde é o link e devolve o jeito certo de tocar o vídeo
+    function lerLink(url) {
+      if (!url) return null;
+      let m;
+      if ((m = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/)) || (m = url.match(/drive\.google\.com\/open\?id=([^&#]+)/)))
+        return { tipo: 'iframe', src: `https://drive.google.com/file/d/${m[1]}/preview` };
+      if ((m = url.match(/instagram\.com\/(?:[^/]+\/)?(?:reel|reels|p|tv)\/([^/?#]+)/)))
+        return { tipo: 'iframe', src: `https://www.instagram.com/p/${m[1]}/embed/` };
+      const yt = idYoutube(url);
+      // aberto direto do computador (sem site no ar) o YouTube não deixa tocar dentro da página, então abre no YouTube
+      if (yt && location.protocol === 'file:') return { tipo: 'externo', src: url };
+      if (yt) return { tipo: 'iframe', src: `https://www.youtube.com/embed/${yt}?autoplay=1&rel=0&playsinline=1` };
+      if ((m = url.match(/tiktok\.com\/@[^/]+\/video\/(\d+)/)))
+        return { tipo: 'iframe', src: `https://www.tiktok.com/embed/v2/${m[1]}` };
+      if (/\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(url)) return { tipo: 'video', src: url };
+      return { tipo: 'externo', src: url };
+    }
+
+    // Coloca o vídeo para tocar dentro de um bloco .tela
+    function tocar(tela, item) {
+      const info = lerLink(item.link);
+      if (!info) return;
+      if (info.tipo === 'externo') { window.open(info.src, '_blank', 'noopener'); return; }
+      tela.innerHTML = info.tipo === 'video'
+        ? `<video src="${esc(info.src)}" ${item.capa ? `poster="${esc(item.capa)}"` : ''} controls autoplay playsinline></video>`
+        : `<iframe src="${esc(info.src)}" title="Vídeo: ${esc(item.titulo)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    }
+
+    /* ---------- Desenho da palmeira de açaí (linha fina dourada) ---------- */
+    function desenharPalmeira(svg) {
+      const P0 = [20, 280], P1 = [110, 30], P2 = [290, 70];
+      const ponto = (t) => [0, 1].map((k) => (1 - t) ** 2 * P0[k] + 2 * (1 - t) * t * P1[k] + t * t * P2[k]);
+      const tang = (t) => [0, 1].map((k) => 2 * (1 - t) * (P1[k] - P0[k]) + 2 * t * (P2[k] - P1[k]));
+      let d = `M${P0[0]} ${P0[1]}Q${P1[0]} ${P1[1]} ${P2[0]} ${P2[1]}`;
+      for (let i = 4; i < 46; i++) {
+        const t = i / 47, [x, y] = ponto(t), [tx, ty] = tang(t);
+        const n = Math.hypot(tx, ty), ux = tx / n, uy = ty / n;
+        const tam = 18 + 78 * Math.pow(Math.sin(Math.PI * t), .7);
+        [-1, 1].forEach((lado) => {
+          // os folíolos caem para baixo, como na palmeira do açaí
+          let dx = -uy * lado * .55 + ux * .25, dy = ux * lado * .55 + uy * .25 + .75;
+          const m = Math.hypot(dx, dy); dx /= m; dy /= m;
+          const ex = x + dx * tam, ey = y + dy * tam;
+          const cx = x + dx * tam * .5 + ux * 8, cy = y + dy * tam * .5 - 6;
+          d += `M${x.toFixed(1)} ${y.toFixed(1)}Q${cx.toFixed(1)} ${cy.toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)}`;
+        });
+      }
+      svg.innerHTML = `<path d="${d}" fill="none" stroke="#c9973f" stroke-width=".9" stroke-linecap="round"/>`;
+    }
+    $$('svg.palmeira').forEach(desenharPalmeira);
+
+    /* ---------- Desenhos do Pará nas seções ---------- */
+    desenhosPara.forEach((d) => {
+      const secao = $(d.onde);
+      if (!secao) return;
+      const simbolo = document.getElementById('d-' + d.desenho);
+      if (!simbolo) return;
+      const vb = simbolo.getAttribute('viewBox');
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('class', 'desenho' + (d.soComputador ? ' so-computador' : ''));
+      svg.setAttribute('viewBox', vb);
+      svg.setAttribute('aria-hidden', 'true');
+      svg.innerHTML = `<use href="#d-${d.desenho}"/>`;
+      Object.assign(svg.style, d.lugar);
+      svg.style.setProperty('--t', d.tamanho + 'px');
+      svg.style.setProperty('--giro', (d.giro || 0) + 'deg');
+      secao.prepend(svg);
+    });
+
+    /* ---------- Faixa de marcas ---------- */
+    const listaMarcas = marcas.map((m) => `<li><span class="selo-marca"><img src="${esc(m.logo)}" alt="${esc(m.nome)}" class="${m.alto ? 'alto' : ''}" loading="lazy"></span></li>`).join('');
+    $('#faixa-trilho').innerHTML = `<ul>${listaMarcas}</ul><ul aria-hidden="true">${listaMarcas}</ul>`;
+
+    /* ---------- Destaques ---------- */
+    const telaDestaque = $('#tela-destaque'), abrirDestaque = $('#abrir-destaque');
+    function mostrarDestaque(i) {
+      const d = destaques[i], temLink = !!d.link, capa = capaDe(d, 'oar2');
+      $$('.item-destaque').forEach((b, j) => b.setAttribute('aria-pressed', String(j === i)));
+      telaDestaque.className = 'tela ' + (capa ? '' : d.degrade);
+      telaDestaque.innerHTML = `
+        <button class="poster" type="button" ${temLink ? '' : 'disabled'} aria-label="${temLink ? 'Assistir: ' : ''}${esc(d.titulo)}${temLink ? '' : ', vídeo em breve'}">
+          ${imagem(capa)}
+          ${temLink ? iconePlay : '<span class="em-breve">em breve</span>'}
+          <span class="info-tela"><strong>${esc(d.titulo)}</strong><span>${esc(d.descricao)}</span></span>
+        </button>`;
+      if (temLink) $('.poster', telaDestaque).addEventListener('click', () => tocar(telaDestaque, d));
+      abrirDestaque.hidden = !temLink;
+      if (temLink) abrirDestaque.href = d.link;
+    }
+    $('#lista-destaques').innerHTML = destaques.map((d, i) => `
+      <button class="item-destaque revelar" type="button" style="--atraso:${i * .07}s" aria-pressed="false">
+        <span class="mini ${capaDe(d) ? '' : d.degrade}" aria-hidden="true">${imagem(capaDe(d, 'sddefault'))}</span>
+        <span>
+          <span class="num">${String(i + 1).padStart(2, '0')}</span>
+          <span class="titulo-item">${esc(d.titulo)}</span>
+          <span class="desc">${esc(d.descricao)}</span>
+          <span class="tags">${(d.tags || []).map((t, k) => `<span class="tag ${k === 0 ? 'forte' : ''}">${esc(t)}</span>`).join('')}${d.ano ? `<span class="tag ouro">${esc(d.ano)}</span>` : ''}</span>
+        </span>
+      </button>`).join('');
+    $$('.item-destaque').forEach((b, i) => b.addEventListener('click', () => {
+      mostrarDestaque(i);
+      if (window.innerWidth < 900) telaDestaque.scrollIntoView({ behavior: reduzMovimento ? 'auto' : 'smooth', block: 'center' });
+    }));
+    mostrarDestaque(0);
+
+    /* ---------- Nichos ---------- */
+    const todosVideos = nichos.flatMap((n) => n.videos);
+    const abasDados = [{ nome: 'Todos', descricao: 'Todos os trabalhos, de todos os nichos.', videos: todosVideos }, ...nichos];
+    $('#abas').innerHTML = abasDados.map((n, i) =>
+      `<button class="aba" type="button" aria-pressed="${i === 0}" data-i="${i}">${esc(n.nome)} <b>${n.videos.length}</b></button>`
+    ).join('');
+
+    function mostrarNicho(i) {
+      const n = abasDados[i];
+      $$('.aba').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.i === i)));
+      $('#nicho-desc').innerHTML = `<h3>${esc(n.nome)}</h3><p>${n.videos.length} ${n.videos.length === 1 ? 'vídeo' : 'vídeos'} · ${esc(n.descricao)}</p>`;
+      $('#grade-videos').innerHTML = n.videos.map((v, k) => {
+        const capa = capaDe(v, 'sddefault');
+        return `
+        <button class="card-video ${reduzMovimento ? '' : 'entrando'}" type="button" style="animation-delay:${Math.min(k, 8) * 40}ms" data-k="${k}" ${v.link ? '' : 'disabled'}
+          aria-label="${v.link ? 'Assistir: ' : ''}${esc(v.titulo)}, ${esc(v.sobre)}${v.link ? '' : ', em breve'}">
+          <span class="capa-video ${capa ? '' : (v.degrade || 'g1')}">
+            ${imagem(capa)}
+            ${v.link ? iconePlay : '<span class="em-breve">em breve</span>'}
+            ${capa ? '' : '<span class="legenda">vídeo 9:16</span>'}
+          </span>
+          <span class="rodape-card">
+            <strong>${esc(v.titulo)}</strong>
+            <small>${esc(v.sobre)}</small>
+            ${v.tag || v.ano ? `<span class="tags">${v.tag ? `<span class="tag forte">${esc(v.tag)}</span>` : ''}${v.ano ? `<span class="tag">${esc(v.ano)}</span>` : ''}</span>` : ''}
+          </span>
+        </button>`;
+      }).join('');
+      $$('#grade-videos .card-video').forEach((c) => c.addEventListener('click', () => abrirVideo(n.videos[+c.dataset.k])));
+    }
+    $('#abas').addEventListener('click', (e) => { const b = e.target.closest('.aba'); if (b) mostrarNicho(+b.dataset.i); });
+    mostrarNicho(0);
+
+    /* ---------- YouTube (horizontal) ---------- */
+    $('#grade-yt').innerHTML = videosYoutube.map((v, k) => `
+      <button class="card-yt revelar" type="button" style="--atraso:${(k % 3) * .07}s" data-k="${k}" aria-label="Assistir: ${esc(v.titulo)}, ${esc(v.sobre)}">
+        <span class="capa-video g1">${imagem(capaDe(v, 'hq720'))}${iconePlay}</span>
+        <strong>${esc(v.titulo)}</strong>
+        <small>${esc(v.sobre)}</small>
+      </button>`).join('');
+    $$('#grade-yt .card-yt').forEach((c) => c.addEventListener('click', () => abrirVideo(videosYoutube[+c.dataset.k], true)));
+
+    /* ---------- Fotos UGC ---------- */
+    $('#fotos-grade').innerHTML = fotos.map((f, i) => `
+      <figure class="foto-ugc revelar" style="--atraso:${(i % 4) * .06}s">
+        <img src="${esc(f.foto)}" alt="Juliana Araújo em foto UGC: ${esc([f.marca, f.produto].filter(Boolean).join(', '))}" loading="lazy">
+        <figcaption>${f.marca ? `${esc(f.marca)} <span>· ${esc(f.produto)}</span>` : esc(f.produto)}</figcaption>
+      </figure>`).join('');
+
+    /* ---------- Cenários, serviços, métricas e depoimentos ---------- */
+    $('#cenarios-grade').innerHTML = cenarios.map((c, i) => `
+      <li class="cenario revelar" style="--atraso:${i * .07}s">
+        <div class="foto ${c.foto ? '' : c.degrade}">${c.foto ? `<img src="${esc(c.foto)}" alt="Cenário: ${esc(c.nome)}" loading="lazy"${c.posicao ? ` style="object-position:${esc(c.posicao)}"` : ''}>` : '<span class="legenda">foto 3:4</span>'}</div>
+        <h3>${esc(c.nome)}</h3>
+        <p>${esc(c.texto)}</p>
+      </li>`).join('');
+
+    $('#frentes').innerHTML = frentes.map((f, i) => `
+      <article class="frente revelar" style="--atraso:${i * .08}s">
+        <svg class="folha-deco" viewBox="0 0 100 200" aria-hidden="true"><use href="#folha"/></svg>
+        <span class="selo-frente">${esc(f.selo)}</span>
+        <p class="destino">${esc(f.destino)}</p>
+        <h3>${esc(f.titulo)}</h3>
+        <p>${esc(f.texto)}</p>
+        <a class="btn ${i === 1 ? 'btn-ouro' : 'btn-mata'}" href="#contato">Pedir orçamento</a>
+      </article>`).join('');
+    $('#formatos').innerHTML = formatos.map((f) => `<li>${esc(f)}</li>`).join('');
+
+    $('#metricas').innerHTML = metricas.map((m, i) => {
+      const pre = esc(m.prefixo), suf = esc(m.sufixo);
+      const valor = m.valor == null
+        ? `<span class="placeholder" title="Troque pelo seu número no array metricas">${pre}00${suf}</span>`
+        : `<span class="sr">${pre}${formatar(m.valor, m.casas)}${suf}</span><span class="contador" aria-hidden="true" data-valor="${m.valor}" data-casas="${m.casas || 0}" data-pre="${pre}" data-suf="">${pre}${formatar(reduzMovimento ? m.valor : 0, m.casas)}</span>${suf ? `<span class="unidade" aria-hidden="true">${suf}</span>` : ''}`;
+      return `<li class="metrica revelar" style="--atraso:${i * .08}s"><span class="valor">${valor}</span><span class="rotulo">${esc(m.rotulo)}</span></li>`;
+    }).join('');
+
+    $('#lista-depoimentos').innerHTML = depoimentos.map((d, i) => `
+      <figure class="depoimento revelar ${d.grande ? 'grande' : ''}" style="--atraso:${(i % 3) * .08}s">
+        <span class="aspas" aria-hidden="true">“</span>
+        <blockquote><p style="margin:0">${esc(d.texto)}</p></blockquote>
+        <figcaption>
+          ${d.logo
+            ? `<img class="logo-marca ${d.quadrado ? 'quadrado' : ''}" src="${esc(d.logo)}" alt="${esc(d.marca)}" loading="lazy">`
+            : `<strong>${esc(d.marca)}</strong>`}
+          <small>${esc(d.tipo)}</small>
+        </figcaption>
+      </figure>`).join('');
+
+    $('#ano').textContent = new Date().getFullYear();
+
+    // Contagem da Black Friday na faixa do topo
+    if (typeof window.diasBlack === 'number') {
+      const d = window.diasBlack;
+      $('#faltam-dias').textContent = d === 0 ? 'É hoje!' : d === 1 ? 'Falta 1 dia' : `Faltam ${d} dias`;
+    }
+
+    /* ---------- Ondas entre as seções (usam as cores que cada seção já tem) ---------- */
+    const formasOnda = [
+      'M0 0H1440V40C1190 72 950 80 720 62S250 20 0 48Z',
+      'M0 0H1440V54C1210 30 990 20 760 38S290 78 0 52Z'
+    ];
+    const fundoPagina = getComputedStyle(document.body).backgroundColor;
+    const corDe = (el, fim) => {
+      if (fim && el.dataset.corFim) return el.dataset.corFim;
+      const c = getComputedStyle(el).backgroundColor;
+      return c === 'rgba(0, 0, 0, 0)' || c === 'transparent' ? fundoPagina : c;
+    };
+    const blocos = [...$$('main > section'), $('.rodape')];
+    blocos.forEach((bloco, i) => {
+      const prox = blocos[i + 1];
+      if (!prox) return;
+      const cima = corDe(bloco, true), baixo = corDe(prox, false);
+      if (cima === baixo) return;
+      const onda = document.createElement('div');
+      onda.className = 'onda';
+      onda.setAttribute('aria-hidden', 'true');
+      onda.style.background = baixo;
+      onda.innerHTML = `<svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="${cima}" d="${formasOnda[i % 2]}"/></svg>`;
+      bloco.after(onda);
+    });
+
+    /* ---------- Animação de entrada e contadores ---------- */
+    function animarContador(el) {
+      const final = parseFloat(el.dataset.valor), casas = +el.dataset.casas, pre = el.dataset.pre, suf = el.dataset.suf;
+      let inicio = null;
+      function passo(t) {
+        if (!inicio) inicio = t;
+        const p = Math.min((t - inicio) / 1800, 1);
+        el.textContent = pre + formatar(final * (1 - Math.pow(1 - p, 3)), casas) + suf;
+        if (p < 1) requestAnimationFrame(passo);
+      }
+      requestAnimationFrame(passo);
+    }
+    const revelaveis = $$('.revelar'), contadores = $$('.contador');
+    if ('IntersectionObserver' in window && !reduzMovimento) {
+      const obs = new IntersectionObserver((ents) => ents.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('visivel'); obs.unobserve(en.target); }
+      }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+      revelaveis.forEach((el) => obs.observe(el));
+      // a capa aparece logo ao abrir; o resto entra conforme a rolagem
+      setTimeout(() => $$('#inicio .revelar').forEach((el) => el.classList.add('visivel')), 60);
+      const obsC = new IntersectionObserver((ents) => ents.forEach((en) => {
+        if (en.isIntersecting) { animarContador(en.target); obsC.unobserve(en.target); }
+      }), { threshold: .6 });
+      contadores.forEach((el) => obsC.observe(el));
+    } else {
+      revelaveis.forEach((el) => el.classList.add('visivel'));
+    }
+
+    /* ---------- Topo, menu ativo e barra de baixo ---------- */
+    const topo = $('#topo');
+    const aoRolar = () => topo.classList.toggle('rolou', window.scrollY > 20);
+    window.addEventListener('scroll', aoRolar, { passive: true }); aoRolar();
+
+    if ('IntersectionObserver' in window) {
+      const linksMenu = $$('#menu a:not(.btn)'), linksBarra = $$('.barra a');
+      const obsMenu = new IntersectionObserver((ents) => ents.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const id = en.target.id;
+        linksMenu.forEach((a) => a.classList.toggle('ativo', a.getAttribute('href') === '#' + id));
+        linksBarra.forEach((a) => a.classList.toggle('ativo', a.dataset.secao === id));
+      }), { rootMargin: '-45% 0px -50% 0px' });
+      $$('main > section').forEach((s) => obsMenu.observe(s));
+    }
+
+    const botaoMais = $('#botao-mais'), folhaMais = $('#folha-mais');
+    function fecharMais() { folhaMais.classList.remove('aberta'); botaoMais.setAttribute('aria-expanded', 'false'); }
+    botaoMais.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const abrir = !folhaMais.classList.contains('aberta');
+      folhaMais.classList.toggle('aberta', abrir);
+      botaoMais.setAttribute('aria-expanded', String(abrir));
+      if (abrir) $('a', folhaMais).focus();
+    });
+    folhaMais.addEventListener('click', (e) => { if (e.target.closest('a')) fecharMais(); });
+    document.addEventListener('click', (e) => { if (!folhaMais.contains(e.target)) fecharMais(); });
+
+    /* ---------- Copiar e-mail ---------- */
+    $('#copiar-email').addEventListener('click', async (e) => {
+      const b = e.currentTarget;
+      try { await navigator.clipboard.writeText('julianaaraujougc@gmail.com'); b.textContent = 'copiado!'; }
+      catch (err) { b.textContent = 'copie ao lado'; }
+      setTimeout(() => { b.textContent = 'copiar e-mail'; }, 2200);
+    });
+
+    /* ---------- Janelas (vídeo e mídia kit) ---------- */
+    let janelaAberta = null, focoAnterior = null;
+    function abrirJanela(fundo, focar) {
+      focoAnterior = document.activeElement;
+      janelaAberta = fundo;
+      fundo.hidden = false;
+      requestAnimationFrame(() => fundo.classList.add('aberto'));
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => (focar || $('[data-fechar]', fundo)).focus(), 60);
+    }
+    function fecharJanela() {
+      const fundo = janelaAberta;
+      if (!fundo) return;
+      janelaAberta = null;
+      fundo.classList.remove('aberto');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        if (janelaAberta === fundo) return; // foi aberta de novo nesse meio tempo
+        fundo.hidden = true;
+        if (fundo.id === 'modal-video') $('#tela-modal').innerHTML = ''; // para o vídeo
+      }, reduzMovimento ? 0 : 300);
+      if (focoAnterior && focoAnterior.focus) focoAnterior.focus();
+    }
+    $$('.fundo-modal').forEach((f) => {
+      f.addEventListener('click', (e) => { if (e.target === f || e.target.closest('[data-fechar]')) fecharJanela(); });
+    });
+
+    function abrirVideo(v, horizontal = false) {
+      const info = lerLink(v.link);
+      if (!info) return;
+      if (info.tipo === 'externo') { window.open(info.src, '_blank', 'noopener'); return; }
+      const tela = $('#tela-modal');
+      tela.className = 'tela ' + (v.degrade || 'g1');
+      $('#caixa-video').classList.toggle('horizontal', horizontal);
+      $('#video-titulo').textContent = `${v.titulo} · ${v.sobre}`;
+      $('#video-link').href = v.link;
+      tocar(tela, v);
+      abrirJanela($('#modal-video'));
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (janelaAberta) fecharJanela();
+        else if (folhaMais.classList.contains('aberta')) { fecharMais(); botaoMais.focus(); }
+      }
+      // mantém o foco do teclado dentro da janela aberta
+      if (e.key === 'Tab' && janelaAberta) {
+        const focaveis = $$('button, a[href], input, select, textarea, iframe, video', janelaAberta)
+          .filter((el) => el.offsetParent !== null && el.tabIndex >= 0);
+        if (!focaveis.length) return;
+        const primeiro = focaveis[0], ultimo = focaveis[focaveis.length - 1];
+        if (e.shiftKey && document.activeElement === primeiro) { e.preventDefault(); ultimo.focus(); }
+        else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primeiro.focus(); }
+      }
+    });
+
+    // Mídia kit: aparece depois de 7 segundos, uma vez por visita
+    const CHAVE = 'midiaKitMostrado';
+    const jaMostrou = () => { try { return sessionStorage.getItem(CHAVE) === '1'; } catch (e) { return false; } };
+    if (!jaMostrou()) setTimeout(() => {
+      if (jaMostrou() || janelaAberta) return;
+      try { sessionStorage.setItem(CHAVE, '1'); } catch (e) { /* navegador sem armazenamento */ }
+      abrirJanela($('#modal-kit'), $('#k-nome'));
+    }, 7000);
+
+    /* ---------- Formulários ---------- */
+    function validar(form) {
+      let ok = true, primeiro = null;
+      $$('[required]', form).forEach((campo) => {
+        const erro = document.getElementById(campo.id + '-erro');
+        let msg = '';
+        if (!campo.value.trim()) msg = 'Preencha este campo.';
+        else if (campo.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value.trim())) msg = 'Confira o e-mail, parece que falta alguma coisa.';
+        campo.setAttribute('aria-invalid', msg ? 'true' : 'false');
+        if (erro) erro.textContent = msg;
+        if (msg) { ok = false; primeiro = primeiro || campo; }
+      });
+      if (primeiro) primeiro.focus();
+      return ok;
+    }
+    const formContato = $('#form-contato'), contatoSucesso = $('#contato-sucesso');
+    formContato.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!validar(formContato)) return;
+      formContato.hidden = true; contatoSucesso.hidden = false; contatoSucesso.focus(); formContato.reset();
+    });
+    $('#nova-mensagem').addEventListener('click', () => { contatoSucesso.hidden = true; formContato.hidden = false; $('#c-nome').focus(); });
+
+    const formKit = $('#form-kit'), kitSucesso = $('#kit-sucesso');
+    formKit.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!validar(formKit)) return;
+      formKit.hidden = true; kitSucesso.hidden = false; kitSucesso.focus();
+      setTimeout(fecharJanela, 3500);
+    });
+  </script>
+</body>
+</html>
