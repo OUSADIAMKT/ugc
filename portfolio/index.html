@@ -534,6 +534,7 @@
     .campo [aria-invalid="true"] { border-color: #b3261e; }
     .erro { color: #b3261e; font-size: .8rem; margin: .3rem 0 0; }
     .erro:empty { display: none; }
+    .erro-envio { margin: 0 0 .9rem; }
     .cartao-form form .btn, .modal form .btn { width: 100%; }
     .sucesso { text-align: center; padding: 1.5rem 0; }
     .sucesso .icone { width: 64px; height: 64px; border-radius: 50%; background: var(--mata); color: var(--ouro-claro); display: grid; place-items: center; margin: 0 auto 1.2rem; }
@@ -605,8 +606,14 @@
     }
     @media (max-width: 899px) {
       .capa-grade, .sobre-cartao, .contato-grade, .destaque-grade { grid-template-columns: 1fr; }
-      .capa-foto { width: min(100%, 360px); margin-top: 1rem; }
-      .selo-giro { width: 104px; height: 104px; right: -8px; }
+      /* celular: a sua foto vem primeiro, à direita, e o nome entra por cima da parte de baixo dela */
+      .capa { padding-top: calc(var(--topo) + var(--aviso) + .25rem); }
+      .capa-grade { display: flex; flex-direction: column; gap: 0; }
+      .capa-grade > div:first-child { position: relative; z-index: 2; }
+      .capa-foto { order: -1; align-self: flex-end; justify-self: auto; width: min(76%, 340px); margin: 0 -6px -110px 0; }
+      .recorte { -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+      .brilho { left: -30%; right: -20%; }
+      .selo-giro { width: 92px; height: 92px; right: auto; left: calc(-1 * min(22vw, 92px) - 14px); top: 22px; }
       .palco { position: relative; top: 0; max-width: 360px; width: 100%; margin-inline: auto; }
       .depoimentos { grid-template-columns: 1fr; }
       .depoimento, .depoimento.grande { grid-column: auto; }
@@ -945,8 +952,8 @@
 
         <div class="cartao-form revelar" style="--atraso:.1s">
           <!--
-            FORMULÁRIO: hoje ele mostra a confirmação na tela, mas ainda não envia a mensagem.
-            Para receber no seu e-mail, crie um formulário grátis no Formspree (formspree.io) e me peça para ligar aqui.
+            FORMULÁRIO: a mensagem é enviada para o seu e-mail pelo FormSubmit (formsubmit.co), sem conta.
+            O endereço que recebe fica em EMAIL_DESTINO, no começo do script.
           -->
           <form id="form-contato" novalidate>
             <h3>Se preferir, responde <em>por aqui</em></h3>
@@ -985,6 +992,8 @@
               <textarea id="c-msg" name="mensagem" required aria-describedby="c-msg-erro" placeholder="Produto, objetivo e prazo."></textarea>
               <p class="erro" id="c-msg-erro" aria-live="polite"></p>
             </div>
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <p class="erro erro-envio" id="c-envio" role="alert"></p>
             <button class="btn btn-mata" type="submit">Enviar mensagem</button>
           </form>
           <div class="sucesso" id="contato-sucesso" hidden tabindex="-1">
@@ -1055,7 +1064,7 @@
       <button class="fechar" type="button" data-fechar aria-label="Fechar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
-      <!-- MÍDIA KIT: hoje mostra a confirmação na tela, mas não envia os dados. Dá para ligar ao Formspree ou Mailchimp. -->
+      <!-- MÍDIA KIT: o nome e o e-mail de quem pede chegam no seu e-mail, pelo FormSubmit. -->
       <div class="topo-kit">
         <svg class="palmeira" viewBox="0 0 300 300" aria-hidden="true"></svg>
         <p class="kicker">Presente para marcas</p>
@@ -1073,6 +1082,8 @@
           <input id="k-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="k-email-erro">
           <p class="erro" id="k-email-erro" aria-live="polite"></p>
         </div>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <p class="erro erro-envio" id="k-envio" role="alert"></p>
         <button class="btn btn-mata" type="submit">Quero receber</button>
         <p class="nota">Nada de caixa de entrada lotada: só o mídia kit e, de vez em quando, uma novidade boa.</p>
       </form>
@@ -1097,6 +1108,10 @@
        junto com o site e coloque o caminho no campo "capa", ex.: "fotos/minha-capa.jpg".
        Vídeo sem link aparece como "em breve".
        ===================================================================== */
+
+    /* E-mail que recebe as mensagens dos dois formulários (contato e mídia kit).
+       Na primeira mensagem de teste o FormSubmit manda um e-mail pedindo para você confirmar. Clique no link uma vez. */
+    const EMAIL_DESTINO = "julianaaraujougc@gmail.com";
 
     /* Marcas da faixa da capa, cada uma num círculo.
        logo: arquivo na pasta "fotos/marcas". alto: true para logos mais altos que largos (ganham mais espaço). */
@@ -1665,11 +1680,40 @@
       if (primeiro) primeiro.focus();
       return ok;
     }
+    /* ---------- Envio para o seu e-mail (FormSubmit) ---------- */
+    async function enviarParaEmail(assunto, campos) {
+      const resp = await fetch('https://formsubmit.co/ajax/' + EMAIL_DESTINO, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ _subject: assunto, _template: 'table', _captcha: 'false', ...campos })
+      });
+      const dados = await resp.json().catch(() => ({}));
+      if (!resp.ok || String(dados.success) === 'false') throw new Error(dados.message || 'falha no envio');
+    }
+    // Trata o envio: bloqueia o botão, manda, e mostra o erro com os outros contatos se não der
+    async function tratarEnvio(form, avisoErro, assunto, campos, aoTerminar) {
+      const botao = $('button[type="submit"]', form), textoBotao = botao.textContent;
+      avisoErro.textContent = '';
+      botao.disabled = true; botao.textContent = 'Enviando...';
+      try {
+        if (!($('[name="_honey"]', form).value)) await enviarParaEmail(assunto, campos); // campo escondido preenchido = robô, não envia
+        aoTerminar();
+      } catch (err) {
+        avisoErro.textContent = 'Não consegui enviar agora. Me chame no WhatsApp, (93) 99228-2674, ou escreva para ' + EMAIL_DESTINO + '.';
+      } finally {
+        botao.disabled = false; botao.textContent = textoBotao;
+      }
+    }
+
     const formContato = $('#form-contato'), contatoSucesso = $('#contato-sucesso');
     formContato.addEventListener('submit', (e) => {
       e.preventDefault();
       if (!validar(formContato)) return;
-      formContato.hidden = true; contatoSucesso.hidden = false; contatoSucesso.focus(); formContato.reset();
+      const v = (id) => $(id).value.trim();
+      tratarEnvio(formContato, $('#c-envio'), 'Novo contato pelo portfólio: ' + v('#c-nome'), {
+        nome: v('#c-nome'), email: v('#c-email'), marca: v('#c-marca') || '(não informou)',
+        formato: $('#c-formato').value || '(não escolheu)', mensagem: v('#c-msg')
+      }, () => { formContato.hidden = true; contatoSucesso.hidden = false; contatoSucesso.focus(); formContato.reset(); });
     });
     $('#nova-mensagem').addEventListener('click', () => { contatoSucesso.hidden = true; formContato.hidden = false; $('#c-nome').focus(); });
 
@@ -1677,8 +1721,10 @@
     formKit.addEventListener('submit', (e) => {
       e.preventDefault();
       if (!validar(formKit)) return;
-      formKit.hidden = true; kitSucesso.hidden = false; kitSucesso.focus();
-      setTimeout(fecharJanela, 3500);
+      const v = (id) => $(id).value.trim();
+      tratarEnvio(formKit, $('#k-envio'), 'Pedido do mídia kit: ' + v('#k-nome'), {
+        nome: v('#k-nome'), email: v('#k-email'), pedido: 'Quer receber o mídia kit completo'
+      }, () => { formKit.hidden = true; kitSucesso.hidden = false; kitSucesso.focus(); formKit.reset(); setTimeout(fecharJanela, 3500); });
     });
   </script>
 </body>
