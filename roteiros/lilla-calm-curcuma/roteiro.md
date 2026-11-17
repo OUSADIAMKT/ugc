@@ -8,12 +8,16 @@
 
 ## Conceito
 
-**"Cuidado de vó, ativo de alta performance."**
-Andiroba e copaíba são da memória de quem cresceu no Norte. A Juliana, que é de Alenquer e vive em Altamira, apresenta os dois produtos como um **ritual de 2 passos para pele sensível**: limpar sem agredir (Calm) e iluminar (Cúrcuma + AH). Luz dourada de fim de tarde, que conversa com a "energia solar" da cúrcuma que a marca usa no post.
+**"Ritual Solar · o luxo do essencial."**
+Um ritual de 2 gestos para pele sensível, com cara de skincare de alta performance: o **Sabonete Calm** limpa com delicadeza e o **Sérum Cúrcuma + AH** devolve a luz. A sofisticação vem da precisão (menos passos, ativos certos), da biodiversidade brasileira tratada como ingrediente de luxo e de uma estética editorial: luz dourada, gestos lentos, texturas em macro. A Juliana fala de andiroba e copaíba com propriedade de quem é da Amazônia, sem folclore.
 
-**Estilo de edição:** UGC natural, câmera na mão e no tripé alternados, cortes secos a cada 2–3 s, legenda dinâmica em todas as falas, 1 texto de apoio por cena. Sons reais (clique da válvula, gota caindo, água) bem audíveis. Trilha leve e orgânica, baixa embaixo da voz.
+**Tom de voz:** a Juliana em versão refinada. Frases curtas e seguras, sem gíria e sem "mana", mantendo o "tu" (é a assinatura dela). Fala pausada, quase confidencial, como quem apresenta um ritual e não um achadinho.
 
-**Referência de gancho:** a marca mandou o post-carrossel da Cúrcuma (fundo claro, frasco em close, frases curtas em laranja com 1 a 2 palavras em caixa alta). Não veio vídeo. Uso essa linguagem nos textos na tela (laranja, palavras-chave em CAIXA ALTA) e abro com o rosto da Juliana + o produto em close nos primeiros 2 s.
+**Estilo de edição:** editorial e cadenciado. Cortes no tempo da trilha (piano ou ambient minimalista, baixo), 2 momentos em câmera lenta, macros de textura, 1 s de silêncio antes do resultado. Legenda discreta em serifa fina, sem caixas coloridas. Sons reais sutis (válvula, gota, água). Sem transições chamativas nem zoom digital.
+
+**Direção de arte:** superfícies de pedra clara ou travertino, linho off-white, vidro, uma folha verde e cúrcuma fresca cortada. Sombra de folhagem projetada pela luz da janela. Figurino em seda ou linho creme, brincos dourados, cabelo solto. Pele real, sem filtro de pele.
+
+**Referência de gancho:** a marca mandou o post-carrossel da Cúrcuma (fundo claro, frasco herói em close, frases curtas em laranja). Não veio vídeo. Uso o frasco como herói e a "energia solar que ilumina a pele" da legenda como fio condutor: o vídeo abre com a gota âmbar contra a luz.
 
 ---
 
@@ -21,25 +25,25 @@ Andiroba e copaíba são da memória de quem cresceu no Norte. A Juliana, que é
 
 | # | Tempo | ÁUDIO / fala | IMAGEM / direção | Texto na tela |
 |---|---|---|---|---|
-| 1. Gancho | 0–4 s | "Andiroba e copaíba. Quem é do Norte sabe: isso aqui é cuidado de vó. E agora tá na minha rotina de skincare." | Close do rosto, luz dourada lateral. Ela levanta o Sabonete Calm até a altura do rosto e aponta o rótulo "hamamélis + andiroba + copaíba". Corte seco no "skincare" para o sérum entrando no quadro pela outra mão. | **CUIDADO DE VÓ** na minha rotina de skincare |
-| 2. Apresentação da solução | 4–9 s | "Mana, pele sensível não precisa de mil passos. Precisa limpar sem agredir e tratar com ativo que respeita a pele." | Plano médio no banheiro/penteadeira com plantas (luz natural). Ela fala direto pra câmera, gesto de "dois" com os dedos. | Pele sensível? **2 PASSOS** |
-| 3. Apresentação do produto | 9–15 s | "Essa é a dupla da Lillá: o Sabonete Calm e o Sérum Cúrcuma mais ácido hialurônico. Cosmético natural, vegano e feito à mão." | Plano detalhe dos dois produtos lado a lado em superfície clara (madeira clara ou pedra), folhas verdes e uma rodela de cúrcuma fresca ao lado. Mão dela gira o frasco do sérum para a luz: o líquido âmbar acende. | Sabonete Calm + Sérum Cúrcuma + AH · **@lilla_biocosmetics** |
-| 4. Ativos e benefícios | 15–28 s | "O Calm tem hamamélis, andiroba e copaíba e é livre de sulfato, parabeno, silicone e petrolato. Limpa sem repuxar. Já o sérum junta a cúrcuma, que é antioxidante, com o ácido hialurônico, que hidrata. É ele que deixa minha pele com esse viço." | 3 cortes: (a) macro da válvula liberando o sabonete na palma; (b) espuma suave sendo espalhada no rosto, olhos fechados, expressão de alívio; (c) macro do conta-gotas: gota âmbar caindo na ponta dos dedos, contra a luz. | (a) **LIVRE** de sulfato, parabeno, silicone e petrolato · (c) Cúrcuma = **DEFESA ANTIOXIDANTE** · AH = **HIDRATAÇÃO** |
-| 5. Praticidade / diferencial | 28–36 s | "E é rapidinho: lavo, seco, [3] gotinhas do sérum e pronto. Cabe até na correria de manhã. E o que eu mais gosto: ativo da nossa biodiversidade com cara de skincare de alta performance." | Sequência em ritmo rápido (jump cuts): enxágue com água, toalha batendo de leve no rosto, gotas do sérum aplicadas com batidinhas nas maçãs do rosto. Fecha com ela segurando os dois frascos. | lava → seca → **[3] gotas** |
-| 6. Demonstração do resultado | 36–45 s | "Olha a textura... absorve rápido, não pesa, e a pele fica hidratada, macia e com esse brilho bonito, sabe? Brilho de pele saudável, não de oleosidade." | Ela vai até a janela/varanda, luz dourada de fim de tarde no rosto. Câmera aproxima devagar. Ela toca a bochecha e sorri. Plano final de perfil mostrando o viço. **Sem antes e depois** e sem filtro de pele. | Pele **HIDRATADA** e com **VIÇO** |
-| 7. Encerramento / CTA | 45–52 s | "Se tua pele também é sensível, bora conhecer: é lillabio.com.br, e na primeira compra tem o cupom OILILLÁ. Me conta aqui: tu já conhecia andiroba no skincare?" | Plano médio, ela segurando os dois produtos perto do rosto, sorrindo. Último frame: produtos sobre a superfície com folhas, cartela final. | **lillabio.com.br** · Cupom **OILILLÁ** na 1ª compra [confirmar] · @lilla_biocosmetics |
+| 1. Gancho | 0–4 s | *(1 s só com o som da gota)* "O ritual mais sofisticado da minha rotina tem só dois passos." | Abre em macro, câmera lenta: uma gota âmbar do sérum cai contra a luz do sol. Corte para close da Juliana, luz dourada lateral, olhar direto para a câmera, frasco na altura do rosto. | ritual *solar* |
+| 2. Apresentação da solução | 4–10 s | "Pele sensível não pede excesso. Pede precisão: uma limpeza delicada e um ativo que devolve luz." | Plano médio na penteadeira clara, roupão de linho, luz de janela com sombra de folhagem. Gestos lentos, ela prende o cabelo. | menos, e *melhor* |
+| 3. Apresentação do produto | 10–16 s | "Sabonete Calm e Sérum Cúrcuma + AH, da Lillá. Cosmética natural, vegana, de alta performance. E feita à mão." | Still life editorial: os dois frascos sobre pedra clara, cúrcuma fresca cortada, uma folha. Câmera desliza devagar (slider ou mão firme). A mão dela entra e gira o sérum: o líquido âmbar acende na luz. | LILLÁ · *biocosmetics* |
+| 4. Ativos e benefícios | 16–30 s | "No Calm, hamamélis, andiroba e copaíba, ativos da nossa biodiversidade que eu conheço desde sempre, numa limpeza sem sulfato, sem parabeno, sem silicone. No sérum, a cúrcuma, antioxidante, encontra o ácido hialurônico. Proteção e hidratação na mesma gota." | 3 macros: (a) válvula liberando o sabonete na palma, textura dourada; (b) espuma leve espalhada no rosto, olhos fechados; (c) conta-gotas cheio contra a luz, gota descendo devagar até a ponta dos dedos. | (a) hamamélis · andiroba · copaíba (c) cúrcuma + *ácido hialurônico* |
+| 5. Praticidade / diferencial | 30–38 s | "Dois gestos, menos de um minuto. A textura é sedosa, absorve na hora e não deixa nada sobre a pele. Só a sensação de cuidado." | Enxágue em câmera lenta, toalha de linho pressionada no rosto. Sérum aplicado com as palmas, em pressão suave (sem batidinhas rápidas). Fecha com as mãos emoldurando o rosto. | dois *gestos* |
+| 6. Demonstração do resultado | 38–46 s | *(1 s de silêncio)* "E o que fica, tu vê: pele hidratada, uniforme e com luz própria." | Ela vai até a janela ou varanda, golden hour. A câmera se aproxima devagar até o perfil. A luz desliza pela maçã do rosto, mostrando o viço. Sem antes e depois, sem filtro. | luz *própria* |
+| 7. Encerramento / CTA | 46–54 s | "O meu ritual solar está em lillabio.com.br. Na primeira compra, usa o cupom OILILLÁ." | Plano médio, ela segura os dois frascos com calma, sorriso leve. Último frame: still life dos produtos com a sombra da folha, cartela final limpa. | lillabio.com.br · cupom OILILLÁ [confirmar] · @lilla_biocosmetics |
 
 ---
 
 ## Ganchos alternativos (para teste A/B)
 
-1. **Identificação:** "Pele sensível que arde com qualquer sabonete? Mana, vem cá que eu achei a dupla."
-2. **Curiosidade (cúrcuma):** "Tu já passou cúrcuma no rosto? Calma, não é a do tempero da cozinha." *(mostrando o sérum âmbar contra a luz)*
-3. **Visual / ASMR:** sem fala nos 2 primeiros segundos, só o som da gota âmbar caindo em câmera lenta + texto "a gota mais bonita do meu skincare".
+1. **Desejo:** "Luxo, pra mim, é uma pele que não precisa de filtro."
+2. **Origem:** "O ingrediente mais sofisticado do skincare nasceu aqui, na nossa biodiversidade. E eu te mostro em dois passos."
+3. **Visual / ASMR:** sem fala nos 2 primeiros segundos, só a gota âmbar caindo em câmera lenta e o texto "a gota mais bonita do meu skincare".
 
 ## Corte de 15 s (anúncio)
 
-Cena 1 (gancho, 3 s) → cena 4c (gota âmbar, 3 s) → cena 5 (rotina rápida, 4 s) → cena 6 (viço na luz, 2 s) → CTA curto: "lillabio.com.br, cupom OILILLÁ na primeira compra." (3 s).
+Cena 1 (gota + gancho, 4 s) → cena 4c (conta-gotas contra a luz, 3 s) → cena 5 (aplicação com as palmas, 3 s) → cena 6 (luz no perfil, 2 s) → CTA: "Ritual solar Lillá. lillabio.com.br, cupom OILILLÁ." (3 s).
 
 ---
 
@@ -48,16 +52,16 @@ Cena 1 (gancho, 3 s) → cena 4c (gota âmbar, 3 s) → cena 5 (rotina rápida, 
 - [ ] A-roll: falas 1 a 7 de frente, tripé, luz da janela (gravar 2 versões de cada fala)
 - [ ] Macro da válvula do Calm + espuma na palma
 - [ ] Rosto ensaboando / enxaguando / toalha
-- [ ] Macro do conta-gotas e da gota âmbar contra a luz (câmera lenta, 60 fps)
-- [ ] Aplicação do sérum com batidinhas
-- [ ] Flatlay dos dois produtos com folhas e cúrcuma fresca
+- [ ] Macro do conta-gotas e da gota âmbar contra a luz (câmera lenta, 60 ou 120 fps)
+- [ ] Aplicação do sérum com as palmas, em pressão suave
+- [ ] Still life dos dois produtos sobre pedra clara, com sombra de folhagem e cúrcuma fresca
 - [ ] Golden hour: rosto de perfil, mão na bochecha, sorriso
 - [ ] Respiro de território (opcional, 1 s): planta, rio ou varanda, pra marcar que ela fala da Amazônia
 
 ## Do's & Don'ts (propostos, até a marca mandar os dela)
 
-**Fazer:** pele real, sem filtro de pele; mostrar rótulo legível; falar "Lillá" e "@lilla_biocosmetics"; luz natural; som real dos produtos.
-**Evitar:** prometer resultado milagroso ou "clareia manchas em X dias"; antes e depois sem autorização; chamar de "tratamento" ou "remédio"; dizer que serve para doença de pele (rosácea, dermatite) sem a marca liberar; mostrar outras marcas no quadro.
+**Fazer:** pele real, sem filtro de pele; ritmo lento e editorial; legenda em serifa discreta; mostrar rótulo legível; falar "Lillá" e "@lilla_biocosmetics"; luz natural; som real dos produtos.
+**Evitar:** gírias, tom de "achadinho", cortes acelerados e textos em caixas coloridas; prometer resultado milagroso ou "clareia manchas em X dias"; antes e depois sem autorização; chamar de "tratamento" ou "remédio"; dizer que serve para doença de pele (rosácea, dermatite) sem a marca liberar; mostrar outras marcas no quadro.
 
 ---
 
