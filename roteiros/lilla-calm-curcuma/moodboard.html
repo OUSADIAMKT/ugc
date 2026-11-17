@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Mood board · Lillá Calm + Cúrcuma · Juliana Araújo</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --laranja:#F47920; --curcuma:#F6A52F; --ambar:#CB5A00; --azul:#045683;
+    --semente:#481C11; --off:#FEFBFA; --creme:#F8EFE4; --tinta:#2E2A27; --linha:#EAD9C6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1440px;background:var(--off);color:var(--tinta);font-family:'Jost',sans-serif;font-weight:300}
+  .board{position:relative;padding:72px 80px 64px;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;pointer-events:none}
+  h1,h2,h3{font-weight:400}
+  .meta{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--ambar)}
+  .script{font-family:'Parisienne',cursive;color:var(--laranja)}
+  .serif{font-family:'Cormorant Garamond',serif}
+  .sec{position:relative;margin-top:64px}
+  .sec-t{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--linha);padding-bottom:12px;margin-bottom:28px}
+  .sec-t .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--laranja)}
+  .sec-t h2{font-size:15px;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
+  .sec-t small{margin-left:auto;font-size:14px;color:#8b7d70}
+
+  /* header */
+  .head{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+  .brand{font-size:58px;letter-spacing:.32em;font-weight:200;line-height:1}
+  .brand sub{display:block;font-size:14px;letter-spacing:.42em;margin-top:8px;font-weight:400;color:#6d625a}
+  .x{font-size:15px;letter-spacing:.3em;text-transform:uppercase;margin:26px 0 8px;font-weight:500}
+  .title{font-family:'Cormorant Garamond',serif;font-size:78px;line-height:.98;letter-spacing:-.01em;margin-top:28px}
+  .title em{font-style:italic;color:var(--laranja)}
+  .lead{font-size:21px;line-height:1.5;max-width:640px;margin-top:22px}
+  .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .tag{border:1px solid var(--laranja);color:var(--ambar);border-radius:40px;padding:7px 16px;font-size:14px;letter-spacing:.06em;font-weight:400}
+  .tag.f{background:var(--laranja);color:#fff}
+  .hero{position:relative;height:560px}
+  .hero .p1{position:absolute;left:0;top:0;width:300px;height:420px;object-fit:cover;border-radius:180px 180px 6px 6px}
+  .hero .p2{position:absolute;right:0;top:110px;width:260px;height:390px;object-fit:cover;border-radius:6px}
+  .hero .prod{position:absolute;left:210px;bottom:-6px;width:210px;background:#fff;padding:10px;border-radius:6px;box-shadow:0 14px 40px rgba(72,28,17,.12)}
+  .hero .hand{position:absolute;right:20px;top:40px;font-size:34px;transform:rotate(-6deg)}
+
+  /* palette */
+  .pal{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+  .sw{border-radius:6px;overflow:hidden;border:1px solid var(--linha);background:#fff}
+  .sw i{display:block;height:120px}
+  .sw div{padding:12px 14px;font-size:14px;line-height:1.35}
+  .sw b{display:block;font-weight:500;font-size:15px}
+  .type{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+  .type div{background:var(--creme);border-radius:6px;padding:18px 22px;font-size:14px;color:#6d625a}
+  .type span{display:block;color:var(--tinta);margin-bottom:6px}
+
+  /* products */
+  .prods{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .pc{display:grid;grid-template-columns:200px 1fr;gap:26px;background:#fff;border:1px solid var(--linha);border-radius:8px;padding:24px;align-items:center}
+  .pc img{width:200px;height:260px;object-fit:contain}
+  .pc h3{font-size:26px;letter-spacing:.08em;font-weight:300}
+  .pc .pr{color:var(--laranja);font-weight:500;font-size:20px;margin:6px 0 12px}
+  .pc ul{list-style:none;font-size:16px;line-height:1.55}
+  .pc li::before{content:'— ';color:var(--curcuma)}
+
+  /* photos */
+  .photos{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .ph img{width:100%;height:330px;object-fit:cover;border-radius:6px;display:block}
+  .ph p{font-size:14px;line-height:1.4;margin-top:10px;color:#5e544d}
+  .ph p b{color:var(--tinta);font-weight:500}
+
+  /* reference */
+  .ref{display:grid;grid-template-columns:380px 1fr;gap:40px;align-items:start}
+  .ref img{width:100%;border-radius:6px;border:1px solid var(--linha)}
+  .ref h3{font-family:'Cormorant Garamond',serif;font-size:36px;line-height:1.1}
+  .ref h3 em{color:var(--laranja)}
+  .ref p{font-size:17px;line-height:1.55;margin-top:14px}
+  .hooks{margin-top:22px;display:grid;gap:12px}
+  .hook{background:var(--creme);border-left:3px solid var(--laranja);padding:14px 18px;font-size:16px;line-height:1.45;border-radius:0 6px 6px 0}
+  .hook b{font-weight:500;color:var(--ambar);letter-spacing:.08em;font-size:12px;text-transform:uppercase;display:block;margin-bottom:3px}
+  .ost{display:inline-block;margin-top:18px;background:#fff;border:1px dashed var(--laranja);padding:14px 20px;font-size:16px;border-radius:6px}
+  .ost strong{color:var(--laranja);font-weight:600}
+
+  /* script */
+  .scenes{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+  .sc{background:#fff;border:1px solid var(--linha);border-radius:8px;padding:16px 14px 18px;display:flex;flex-direction:column;position:relative}
+  .sc .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar);font-weight:500}
+  .sc .nm{font-family:'Cormorant Garamond',serif;font-size:42px;font-style:italic;color:var(--laranja);line-height:1;margin:6px 0 2px}
+  .sc h4{font-size:15px;font-weight:500;letter-spacing:.02em;line-height:1.25;min-height:38px}
+  .sc .lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#a0938a;margin-top:12px;font-weight:500}
+  .sc .fala{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.32;font-style:italic;margin-top:4px}
+  .sc .img{font-size:13px;line-height:1.4;margin-top:4px;color:#4f4740}
+  .sc .tx{margin-top:auto;padding-top:12px}
+  .sc .tx span{display:block;background:var(--laranja);color:#fff;font-size:12px;font-weight:500;letter-spacing:.04em;padding:7px 9px;border-radius:4px;line-height:1.3}
+  .sc.hl{background:linear-gradient(180deg,#FFF6EA,#fff 60%);border-color:var(--curcuma)}
+
+  /* benefits */
+  .bens{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+  .ben{background:#fff;border:1px solid var(--linha);border-radius:8px;padding:24px}
+  .ben h3{font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--ambar);margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:var(--creme);padding:7px 13px;border-radius:30px;font-size:14px}
+  .chip.o{background:var(--laranja);color:#fff}
+  .ben ul{list-style:none;font-size:15px;line-height:1.6}
+  .ben li::before{content:'✓ ';color:var(--laranja)}
+  .ben li.no::before{content:'✕ ';color:var(--ambar)}
+
+  .pend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 32px;font-size:15px;line-height:1.45;counter-reset:p}
+  .pend div{counter-increment:p;padding-left:30px;position:relative}
+  .pend div::before{content:counter(p,decimal-leading-zero);position:absolute;left:0;color:var(--laranja);font-weight:500;font-size:13px;top:2px}
+  .foot{margin-top:56px;display:flex;justify-content:space-between;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9a8c80;border-top:1px solid var(--linha);padding-top:18px}
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="blob" style="width:420px;height:420px;right:-120px;top:-140px;background:radial-gradient(circle at 40% 40%,#F6A52F,#F4792055 60%,transparent 72%)"></span>
+  <span class="blob" style="width:260px;height:260px;left:-90px;top:520px;background:radial-gradient(circle,#04568340,#04568310 60%,transparent 72%)"></span>
+  <span class="blob" style="width:300px;height:300px;right:-80px;top:1900px;background:radial-gradient(circle,#F6A52F55,transparent 70%)"></span>
+  <span class="blob" style="width:220px;height:220px;left:-60px;top:2700px;background:radial-gradient(circle,#F4792040,transparent 70%)"></span>
+
+  <!-- HEADER -->
+  <header class="head">
+    <div>
+      <div class="brand">LILLÁ<sub>biocosmetics</sub></div>
+      <p class="x">× Juliana Araújo · UGC</p>
+      <h1 class="title">Cuidado de vó,<br><em>ativo</em> de alta<br>performance.</h1>
+      <p class="lead">Ritual de 2 passos para pele sensível: limpar sem agredir com o <b>Sabonete Calm</b> e iluminar com o <b>Sérum Cúrcuma + AH</b>. Luz dourada, pele real e a memória amazônica da andiroba e da copaíba.</p>
+      <div class="tags">
+        <span class="tag f">Vertical 9:16</span><span class="tag">45–55 s + corte 15 s</span><span class="tag">Reels · TikTok · Ads</span><span class="tag">@lilla_biocosmetics</span>
+      </div>
+    </div>
+    <div class="hero">
+      <img class="p1" src="img/11-sabonetes-por-do-sol.jpg" alt="">
+      <img class="p2" src="img/18-amaue-rio.jpg" alt="">
+      <img class="prod" src="img/produto-serum-curcuma.jpg" alt="Sérum Cúrcuma + AH">
+      <span class="hand script">energia solar</span>
+    </div>
+  </header>
+
+  <!-- PALETA -->
+  <section class="sec">
+    <div class="sec-t"><span class="n">01</span><h2>Paleta da marca</h2><small>tirada do site, do rótulo e do sérum</small></div>
+    <div class="pal">
+      <div class="sw"><i style="background:#F47920"></i><div><b>Laranja Lillá</b>#F47920 · CTA e textos na tela</div></div>
+      <div class="sw"><i style="background:#F6A52F"></i><div><b>Cúrcuma</b>#F6A52F · sérum contra a luz</div></div>
+      <div class="sw"><i style="background:#CB5A00"></i><div><b>Âmbar</b>#CB5A00 · sombra e profundidade</div></div>
+      <div class="sw"><i style="background:#045683"></i><div><b>Azul aquarela</b>#045683 · detalhe do Calm</div></div>
+      <div class="sw"><i style="background:#481C11"></i><div><b>Semente</b>#481C11 · madeira, folhas secas</div></div>
+      <div class="sw"><i style="background:#FEFBFA;border-bottom:1px solid #EAD9C6"></i><div><b>Off-white</b>#FEFBFA · fundo, toalha, roupão</div></div>
+    </div>
+    <div class="type">
+      <div><span style="font-family:Jost;font-weight:300;font-size:26px;letter-spacing:.2em">LILLÁ CALM</span>Sem serifa fina · nomes e legendas (como no logo)</div>
+      <div><span class="serif" style="font-size:28px;font-style:italic">pele com viço</span>Serifa itálica · frase-chave</div>
+      <div><span class="script" style="font-size:34px">Sérum</span>Manuscrita · 1 nota por vídeo (como no frasco)</div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="sec">
+    <div class="sec-t"><span class="n">02</span><h2>Os produtos</h2><small>a dupla do ritual</small></div>
+    <div class="prods">
+      <div class="pc">
+        <img src="img/produto-sabonete-calm.jpg" alt="Sabonete Calm">
+        <div>
+          <p class="meta">Passo 1 · limpar</p>
+          <h3>SABONETE CALM</h3>
+          <p class="pr">R$ 78 · 210 ml</p>
+          <ul>
+            <li>Sabonete líquido para peles sensíveis</li>
+            <li>Hamamélis + andiroba + copaíba</li>
+            <li>Livre de parabeno, petrolato, silicone, alumínio e sulfato</li>
+            <li>Dermatologicamente testado · vegano · natural</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pc">
+        <img src="img/produto-serum-curcuma.jpg" alt="Sérum Cúrcuma + AH">
+        <div>
+          <p class="meta">Passo 2 · iluminar</p>
+          <h3>SÉRUM CÚRCUMA + AH</h3>
+          <p class="pr">R$ 287 · 30 ml</p>
+          <ul>
+            <li>Cúrcuma + ácido hialurônico</li>
+            <li>Defesa antioxidante contra danos ambientais</li>
+            <li>Hidratação, viço e pele mais uniforme</li>
+            <li>Natural e vegano de alta performance · feito à mão</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINHAS FOTOS -->
+  <section class="sec">
+    <div class="sec-t"><span class="n">03</span><h2>Minhas fotos · direção de luz e enquadramento</h2><small>portfólio Juliana Araújo</small></div>
+    <div class="photos">
+      <div class="ph"><img src="img/03-roupao-plantas.jpg" alt=""><p><b>Cena 2 · rotina.</b> Roupão branco, plantas, luz de janela. Cenário do banheiro/penteadeira.</p></div>
+      <div class="ph"><img src="img/16-evessence-lintime.jpg" alt=""><p><b>Cenas 3–4 · produto.</b> Frasco na altura do rosto, olhos fechados, sensorial.</p></div>
+      <div class="ph"><img src="img/20-ekilibre-serum.jpg" alt=""><p><b>Cena 4c · conta-gotas.</b> Contra-luz quente, mão no cabelo, close de 3/4.</p></div>
+      <div class="ph"><img src="img/11-sabonetes-por-do-sol.jpg" alt=""><p><b>Cena 1 · gancho.</b> Produto perto do rosto, sorriso, golden hour.</p></div>
+      <div class="ph"><img src="img/18-amaue-rio.jpg" alt=""><p><b>Cena 6 · resultado.</b> Luz dourada no rosto, pele real, território ao fundo.</p></div>
+    </div>
+  </section>
+
+  <!-- REFERENCIA -->
+  <section class="sec">
+    <div class="sec-t"><span class="n">04</span><h2>Referência de gancho</h2><small>post da marca · carrossel Cúrcuma (2/4)</small></div>
+    <div class="ref">
+      <img src="img/referencia-post-curcuma.jpg" alt="Post da Lillá sobre o Sérum Cúrcuma">
+      <div>
+        <h3>O que pego do post: frasco <em>herói</em>, fundo claro e frases curtas com palavra em CAIXA ALTA.</h3>
+        <p>A marca fala da cúrcuma como <i>"energia solar que ilumina a pele de dentro para fora"</i>. No vídeo, isso vira luz dourada real e a gota âmbar contra o sol. Os textos na tela repetem o estilo: laranja, curtos, 1 a 2 palavras em destaque.</p>
+        <div class="ost">Exemplo de texto na tela: <strong>CUIDADO DE VÓ</strong> na minha rotina de skincare</div>
+        <div class="hooks">
+          <div class="hook"><b>Gancho principal · território</b>"Andiroba e copaíba. Quem é do Norte sabe: isso aqui é cuidado de vó. E agora tá na minha rotina de skincare."</div>
+          <div class="hook"><b>A/B · identificação</b>"Pele sensível que arde com qualquer sabonete? Mana, vem cá que eu achei a dupla."</div>
+          <div class="hook"><b>A/B · curiosidade</b>"Tu já passou cúrcuma no rosto? Calma, não é a do tempero da cozinha."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROTEIRO -->
+  <section class="sec">
+    <div class="sec-t"><span class="n">05</span><h2>Roteiro cena a cena</h2><small>áudio · imagem · texto na tela</small></div>
+    <div class="scenes">
+      <div class="sc hl"><span class="t">0–4 s</span><span class="nm">1</span><h4>Gancho</h4>
+        <p class="lbl">Áudio</p><p class="fala">"Andiroba e copaíba. Quem é do Norte sabe: isso aqui é cuidado de vó."</p>
+        <p class="lbl">Imagem</p><p class="img">Close, luz dourada. Levanta o Calm e aponta o rótulo. Corte seco: sérum entra no quadro.</p>
+        <div class="tx"><span>CUIDADO DE VÓ na minha rotina</span></div></div>
+      <div class="sc"><span class="t">4–9 s</span><span class="nm">2</span><h4>Solução</h4>
+        <p class="lbl">Áudio</p><p class="fala">"Pele sensível não precisa de mil passos. Precisa limpar sem agredir e tratar com ativo que respeita."</p>
+        <p class="lbl">Imagem</p><p class="img">Plano médio na penteadeira com plantas. Gesto de "dois".</p>
+        <div class="tx"><span>Pele sensível? 2 PASSOS</span></div></div>
+      <div class="sc"><span class="t">9–15 s</span><span class="nm">3</span><h4>Produto</h4>
+        <p class="lbl">Áudio</p><p class="fala">"A dupla da Lillá: Sabonete Calm e Sérum Cúrcuma + AH. Natural, vegano, feito à mão."</p>
+        <p class="lbl">Imagem</p><p class="img">Flatlay claro com folhas e cúrcuma fresca. Gira o sérum: o âmbar acende.</p>
+        <div class="tx"><span>@lilla_biocosmetics</span></div></div>
+      <div class="sc"><span class="t">15–28 s</span><span class="nm">4</span><h4>Ativos e benefícios</h4>
+        <p class="lbl">Áudio</p><p class="fala">"Hamamélis, andiroba e copaíba, sem sulfato. Cúrcuma antioxidante + ácido hialurônico que hidrata."</p>
+        <p class="lbl">Imagem</p><p class="img">Macro da válvula, espuma no rosto, gota âmbar caindo contra a luz.</p>
+        <div class="tx"><span>DEFESA ANTIOXIDANTE + HIDRATAÇÃO</span></div></div>
+      <div class="sc"><span class="t">28–36 s</span><span class="nm">5</span><h4>Praticidade</h4>
+        <p class="lbl">Áudio</p><p class="fala">"Lavo, seco, três gotinhas e pronto. Cabe na correria de manhã."</p>
+        <p class="lbl">Imagem</p><p class="img">Jump cuts: enxágue, toalha, batidinhas do sérum nas maçãs do rosto.</p>
+        <div class="tx"><span>lava → seca → 3 gotas</span></div></div>
+      <div class="sc"><span class="t">36–45 s</span><span class="nm">6</span><h4>Resultado</h4>
+        <p class="lbl">Áudio</p><p class="fala">"Absorve rápido, não pesa. Pele hidratada e com brilho de pele saudável."</p>
+        <p class="lbl">Imagem</p><p class="img">Janela, golden hour, câmera aproxima. Toque na bochecha, perfil. Sem filtro.</p>
+        <div class="tx"><span>HIDRATADA e com VIÇO</span></div></div>
+      <div class="sc hl"><span class="t">45–52 s</span><span class="nm">7</span><h4>CTA</h4>
+        <p class="lbl">Áudio</p><p class="fala">"Bora conhecer: lillabio.com.br, cupom OILILLÁ na primeira compra. Tu já conhecia andiroba no skincare?"</p>
+        <p class="lbl">Imagem</p><p class="img">Dois produtos perto do rosto, sorriso. Cartela final no flatlay.</p>
+        <div class="tx"><span>lillabio.com.br · OILILLÁ</span></div></div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="sec">
+    <div class="sec-t"><span class="n">06</span><h2>Diferenciais, benefícios e regras</h2></div>
+    <div class="bens">
+      <div class="ben"><h3>Diferenciais</h3><div class="chips">
+        <span class="chip o">Andiroba + copaíba</span><span class="chip">Hamamélis</span><span class="chip o">Cúrcuma + AH</span><span class="chip">Vegano</span><span class="chip">Natural</span><span class="chip">Feito à mão</span><span class="chip">Dermatologicamente testado</span><span class="chip">Livre de sulfato e parabeno</span><span class="chip">Sustentável</span></div></div>
+      <div class="ben"><h3>Benefícios a mostrar</h3><ul>
+        <li>Limpa sem repuxar a pele sensível</li><li>Defesa antioxidante</li><li>Hidratação que não pesa</li><li>Viço e pele mais uniforme</li><li>Rotina de 2 passos</li></ul></div>
+      <div class="ben"><h3>Fazer / evitar</h3><ul>
+        <li>Pele real, sem filtro de pele</li><li>Rótulo legível e som real do produto</li><li class="no">Promessa milagrosa ou prazo de resultado</li><li class="no">Antes e depois sem autorização</li><li class="no">Outras marcas no quadro</li></ul></div>
+    </div>
+  </section>
+
+  <!-- PENDENCIAS -->
+  <section class="sec">
+    <div class="sec-t"><span class="n">07</span><h2>Pendências com a marca</h2><small>confirmar antes de gravar</small></div>
+    <div class="pend">
+      <div>Peças recebidas (vem a caixa do sérum?)</div>
+      <div>Duração final e corte de 15 s para anúncio</div>
+      <div>Uso de imagem: orgânico, collab ou ads (e prazo)</div>
+      <div>Link oficial / UTM e cupom (OILILLÁ ou cupom próprio)</div>
+      <div>Claims liberados: "clareamento", "renovação celular"</div>
+      <div>Calm é facial, corporal ou os dois?</div>
+      <div>Modo de uso do sérum (gotas, manhã/noite, FPS)</div>
+      <div>Lista "livre de" e selos de cada produto</div>
+      <div>Frases obrigatórias, termos proibidos, hashtags</div>
+    </div>
+  </section>
+
+  <div class="foot"><span>2026 · Juliana Araújo × Lillá Biocosmetics</span><span>Mood board UGC · Calm + Cúrcuma</span></div>
+</div>
+</body>
+</html>
