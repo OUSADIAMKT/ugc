@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta de vídeo · Ritual Solar · Lillá × Juliana Araújo</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root{--laranja:#F47920;--curcuma:#F6A52F;--ambar:#CB5A00;--azul:#045683;--semente:#481C11;--off:#FEFBFA;--creme:#F8EFE4;--tinta:#2E2A27;--linha:#EAD9C6}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1240px;height:1754px;background:var(--off);color:var(--tinta);font-family:'Jost',sans-serif;font-weight:300;overflow:hidden}
+  .pg{position:relative;width:1240px;height:1754px;padding:70px 90px 60px;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;pointer-events:none}
+  .meta{font-size:13px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:var(--ambar)}
+  .serif{font-family:'Cormorant Garamond',serif}
+  .script{font-family:'Parisienne',cursive;color:var(--laranja)}
+  .top{display:flex;justify-content:space-between;align-items:flex-start}
+  .brand{font-size:40px;letter-spacing:.32em;font-weight:200;line-height:1}
+  .brand small{display:block;font-size:11px;letter-spacing:.42em;margin-top:7px;color:#6d625a;font-weight:400}
+  .who{text-align:right;font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;line-height:1.7}
+  .who span{color:var(--ambar)}
+
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:50px;margin-top:44px;align-items:end}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:96px;line-height:.94;letter-spacing:-.015em}
+  h1 em{color:var(--laranja)}
+  .idea{font-size:19px;line-height:1.5;margin-top:22px;max-width:600px}
+  .idea b{font-weight:500}
+  .photo{position:relative;height:440px}
+  .photo img.a{position:absolute;right:0;top:0;width:300px;height:410px;object-fit:cover;border-radius:150px 170px 6px 6px}
+  .photo img.b{position:absolute;left:0;bottom:0;width:165px;background:#fff;padding:8px;border-radius:6px;box-shadow:0 14px 40px rgba(72,28,17,.14)}
+  .photo .note{position:absolute;left:-30px;top:110px;font-size:36px;transform:rotate(-7deg)}
+
+  .h2{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--linha);padding-bottom:10px;margin:38px 0 18px}
+  .h2 i{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--laranja)}
+  .h2 b{font-size:14px;letter-spacing:.26em;text-transform:uppercase;font-weight:500}
+
+  .ritual{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center}
+  .step{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
+  .step img{width:120px;height:150px;object-fit:contain;background:#fff;border:1px solid var(--linha);border-radius:6px;padding:8px}
+  .step .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:46px;color:var(--laranja);line-height:1}
+  .step h3{font-size:22px;letter-spacing:.1em;font-weight:300;margin:4px 0 8px}
+  .step p{font-size:16px;line-height:1.5;color:#4f4740}
+  .arrow{text-align:center;font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--curcuma)}
+
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .pl{background:#fff;border:1px solid var(--linha);border-radius:8px;padding:18px 18px}
+  .pl h4{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;line-height:1.1;margin-bottom:10px}
+  .pl h4 em{color:var(--laranja)}
+  .pl p{font-size:15px;line-height:1.5;color:#4f4740}
+
+  .mood{display:grid;grid-template-columns:repeat(3,1fr) 260px;gap:14px;align-items:stretch}
+  .mood img{width:100%;height:180px;object-fit:cover;border-radius:6px;display:block}
+  .pal{background:var(--creme);border-radius:6px;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+  .dots{display:flex;gap:8px;margin-top:12px}
+  .dots i{width:34px;height:34px;border-radius:50%;display:block;border:1px solid #0000000d}
+  .pal p{font-size:14px;line-height:1.5;color:#5e544d}
+
+  .bottom{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:6px}
+  .bottom ul{list-style:none;font-size:16px;line-height:1.55}
+  .bottom li::before{content:'— ';color:var(--curcuma)}
+  .about p{font-size:16px;line-height:1.55}
+  .about b{font-weight:500}
+
+  .cta{position:absolute;left:90px;right:90px;bottom:60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--linha);padding-top:20px}
+  .cta .q{font-family:'Cormorant Garamond',serif;font-size:36px;line-height:1}
+  .cta .q em{color:var(--laranja)}
+  .cta .c{text-align:right;font-size:15px;letter-spacing:.12em;line-height:1.7}
+  .cta .c b{font-weight:500;color:var(--ambar)}
+</style>
+</head>
+<body>
+<div class="pg">
+  <span class="blob" style="width:520px;height:520px;right:-200px;top:-220px;background:radial-gradient(circle at 40% 40%,#F6A52F,#F4792050 58%,transparent 72%);opacity:.6"></span>
+  <span class="blob" style="width:300px;height:300px;left:-140px;top:880px;background:radial-gradient(circle,#04568330,transparent 70%)"></span>
+
+  <div class="top">
+    <div class="brand">LILLÁ<small>biocosmetics</small></div>
+    <div class="who">Proposta de vídeo UGC<br><span>por Juliana Araújo</span></div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <p class="meta">Sabonete Calm + Sérum Cúrcuma + AH</p>
+      <h1 style="margin-top:18px">Ritual <em>solar</em>.<br>O luxo do<br>essencial.</h1>
+      <p class="idea">Um vídeo em que apresento os dois produtos como um <b>ritual de dois gestos para pele sensível</b>: limpar com delicadeza e devolver a luz. Estética editorial, pele real e a biodiversidade brasileira tratada como o que ela é: <b>ingrediente de luxo</b>.</p>
+    </div>
+    <div class="photo">
+      <img class="a" src="img/03-roupao-plantas.jpg" alt="Juliana Araújo">
+      <img class="b" src="img/produto-serum-curcuma.jpg" alt="Sérum Cúrcuma + AH">
+      <span class="note script">energia solar</span>
+    </div>
+  </div>
+
+  <div class="h2"><i>01</i><b>O ritual</b></div>
+  <div class="ritual">
+    <div class="step"><img src="img/produto-sabonete-calm.jpg" alt="Sabonete Calm">
+      <div><span class="n">1</span><h3>LIMPAR · CALM</h3><p>Hamamélis, andiroba e copaíba numa limpeza delicada, sem sulfato e sem parabeno.</p></div></div>
+    <div class="arrow">→</div>
+    <div class="step"><img src="img/produto-serum-curcuma.jpg" alt="Sérum Cúrcuma + AH">
+      <div><span class="n">2</span><h3>ILUMINAR · CÚRCUMA + AH</h3><p>Cúrcuma antioxidante e ácido hialurônico: proteção e hidratação na mesma gota.</p></div></div>
+  </div>
+
+  <div class="h2"><i>02</i><b>Como vai ser</b></div>
+  <div class="pillars">
+    <div class="pl"><h4>Luz <em>dourada</em></h4><p>A "energia solar" da cúrcuma vira imagem: a gota âmbar contra o sol abre o vídeo.</p></div>
+    <div class="pl"><h4>Ritmo <em>editorial</em></h4><p>Gestos lentos, texturas em macro, câmera lenta e trilha minimalista.</p></div>
+    <div class="pl"><h4>Pele <em>real</em></h4><p>Sem filtro de pele. O resultado é viço e hidratação, mostrados com verdade.</p></div>
+    <div class="pl"><h4>Voz <em>amazônida</em></h4><p>Andiroba e copaíba contadas por quem é da Amazônia, com propriedade e sem folclore.</p></div>
+  </div>
+
+  <div class="h2"><i>03</i><b>Estética</b></div>
+  <div class="mood">
+    <img src="img/11-sabonetes-por-do-sol.jpg" alt="" style="object-position:50% 30%">
+    <img src="img/22-varanda-rede-plantas.jpg" alt="">
+    <img src="img/21-praia-rio-barco.jpg" alt="" style="object-position:50% 70%">
+    <div class="pal">
+      <div><p class="meta">Paleta Lillá</p>
+        <div class="dots"><i style="background:#F47920"></i><i style="background:#F6A52F"></i><i style="background:#CB5A00"></i><i style="background:#045683"></i><i style="background:#FEFBFA"></i></div></div>
+      <p>Pedra clara, linho off-white, folhagem e cúrcuma fresca. Texto na tela em serifa fina, com o laranja da marca como único acento.</p>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div>
+      <div class="h2" style="margin-top:38px"><i>04</i><b>Entrega sugerida</b></div>
+      <ul>
+        <li>1 vídeo vertical 9:16, de 45 a 60 s</li>
+        <li>1 corte de 15 s para anúncio</li>
+        <li>Para Reels e TikTok, em collab com @lilla_biocosmetics</li>
+        <li>Roteiro aprovado com a marca antes da gravação</li>
+      </ul>
+    </div>
+    <div class="about">
+      <div class="h2" style="margin-top:38px"><i>05</i><b>Quem assina</b></div>
+      <p><b>Juliana Araújo</b>, criadora de conteúdo, atriz e UGC creator de Altamira, no Xingu (PA). Mais de 70 marcas atendidas, com conteúdo de beleza, skincare e lifestyle que leva o território amazônico para a tela.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <p class="q">Vamos criar esse <em>ritual</em> juntas?</p>
+    <p class="c"><b>@juh.arauju</b><br>ousadiamkt.github.io/ugc/portfolio</p>
+  </div>
+</div>
+</body>
+</html>
